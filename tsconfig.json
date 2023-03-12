@@ -14,8 +14,10 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": "./src",
+    "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": [".eslintrc.cjs", "src", "vite.config.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
