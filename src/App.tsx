@@ -5,15 +5,19 @@ import { Component } from 'react';
 import { AboutUs } from './pages/AboutUs';
 import { Home } from './pages/Home';
 import { NotFound } from './pages/NotFound';
+import { NavBar } from './components/NavBar/NavBar';
 
 export class App extends Component {
   render() {
     return (
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<AboutUs />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </>
     );
   }
 }
@@ -37,10 +41,10 @@ export class App extends Component {
 //   }
 // }
 
-export function WrappedApp() {
-  return (
-    <HashRouter>
-      <App />
-    </HashRouter>
-  );
-}
+// export function WrappedApp() {
+//   return (
+//     <HashRouter>
+//       <App />
+//     </HashRouter>
+//   );
+// }
