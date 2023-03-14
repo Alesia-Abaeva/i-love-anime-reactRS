@@ -23,13 +23,11 @@ export class Home extends Component<object, HomeState> {
     const localItem = localStorage.getItem(LOCAL_STORAGE_KEYS.INPUT_VALUE);
     const storedSearch = localItem && JSON.parse(localItem);
     storedSearch && this.setState({ search: storedSearch });
-    // получить поиск из локал сторедж
     this.getCountries();
   }
 
   componentWillUnmount() {
     localStorage.setItem(LOCAL_STORAGE_KEYS.INPUT_VALUE, JSON.stringify(this.state.search));
-    // записывать значение поиска
   }
 
   handleSearchChange(value: string) {
