@@ -1,5 +1,5 @@
 .navbar {
-  background: linear-gradient(90deg, rgb(110, 94, 254) 0%, rgba(73, 63, 252, 1) 100%);
+  background: #141414;
   height: 80px;
   display: flex;
   justify-content: flex-start;
@@ -8,6 +8,12 @@
   padding-left: 3rem;
   padding-right: 3rem;
   gap: 4rem;
+}
+
+.navbar_logo {
+  color: white;
+  font-weight: 400;
+  font-size: 1.5rem;
 }
 
 .logo {
@@ -27,8 +33,13 @@
   font-size: 1.5rem;
 }
 
+.active {
+  color: #00d8ff;
+  text-decoration: underline;
+}
+
 .nav-links:hover {
-  color: aqua;
+  color: #00d8ff;
 }
 
 .navbar_logo {

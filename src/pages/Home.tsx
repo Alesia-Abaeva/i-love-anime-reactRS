@@ -9,9 +9,9 @@ interface HomeState {
   countries: CountriesData[];
 }
 
-export class Home extends Component<void, HomeState> {
-  constructor() {
-    super();
+export class Home extends Component<object, HomeState> {
+  constructor(props: object) {
+    super(props);
 
     this.state = {
       search: '',
@@ -51,11 +51,7 @@ export class Home extends Component<void, HomeState> {
   render(): ReactNode {
     return (
       <div>
-        <Search
-          value={this.state.search}
-          onSearchChange={this.handleSearchChange.bind(this)}
-          // placeholder={}
-        />
+        <Search value={this.state.search} onSearchChange={this.handleSearchChange.bind(this)} />
         <Countries data={this.filterCountries()} />
       </div>
     );

@@ -18,13 +18,13 @@
   padding: 1rem;
   padding-left: 3rem;
   outline: none;
-  border: 2px solid rgb(110, 94, 254);
+  border: 2px solid #141414;
   border-radius: 5px;
 }
 
 .search__input :focus {
   border: 1px solid transparent;
-  box-shadow: 0 0 0 1px rgba(73, 63, 252, 1);
+  box-shadow: 0 0 0 1px#00D8FF;
 }
 
 .search__img {
