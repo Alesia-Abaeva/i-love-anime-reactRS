@@ -2,10 +2,15 @@ import { Component, ReactNode } from 'react';
 import img from '../../assets/search.svg';
 import './Search.css';
 
-export class Search extends Component {
-  state = {
-    inputValue: '',
-  };
+interface SearchProps {
+  value: string;
+  onSearchChange: (value: string) => void;
+}
+
+export class Search extends Component<SearchProps> {
+  constructor(props: SearchProps) {
+    super(props);
+  }
 
   render(): ReactNode {
     return (
@@ -15,7 +20,8 @@ export class Search extends Component {
             type="text"
             placeholder="Search in the country..."
             className="search__input"
-            onChange={(event) => this.setState(event.target.value)}
+            onChange={(event) => this.props.onSearchChange(event.target.value)}
+            value={this.props.value}
           />
           <img src={img} alt="img" className="search__img" />
         </form>

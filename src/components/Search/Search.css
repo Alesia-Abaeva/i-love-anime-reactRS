@@ -1,7 +1,8 @@
 .form_container {
-  width: 100%;
+  width: 90%;
   margin-left: 4rem;
   margin-right: 3rem;
+  padding-top: 2rem;
 }
 
 .search_form {
