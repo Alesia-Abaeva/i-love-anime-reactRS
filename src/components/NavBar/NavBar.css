@@ -5,8 +5,8 @@
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
   gap: 4rem;
 }
 
@@ -21,9 +21,10 @@
 .navbar_lists {
   display: flex;
   list-style-type: none;
-  gap: 1.5rem;
+  gap: 4rem;
   color: white;
   font-weight: 400;
+  font-size: 1.5rem;
 }
 
 .nav-links:hover {

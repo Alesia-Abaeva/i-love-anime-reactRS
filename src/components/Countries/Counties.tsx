@@ -1,5 +1,4 @@
 // import React, { Component } from 'react';
-// import img from '../../assets/search.svg';
 
 // type DataCountry = {
 //   countries: string[];
@@ -30,12 +29,6 @@
 //   render() {
 //     return (
 //       <div>
-//         <div className="form">
-//           <form>
-//             <input type="text" placeholder="Search in the country..." className="search__input" />
-//             <img src={img} alt="img" className="search__img" />
-//           </form>
-//         </div>
 //         <div className="countries">
 //           {this.state.countries.map((country, index) => {
 //             return <CountryItem country={country} key={index} />;
