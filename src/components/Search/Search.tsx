@@ -18,7 +18,7 @@ export class Search extends Component<SearchProps> {
         <form className="search_form">
           <input
             type="text"
-            placeholder="Search in the country..."
+            placeholder={'Search in the country...'}
             className="search__input"
             onChange={(event) => this.props.onSearchChange(event.target.value)}
             value={this.props.value}
