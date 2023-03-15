@@ -13,10 +13,13 @@ export class Countries extends Component<CountriesProps> {
 
   render() {
     return (
-      <div className="countries_container">
-        {this.props.data.map((country, index) => (
-          <CountryItem data={country} key={index} />
-        ))}
+      <div>
+        <h2 className="countries_title">Countries</h2>
+        <div className="countries_container">
+          {this.props.data.map((country, index) => (
+            <CountryItem data={country} key={index} />
+          ))}
+        </div>
       </div>
     );
   }

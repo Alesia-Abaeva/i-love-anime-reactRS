@@ -6,7 +6,7 @@ export class NotFound extends Component {
   render(): ReactNode {
     return (
       <div className="main_nfnd">
-        <h1>Page not found ( ´•︵•` )</h1>
+        <h2>Page not found ( ´•︵•` )</h2>
         <Link to="/" className="main_link">
           main
         </Link>

@@ -4,15 +4,6 @@ import { MemoryRouter } from 'react-router-dom';
 import { App } from './App';
 
 describe('App', () => {
-  it('Renders hello world', () => {
-    render(<App />);
-    expect(
-      screen.getByRole('heading', {
-        level: 1,
-      })
-    ).toHaveTextContent('Hello World');
-  });
-
   it('Renders not found is invalid path', () => {
     render(
       <MemoryRouter initialEntries={['/banana']}>
@@ -21,8 +12,34 @@ describe('App', () => {
     );
     expect(
       screen.getByRole('heading', {
-        level: 1,
+        level: 2,
       })
-    ).toHaveTextContent('Кажется этой страницы не существует ( ´•︵•` )');
+    ).toHaveTextContent('Page not found ( ´•︵•` )');
+  });
+
+  it('Renders about page', () => {
+    render(
+      <MemoryRouter initialEntries={['/about']}>
+        <App />
+      </MemoryRouter>
+    );
+    expect(
+      screen.getByRole('heading', {
+        level: 3,
+      })
+    ).toHaveTextContent('Alesia-Abaeva');
+  });
+
+  it('Renders main page', () => {
+    render(
+      <MemoryRouter initialEntries={['/']}>
+        <App />
+      </MemoryRouter>
+    );
+    expect(
+      screen.getByRole('heading', {
+        level: 2,
+      })
+    ).toHaveTextContent('Countries');
   });
 });

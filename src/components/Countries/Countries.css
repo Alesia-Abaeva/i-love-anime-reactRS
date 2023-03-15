@@ -6,3 +6,8 @@
   overflow: hidden;
   flex-wrap: wrap;
 }
+
+.countries_title {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}

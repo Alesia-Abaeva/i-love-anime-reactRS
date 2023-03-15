@@ -52,7 +52,7 @@ interface CountriesData {
   timezones: string[];
   continents: string[];
   flags: { png: string; svg: string; alt: string };
-  coatOfArms: { png: string; svg: string };
+  coatOfArms: { png: string; svg: string } | null;
   startOfWeek: string;
   capitalInfo: { latlng: number[] };
 }
