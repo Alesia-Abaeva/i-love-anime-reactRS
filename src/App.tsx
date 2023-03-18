@@ -15,7 +15,7 @@ export class App extends Component {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
-          <Route path="/404" element={<NotFound />} />
+          <Route path="/*" element={<NotFound />} />
         </Routes>
       </>
     );
