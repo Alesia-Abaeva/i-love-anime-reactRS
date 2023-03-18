@@ -37,7 +37,6 @@ export class Home extends Component<object, HomeState> {
   async getCountries() {
     const response = await axios.get<CountriesData[]>('https://restcountries.com/v3.1/all');
     this.setState({ countries: response.data });
-    console.log(response.data, this.state.countries);
   }
 
   filterCountries() {
