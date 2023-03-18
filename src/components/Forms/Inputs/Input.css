@@ -1,0 +1,22 @@
+.input_text {
+  width: 20rem;
+  height: 3rem;
+  padding: 1rem;
+  /* padding-left: 3rem; */
+  outline: none;
+  border: 2px solid #141414;
+  border-radius: 5px;
+}
+
+.input_text :focus {
+  border: 1px solid transparent;
+  box-shadow: 0 0 0 1px#00D8FF;
+}
+
+.item_input {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  gap: 0.7rem;
+}

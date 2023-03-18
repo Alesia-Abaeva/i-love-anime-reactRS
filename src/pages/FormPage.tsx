@@ -25,7 +25,7 @@ export class FormPage extends Component<object, FormState> {
   render(): ReactNode {
     return (
       <div className="main_form container">
-        <Forms />
+        <Forms addCard={this.addCard} />
         <Card data={this.state.cards} />
       </div>
     );

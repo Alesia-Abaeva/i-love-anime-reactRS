@@ -1,8 +1,10 @@
 interface NewCard {
-  name: string;
-  lastname: string;
+  title: string;
+  text: string;
   date: string;
   country: string;
-  img: string | null;
+  notification: string;
+  agree: boolean;
+  file: string | null;
   process: boolean;
 }
