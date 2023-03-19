@@ -1,6 +1,6 @@
 import { Component, ReactNode } from 'react';
 import img from '../../assets/search.svg';
-import './Search.css';
+import style from './Search.module.scss';
 
 interface SearchProps {
   value: string;
@@ -14,16 +14,16 @@ export class Search extends Component<SearchProps> {
 
   render(): ReactNode {
     return (
-      <div className="form_container">
-        <form className="search_form">
+      <div className={style.form_container}>
+        <form className={style.search_form}>
           <input
             type="text"
             placeholder={'Search in the country...'}
-            className="search__input"
+            className={style.search__input}
             onChange={(event) => this.props.onSearchChange(event.target.value)}
             value={this.props.value}
           />
-          <img src={img} alt="img" className="search__img" />
+          <img src={img} alt="img" className={style.search__img} />
         </form>
       </div>
     );

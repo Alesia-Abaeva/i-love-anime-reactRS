@@ -1,21 +1,26 @@
 import { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { MenuItem } from '../../const/menu-items';
-import './NavBar.css';
+import styles from './NavBar.module.scss';
 
 export class NavBar extends Component {
   render() {
     return (
-      <nav className="navbar">
-        <h1 className="navbar_logo">
-          React Countries Project <i className="logo"></i>
+      <nav className={styles.navbar}>
+        <h1 className={styles.navbar_logo}>
+          React Countries Project <i className={styles.logo}></i>
         </h1>
 
-        <ul className="navbar_lists">
+        <ul className={styles.navbar_lists}>
           {MenuItem.map((item, index) => {
             return (
               <li key={index}>
-                <NavLink to={item.url} className={item.cName}>
+                <NavLink
+                  to={item.url}
+                  className={({ isActive }) =>
+                    isActive ? `${styles[item.cName]} ${styles.active}` : styles[item.cName]
+                  }
+                >
                   {item.title}
                 </NavLink>
               </li>

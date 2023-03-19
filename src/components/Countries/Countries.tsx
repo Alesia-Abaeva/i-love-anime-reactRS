@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { CountryItem } from './CountryItem/CountryItem';
-import './Countries.css';
+import styles from './Countries.module.scss';
 
 interface CountriesProps {
   data: CountriesData[];
@@ -14,8 +14,8 @@ export class Countries extends Component<CountriesProps> {
   render() {
     return (
       <div>
-        <h2 className="countries_title">Countries</h2>
-        <div className="countries_container">
+        <h2 className={styles.countries_title}>Countries</h2>
+        <div className={styles.countries_container}>
           {this.props.data.map((country, index) => (
             <CountryItem data={country} key={index} />
           ))}

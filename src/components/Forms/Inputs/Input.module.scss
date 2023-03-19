@@ -1,0 +1,33 @@
+@import '/src/styles/variables';
+
+.input_text {
+  width: 20rem;
+  height: 3rem;
+  padding: 1rem;
+  outline: none;
+  border: 2px solid $background;
+  border-radius: 5px;
+
+  :focus {
+    border: 1px solid transparent;
+    box-shadow: 0 0 0 1px $ligth-blue;
+  }
+}
+
+.item_input {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  gap: 0.5rem;
+}
+
+.error_title {
+  color: transparent;
+  height: 1.2rem;
+  transition: all 0.3 ease-in;
+}
+
+.error_active {
+  color: red;
+}

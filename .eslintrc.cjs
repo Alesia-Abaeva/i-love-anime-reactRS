@@ -10,12 +10,14 @@ module.exports = {
     'plugin:prettier/recommended',
     'prettier',
   ],
+
   overrides: [],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
     project: './tsconfig.json',
+    extraFileExtension: ['.scss'],
   },
   plugins: ['react', '@typescript-eslint', 'prettier', 'react-hooks'],
   rules: {

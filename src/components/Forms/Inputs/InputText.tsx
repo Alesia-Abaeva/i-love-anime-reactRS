@@ -1,8 +1,7 @@
 import { Component, createRef, RefObject } from 'react';
-import './Input.css';
+import styles from './Input.module.scss';
 
 interface InputTextProps {
-  isValidate: (value: boolean) => void;
   onChange: (value: string) => void;
   validate?: boolean;
 }
@@ -30,34 +29,25 @@ export class InputText extends Component<InputTextProps, InputTextState> {
   handlerChange() {
     this.props.onChange(this.titleInput.current?.value ?? '');
     this.setState({ value: this.titleInput.current?.value as string });
-    // this.validate();
-  }
-
-  validate() {
-    const text = this.titleInput.current?.value;
-
-    if (!text?.trim().length || text?.trim().length < 2) {
-      this.setState({ validate: false });
-      this.props.isValidate(false);
-    } else {
-      this.setState({ validate: true });
-      this.props.isValidate(true);
-    }
-
-    console.log(this.state);
   }
 
   render() {
     return (
-      <div className="item_input">
+      <div className={styles.item_input}>
         <label htmlFor="">Title</label>
         <input
           type="text"
-          className="input_text"
+          className={styles.input_text}
           ref={this.titleInput}
           onChange={() => this.handlerChange()}
         />
-        {this.props.validate ? <span>Super</span> : <span>Error press valid data</span>}
+        {
+          <span
+            className={`${styles.error_title} ${!this.props.validate ? styles.error_active : ''}`}
+          >
+            {!this.props.validate && 'Error press valid data'}
+          </span>
+        }
       </div>
     );
   }

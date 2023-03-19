@@ -4,11 +4,11 @@ import { InputText } from './Inputs/InputText';
 import './Forms.css';
 
 enum FormKeys {
-  TEST = 'test',
+  TITLE = 'title',
 }
 
 const validateMap: Record<FormKeys, (value: string) => boolean> = {
-  [FormKeys.TEST]: (value: string) => !value.trim().length || value.trim().length < 2,
+  [FormKeys.TITLE]: (value: string) => !value.trim().length || value.trim().length <= 2,
 };
 
 interface FormProps {
@@ -16,26 +16,25 @@ interface FormProps {
 }
 
 interface FormState {
-  test: { value: string; isError?: boolean };
-  title: boolean;
+  title: { value: string; isError?: boolean };
+  // title: boolean;
 }
 
 export class Forms extends Component<FormProps, FormState> {
   constructor(props: FormProps) {
     super(props);
     this.state = {
-      test: { value: '', isError: false },
-      title: true,
+      title: { value: '', isError: false },
+      // title: true,
     };
   }
 
   handleChange(value: string) {
-    this.setState({ test: { value } });
-    console.log(this.state.test);
+    this.setState({ title: { value } });
   }
 
   handlerValidate(isValidate: boolean) {
-    this.setState({ title: isValidate });
+    this.setState({ title: { ...this.state.title, isError: isValidate } });
   }
 
   validate() {
@@ -67,11 +66,7 @@ export class Forms extends Component<FormProps, FormState> {
     return (
       <div className="main_form container">
         <form>
-          <InputText
-            onChange={this.handleChange.bind(this)}
-            isValidate={this.handlerValidate.bind(this)}
-            validate={!this.state.test.isError}
-          />
+          <InputText onChange={this.handleChange.bind(this)} validate={!this.state.title.isError} />
           {/* <input type="date" />
           <input type="checkbox" />
           <input type="radio" />

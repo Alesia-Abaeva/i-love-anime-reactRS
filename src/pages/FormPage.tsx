@@ -1,7 +1,7 @@
 import { Forms } from '../components/Forms/Forms';
 import { Card } from '../components/Card/Card';
 import { Component, ReactNode } from 'react';
-import './Pages.css';
+import './Pages.module.scss';
 
 interface FormState {
   cards: NewCard[];
