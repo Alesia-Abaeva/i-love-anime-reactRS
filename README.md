@@ -1,7 +1,5 @@
 # react-rs
 
-[RS films](http://rs-films22q3.ru/) is a free online cinema app with lots of features. This project was created as a final task (RS Clone) on RS School course.
-
 [React-rs](https://react-component-countries.netlify.app/#/)is an application for studying flags of different countries Here are all the flags of the world This project was created as a task for the [RS School React course](https://rs.school/react/).
 
 ## Key features
@@ -11,7 +9,8 @@
 
 ## Screenshot
 
-![image]()
+![image](https://user-images.githubusercontent.com/101274979/226210211-d04cfad6-c15e-4483-8b6b-478d7a207530.png)
+
 
 ## Tech stack
 
