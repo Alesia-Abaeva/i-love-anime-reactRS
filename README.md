@@ -4,14 +4,6 @@
 
 [React-rs](https://react-component-countries.netlify.app/#/)is an application for studying flags of different countries Here are all the flags of the world This project was created as a task for the [RS School React course](https://rs.school/react/).
 
-Tech stack
-
-3-rd party API
-Google Books API
-
-How run locally
-To clone and run this application, you'll need Git and Node.js (which comes with npm) installed on your computer. From your command line:
-
 ## Key features
 
 - all flags with a description (continent, area, area) are presented on the main page
@@ -19,7 +11,7 @@ To clone and run this application, you'll need Git and Node.js (which comes with
 
 ## Screenshot
 
-![image](https://user-images.githubusercontent.com/101424508/222893646-82655804-30aa-4774-8a98-4f61d7bd0d5e.png)
+![image]()
 
 ## Tech stack
 
