@@ -3,7 +3,7 @@ import { Button } from './Button/Button';
 import { InputText } from './Inputs/InputText';
 import { InputDate } from './Inputs/InputDate';
 
-import './Forms.css';
+import style from './Forms.module.scss';
 import { dateValidate } from '../../utils/validate';
 
 enum FormKeys {
@@ -64,7 +64,7 @@ export class Forms extends Component<FormProps, FormState> {
 
   render(): ReactNode {
     return (
-      <div className="main_form container">
+      <div className={style.main_form}>
         <form>
           <InputText
             onChange={(value) => this.handleChange(value, FormKeys.TITLE)}
