@@ -1,6 +1,6 @@
 # react-rs
 
-[React-rs](https://react-component-countries.netlify.app/#/)is an application for studying flags of different countries Here are all the flags of the world This project was created as a task for the [RS School React course](https://rs.school/react/).
+[React-rs](https://react-component-countries.netlify.app/#/) is an application for studying flags of different countries Here are all the flags of the world This project was created as a task for the [RS School React course](https://rs.school/react/).
 
 ## Key features
 
