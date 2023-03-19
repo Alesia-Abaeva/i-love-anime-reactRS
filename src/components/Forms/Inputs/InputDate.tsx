@@ -1,23 +1,23 @@
 import { Component, createRef, RefObject } from 'react';
 import styles from './Input.module.scss';
 
-interface InputTextProps {
+interface InputDateProps {
   onChange: (value: string) => void;
   validate?: boolean;
 }
 
-interface InputTextState {
+interface InputDateState {
   value: string;
   validate: boolean;
   error: boolean;
 }
 
-export class InputText extends Component<InputTextProps, InputTextState> {
-  titleInput: RefObject<HTMLInputElement>;
+export class InputDate extends Component<InputDateProps, InputDateState> {
+  dateInput: RefObject<HTMLInputElement>;
 
-  constructor(props: InputTextProps) {
+  constructor(props: InputDateProps) {
     super(props);
-    this.titleInput = createRef();
+    this.dateInput = createRef();
 
     this.state = {
       value: '',
@@ -27,20 +27,20 @@ export class InputText extends Component<InputTextProps, InputTextState> {
   }
 
   handlerChange() {
-    this.props.onChange(this.titleInput.current?.value ?? '');
-    this.setState({ value: this.titleInput.current?.value as string });
+    this.props.onChange(this.dateInput.current?.value ?? '');
+    this.setState({ value: this.dateInput.current?.value as string });
   }
 
   render() {
     return (
       <div className={styles.item_input}>
-        <label htmlFor="title_input">Title</label>
+        <label htmlFor="input_date">Date</label>
         <input
-          type="text"
+          type="date"
           className={styles.input_text}
-          ref={this.titleInput}
+          ref={this.dateInput}
           onChange={() => this.handlerChange()}
-          id="title_input"
+          id="input_date"
         />
         {
           <span

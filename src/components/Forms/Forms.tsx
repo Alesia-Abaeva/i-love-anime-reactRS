@@ -1,14 +1,19 @@
 import { Component, ReactNode } from 'react';
 import { Button } from './Button/Button';
 import { InputText } from './Inputs/InputText';
+import { InputDate } from './Inputs/InputDate';
+
 import './Forms.css';
+import { dateValidate } from '../../utils/validate';
 
 enum FormKeys {
   TITLE = 'title',
+  DATE = 'date',
 }
 
 const validateMap: Record<FormKeys, (value: string) => boolean> = {
-  [FormKeys.TITLE]: (value: string) => !value.trim().length || value.trim().length <= 2,
+  [FormKeys.TITLE]: (value: string) => !value.trim().length || value.trim().length <= 2 || !value,
+  [FormKeys.DATE]: dateValidate,
 };
 
 interface FormProps {
@@ -17,7 +22,7 @@ interface FormProps {
 
 interface FormState {
   title: { value: string; isError?: boolean };
-  // title: boolean;
+  date: { value: string; isError?: boolean };
 }
 
 export class Forms extends Component<FormProps, FormState> {
@@ -25,35 +30,30 @@ export class Forms extends Component<FormProps, FormState> {
     super(props);
     this.state = {
       title: { value: '', isError: false },
-      // title: true,
+      date: { value: '', isError: false },
     };
   }
 
-  handleChange(value: string) {
-    this.setState({ title: { value } });
-  }
-
-  handlerValidate(isValidate: boolean) {
-    this.setState({ title: { ...this.state.title, isError: isValidate } });
+  handleChange(value: string, field: FormKeys) {
+    this.setState((formState) => ({ ...formState, [field]: { ...formState[field], value } }));
   }
 
   validate() {
-    const errors = [];
-
     // валидация каждого поля и запись ошибки в массив ошибок errors
     // если он пуст - успешная валидация
     (Object.entries(validateMap) as [FormKeys, (value: string) => boolean][]).forEach(
       ([stateKey, validateFn]) => {
-        this.setState({
-          [stateKey]: {
-            ...this.state[stateKey],
-            isError: validateFn(this.state[stateKey].value),
-          },
+        this.setState((formState) => {
+          return {
+            ...formState,
+            [stateKey]: {
+              ...formState[stateKey],
+              isError: validateFn(formState[stateKey].value),
+            },
+          };
         });
       }
     );
-
-    return !!errors.length;
   }
 
   handleSendForm() {
@@ -66,7 +66,14 @@ export class Forms extends Component<FormProps, FormState> {
     return (
       <div className="main_form container">
         <form>
-          <InputText onChange={this.handleChange.bind(this)} validate={!this.state.title.isError} />
+          <InputText
+            onChange={(value) => this.handleChange(value, FormKeys.TITLE)}
+            validate={!this.state.title.isError}
+          />
+          <InputDate
+            onChange={(value) => this.handleChange(value, FormKeys.DATE)}
+            validate={!this.state.date.isError}
+          />
           {/* <input type="date" />
           <input type="checkbox" />
           <input type="radio" />

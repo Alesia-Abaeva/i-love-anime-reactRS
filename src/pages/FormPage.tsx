@@ -12,7 +12,7 @@ export class FormPage extends Component<object, FormState> {
     super(props);
 
     this.state = {
-      cards: [] as NewCard[],
+      cards: [],
     };
   }
 
