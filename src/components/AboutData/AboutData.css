@@ -1,0 +1,7 @@
+.about_link {
+  margin-top: 1rem;
+}
+
+.about_link:hover {
+  color: #00d8ff;
+}

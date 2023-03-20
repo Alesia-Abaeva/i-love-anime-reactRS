@@ -1,0 +1,60 @@
+.navbar {
+  background: #141414;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  gap: 4rem;
+}
+
+.navbar_logo {
+  color: white;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.logo {
+  background: url('../../assets/react.svg');
+  background-repeat: no-repeat;
+  width: 2.3rem;
+  height: 2.3rem;
+  display: block;
+}
+
+.navbar_lists {
+  display: flex;
+  list-style-type: none;
+  gap: 4rem;
+  color: white;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.active {
+  color: #00d8ff;
+  text-decoration: underline;
+}
+
+.nav-links:hover {
+  color: #00d8ff;
+}
+
+.navbar_logo {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+  gap: 1.5rem;
+}
+
+.navbar_current-page {
+  width: 30%;
+  color: white;
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-align: right;
+}

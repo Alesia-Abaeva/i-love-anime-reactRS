@@ -1,0 +1,24 @@
+.main_nfnd,
+.main_about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 80vh;
+  font-size: 1.5rem;
+}
+
+.main_link {
+  margin-top: 1rem;
+  text-align: center;
+  width: 10rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #141414;
+  padding: 1rem;
+  font-size: 1rem;
+  background-color: #00d9ff9a;
+}
