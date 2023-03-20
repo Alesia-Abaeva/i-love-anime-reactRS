@@ -8,8 +8,6 @@ interface InputDateProps {
 
 interface InputDateState {
   value: string;
-  validate: boolean;
-  error: boolean;
 }
 
 export class InputDate extends Component<InputDateProps, InputDateState> {
@@ -21,8 +19,6 @@ export class InputDate extends Component<InputDateProps, InputDateState> {
 
     this.state = {
       value: '',
-      validate: false,
-      error: false,
     };
   }
 

@@ -1,19 +1,19 @@
 import { Component, createRef, RefObject } from 'react';
 import styles from './Input.module.scss';
 
-interface InputTextProps {
+interface InputCheckboxProps {
   onChange: (value: string) => void;
   validate?: boolean;
 }
 
-interface InputTextState {
+interface InputCheckboxState {
   value: string;
 }
 
-export class InputText extends Component<InputTextProps, InputTextState> {
+export class InputCheckbox extends Component<InputCheckboxProps, InputCheckboxState> {
   titleInput: RefObject<HTMLInputElement>;
 
-  constructor(props: InputTextProps) {
+  constructor(props: InputCheckboxProps) {
     super(props);
     this.titleInput = createRef();
 
@@ -23,21 +23,25 @@ export class InputText extends Component<InputTextProps, InputTextState> {
   }
 
   handlerChange() {
-    this.props.onChange(this.titleInput.current?.value ?? '');
-    this.setState({ value: this.titleInput.current?.value as string });
+    const value = this.state.value === 'on' ? 'off' : 'on';
+    this.props.onChange(value);
+    this.setState({ value: value });
   }
 
   render() {
     return (
       <div className={styles.item_input}>
-        <label htmlFor="title_input">Title</label>
         <input
-          type="text"
-          className={styles.input_text}
+          type="checkbox"
+          className={styles.input_check}
           ref={this.titleInput}
           onChange={() => this.handlerChange()}
-          id="title_input"
+          id="input_check"
         />
+        <label htmlFor="input_check" className={styles.label_check}>
+          Show you name
+        </label>
+
         {
           <span
             className={`${styles.error_title} ${!this.props.validate ? styles.error_active : ''}`}

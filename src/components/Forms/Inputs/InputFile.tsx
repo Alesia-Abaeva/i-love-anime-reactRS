@@ -8,8 +8,6 @@ interface InputFileProps {
 
 interface InputFileState {
   value: string;
-  validate: boolean;
-  error: boolean;
 }
 
 export class InputFile extends Component<InputFileProps, InputFileState> {
@@ -21,8 +19,6 @@ export class InputFile extends Component<InputFileProps, InputFileState> {
 
     this.state = {
       value: '',
-      validate: false,
-      error: false,
     };
   }
 

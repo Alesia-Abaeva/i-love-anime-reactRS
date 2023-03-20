@@ -9,8 +9,6 @@ interface InputSelectProps {
 
 interface InputSelectState {
   value: string;
-  validate: boolean;
-  error: boolean;
 }
 
 export class InputSelect extends Component<InputSelectProps, InputSelectState> {
@@ -22,8 +20,6 @@ export class InputSelect extends Component<InputSelectProps, InputSelectState> {
 
     this.state = {
       value: '',
-      validate: false,
-      error: false,
     };
   }
 

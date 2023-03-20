@@ -37,3 +37,101 @@
     text-align: left;
   }
 }
+$firstColor: #014862;
+$secondColor: #0fa800;
+
+.input_check {
+  display: none;
+  &:checked + label {
+    &:after {
+      opacity: 1;
+    }
+    &:before {
+      background: $blue;
+    }
+  }
+  & + label {
+    cursor: pointer;
+    user-select: none;
+    display: inline-block;
+    position: relative;
+    padding-left: 40px;
+    padding-top: 5px;
+    vertical-align: middle;
+    &:after {
+      transform: scale(0.5);
+      content: '';
+      display: block;
+      opacity: 1;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+      transition: opacity ease-in 0.2s;
+    }
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0px;
+      left: 0;
+      width: 30px;
+      height: 30px;
+      border-radius: 25px;
+      background: $firstColor;
+      box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.3) inset;
+      transition: ease-in 0.15s;
+    }
+  }
+}
+.input_check {
+  display: none;
+  &:checked + label {
+    &:after {
+      left: 25px;
+    }
+    &:before {
+      background: $blue;
+    }
+  }
+  & + label {
+    cursor: pointer;
+    user-select: none;
+    display: inline-block;
+    position: relative;
+    padding-left: 65px;
+    padding-top: 5px;
+    vertical-align: middle;
+    &:after {
+      transform: scale(0.7);
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+      transition: ease-in 0.15s;
+    }
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0px;
+      left: 0;
+      width: 55px;
+      height: 30px;
+      border-radius: 25px;
+      background: $firstColor;
+      box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.3) inset;
+      transition: ease-in 0.15s;
+    }
+  }
+}
