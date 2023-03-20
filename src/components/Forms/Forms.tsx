@@ -4,17 +4,19 @@ import { InputText } from './Inputs/InputText';
 import { InputDate } from './Inputs/InputDate';
 
 import style from './Forms.module.scss';
-import { dateValidate } from '../../utils/validate';
+import { dateValidate, fileValidate, textValidate } from '../../utils/validate';
 import { InputFile } from './Inputs/InputFile';
 
 enum FormKeys {
   TITLE = 'title',
   DATE = 'date',
+  FILE = 'file',
 }
 
 const validateMap: Record<FormKeys, (value: string) => boolean> = {
-  [FormKeys.TITLE]: (value: string) => !value.trim().length || value.trim().length <= 2 || !value,
+  [FormKeys.TITLE]: textValidate,
   [FormKeys.DATE]: dateValidate,
+  [FormKeys.FILE]: fileValidate,
 };
 
 interface FormProps {
@@ -24,6 +26,7 @@ interface FormProps {
 interface FormState {
   title: { value: string; isError?: boolean };
   date: { value: string; isError?: boolean };
+  file: { value: string; isError?: boolean };
 }
 
 export class Forms extends Component<FormProps, FormState> {
@@ -32,6 +35,7 @@ export class Forms extends Component<FormProps, FormState> {
     this.state = {
       title: { value: '', isError: false },
       date: { value: '', isError: false },
+      file: { value: '', isError: false },
     };
   }
 
@@ -77,7 +81,7 @@ export class Forms extends Component<FormProps, FormState> {
           />
           <InputFile
             onChange={(value) => this.handleChange(value, FormKeys.DATE)}
-            validate={!this.state.date.isError}
+            validate={!this.state.file.isError}
           />
           {/* <input type="date" />
           <input type="checkbox" />

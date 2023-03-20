@@ -15,7 +15,7 @@ interface InputFileState {
 export class InputFile extends Component<InputFileProps, InputFileState> {
   fileInput: RefObject<HTMLInputElement>;
 
-  constructor(props: InputFileState) {
+  constructor(props: InputFileProps) {
     super(props);
     this.fileInput = createRef();
 
@@ -35,19 +35,20 @@ export class InputFile extends Component<InputFileProps, InputFileState> {
   render() {
     return (
       <div className={styles.item_input}>
-        <label htmlFor="input_date">Upload file</label>
+        <label htmlFor="input_file">Upload file</label>
         <input
           type="file"
           className={(styles.input_text, styles.input_file)}
           ref={this.fileInput}
+          accept={'.jpg, .jpeg, .png'}
           onChange={() => this.handlerChange()}
-          id="input_date"
+          id="input_file"
         />
         {
           <span
             className={`${styles.error_title} ${!this.props.validate ? styles.error_active : ''}`}
           >
-            {!this.props.validate && 'press valide date'}
+            {!this.props.validate && 'download picture'}
           </span>
         }
       </div>
