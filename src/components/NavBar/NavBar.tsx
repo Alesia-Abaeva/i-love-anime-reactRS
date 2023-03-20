@@ -1,9 +1,22 @@
 import { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import { showCurrentPage } from '../../utils/show-current-page';
 import { MenuItem } from '../../const/menu-items';
 import './NavBar.css';
 
-export class NavBar extends Component {
+interface NavBarState {
+  currentPage: string;
+}
+
+export class NavBar extends Component<object, NavBarState> {
+  constructor(props: object) {
+    super(props);
+
+    this.state = {
+      currentPage: showCurrentPage(),
+    };
+  }
+
   render() {
     return (
       <nav className="navbar">
@@ -15,13 +28,22 @@ export class NavBar extends Component {
           {MenuItem.map((item, index) => {
             return (
               <li key={index}>
-                <NavLink to={item.url} className={item.cName}>
+                <NavLink
+                  to={item.url}
+                  className={item.cName}
+                  onClick={(event) =>
+                    this.setState({
+                      currentPage: (event.target as HTMLElement).textContent as string,
+                    })
+                  }
+                >
                   {item.title}
                 </NavLink>
               </li>
             );
           })}
         </ul>
+        <h2 className="navbar_current-page">Current Page: {this.state.currentPage}</h2>
       </nav>
     );
   }
