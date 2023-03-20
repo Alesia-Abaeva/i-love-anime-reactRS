@@ -57,7 +57,7 @@ export class NavBar extends Component<object, NavBarState> {
             );
           })}
         </ul>
-        <h2 className="navbar_current-page">Current Page: {this.state.currentPage}</h2>
+        <p className="navbar_current-page">Current Page: {this.state.currentPage}</p>
       </nav>
     );
   }
