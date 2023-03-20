@@ -1,25 +1,19 @@
 @import '/src/styles/variables';
 
 .input_text {
-  width: 20rem;
-  height: 3rem;
-  padding: 1rem;
-  outline: none;
-  border: 2px solid $background;
-  border-radius: 5px;
-
-  :focus {
-    border: 1px solid transparent;
-    box-shadow: 0 0 0 1px $ligth-blue;
-  }
+  @extend %input;
 }
 
 .item_input {
   display: flex;
   flex-direction: column;
-  margin-top: 2rem;
+  margin-top: 1rem;
   margin-bottom: 1rem;
   gap: 0.5rem;
+
+  &:first-child {
+    margin-top: 2rem;
+  }
 }
 
 .error_title {
@@ -30,4 +24,16 @@
 
 .error_active {
   color: red;
+}
+
+.input_file {
+  padding: 0.8rem;
+
+  @extend %input;
+  &::-webkit-file-upload-button {
+    visibility: hidden;
+    padding: 0;
+    width: 0px;
+    text-align: left;
+  }
 }

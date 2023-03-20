@@ -5,6 +5,7 @@ import { InputDate } from './Inputs/InputDate';
 
 import style from './Forms.module.scss';
 import { dateValidate } from '../../utils/validate';
+import { InputFile } from './Inputs/InputFile';
 
 enum FormKeys {
   TITLE = 'title',
@@ -71,6 +72,10 @@ export class Forms extends Component<FormProps, FormState> {
             validate={!this.state.title.isError}
           />
           <InputDate
+            onChange={(value) => this.handleChange(value, FormKeys.DATE)}
+            validate={!this.state.date.isError}
+          />
+          <InputFile
             onChange={(value) => this.handleChange(value, FormKeys.DATE)}
             validate={!this.state.date.isError}
           />

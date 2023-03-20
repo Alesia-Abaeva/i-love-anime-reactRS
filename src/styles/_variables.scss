@@ -28,3 +28,17 @@
   height: 80vh;
   font-size: 1.5rem;
 }
+
+%input {
+  width: 20rem;
+  height: 3rem;
+  padding: 1rem;
+  outline: none;
+  border: 2px solid $background;
+  border-radius: 5px;
+
+  &:focus {
+    border: 1px solid transparent;
+    box-shadow: 0 0 0 1px $ligth-blue;
+  }
+}

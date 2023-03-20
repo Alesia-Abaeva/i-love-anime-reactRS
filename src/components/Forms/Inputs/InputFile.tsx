@@ -1,23 +1,23 @@
 import { Component, createRef, RefObject } from 'react';
 import styles from './Input.module.scss';
 
-interface InputDateProps {
+interface InputFileProps {
   onChange: (value: string) => void;
   validate?: boolean;
 }
 
-interface InputDateState {
+interface InputFileState {
   value: string;
   validate: boolean;
   error: boolean;
 }
 
-export class InputDate extends Component<InputDateProps, InputDateState> {
-  dateInput: RefObject<HTMLInputElement>;
+export class InputFile extends Component<InputFileProps, InputFileState> {
+  fileInput: RefObject<HTMLInputElement>;
 
-  constructor(props: InputDateProps) {
+  constructor(props: InputFileState) {
     super(props);
-    this.dateInput = createRef();
+    this.fileInput = createRef();
 
     this.state = {
       value: '',
@@ -27,18 +27,19 @@ export class InputDate extends Component<InputDateProps, InputDateState> {
   }
 
   handlerChange() {
-    this.props.onChange(this.dateInput.current?.value ?? '');
-    this.setState({ value: this.dateInput.current?.value as string });
+    console.log(this.fileInput.current?.value);
+    this.props.onChange(this.fileInput.current?.value ?? '');
+    this.setState({ value: this.fileInput.current?.value as string });
   }
 
   render() {
     return (
       <div className={styles.item_input}>
-        <label htmlFor="input_date">Date</label>
+        <label htmlFor="input_date">Upload file</label>
         <input
-          type="date"
-          className={styles.input_text}
-          ref={this.dateInput}
+          type="file"
+          className={(styles.input_text, styles.input_file)}
+          ref={this.fileInput}
           onChange={() => this.handlerChange()}
           id="input_date"
         />
