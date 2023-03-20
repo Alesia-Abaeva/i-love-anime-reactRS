@@ -15,6 +15,20 @@ export class NavBar extends Component<object, NavBarState> {
     this.state = {
       currentPage: showCurrentPage(),
     };
+
+    this.handleLocationChange = this.handleLocationChange.bind(this);
+  }
+
+  handleLocationChange(event: HashChangeEvent) {
+    this.setState({ currentPage: showCurrentPage(event.newURL) });
+  }
+
+  componentDidMount() {
+    addEventListener('hashchange', this.handleLocationChange);
+  }
+
+  componentWillUnmount() {
+    removeEventListener('hashchange', this.handleLocationChange);
   }
 
   render() {

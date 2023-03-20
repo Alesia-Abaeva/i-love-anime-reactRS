@@ -1,6 +1,6 @@
-export const showCurrentPage = (): string => {
+export const showCurrentPage = (path?: string): string => {
   let href = '404';
-  const location = window.location.href;
+  const location = path ?? window.location.href;
 
   if (location.endsWith('/') || location.endsWith('main')) {
     href = 'Main';
