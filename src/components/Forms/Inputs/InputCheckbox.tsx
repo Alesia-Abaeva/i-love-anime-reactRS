@@ -1,19 +1,10 @@
 import { Component, createRef, RefObject } from 'react';
 import styles from './Input.module.scss';
 
-interface InputCheckboxProps {
-  onChange: (value: string) => void;
-  validate?: boolean;
-}
-
-interface InputCheckboxState {
-  value: string;
-}
-
-export class InputCheckbox extends Component<InputCheckboxProps, InputCheckboxState> {
+export class InputCheckbox extends Component<InputProps, InputState> {
   titleInput: RefObject<HTMLInputElement>;
 
-  constructor(props: InputCheckboxProps) {
+  constructor(props: InputProps) {
     super(props);
     this.titleInput = createRef();
 

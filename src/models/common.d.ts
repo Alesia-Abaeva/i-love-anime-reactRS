@@ -7,3 +7,12 @@ interface MenuItem {
   url: string;
   cName: string;
 }
+
+interface InputProps {
+  onChange: (value: string) => void;
+  validate?: boolean;
+}
+
+interface InputState {
+  value: string;
+}

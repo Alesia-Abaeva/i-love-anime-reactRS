@@ -2,19 +2,10 @@ import { selectOptions } from '../../../const/select-options';
 import { Component, createRef, RefObject } from 'react';
 import styles from './Input.module.scss';
 
-interface InputSelectProps {
-  onChange: (value: string) => void;
-  validate?: boolean;
-}
-
-interface InputSelectState {
-  value: string;
-}
-
-export class InputSelect extends Component<InputSelectProps, InputSelectState> {
+export class InputSelect extends Component<InputProps, InputState> {
   SelectInput: RefObject<HTMLSelectElement>;
 
-  constructor(props: InputSelectProps) {
+  constructor(props: InputProps) {
     super(props);
     this.SelectInput = createRef();
 

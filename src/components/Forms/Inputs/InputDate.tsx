@@ -1,19 +1,10 @@
 import { Component, createRef, RefObject } from 'react';
 import styles from './Input.module.scss';
 
-interface InputDateProps {
-  onChange: (value: string) => void;
-  validate?: boolean;
-}
-
-interface InputDateState {
-  value: string;
-}
-
-export class InputDate extends Component<InputDateProps, InputDateState> {
+export class InputDate extends Component<InputProps, InputState> {
   dateInput: RefObject<HTMLInputElement>;
 
-  constructor(props: InputDateProps) {
+  constructor(props: InputProps) {
     super(props);
     this.dateInput = createRef();
 

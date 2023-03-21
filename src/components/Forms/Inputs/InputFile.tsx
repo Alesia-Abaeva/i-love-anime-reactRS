@@ -1,19 +1,10 @@
 import { Component, createRef, RefObject } from 'react';
 import styles from './Input.module.scss';
 
-interface InputFileProps {
-  onChange: (value: string) => void;
-  validate?: boolean;
-}
-
-interface InputFileState {
-  value: string;
-}
-
-export class InputFile extends Component<InputFileProps, InputFileState> {
+export class InputFile extends Component<InputProps, InputState> {
   fileInput: RefObject<HTMLInputElement>;
 
-  constructor(props: InputFileProps) {
+  constructor(props: InputProps) {
     super(props);
     this.fileInput = createRef();
 
@@ -23,7 +14,6 @@ export class InputFile extends Component<InputFileProps, InputFileState> {
   }
 
   handlerChange() {
-    console.log(this.fileInput.current?.value);
     this.props.onChange(this.fileInput.current?.value ?? '');
     this.setState({ value: this.fileInput.current?.value as string });
   }

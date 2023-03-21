@@ -1,19 +1,10 @@
 import { Component, createRef, RefObject } from 'react';
 import styles from './Input.module.scss';
 
-interface InputTextProps {
-  onChange: (value: string) => void;
-  validate?: boolean;
-}
-
-interface InputTextState {
-  value: string;
-}
-
-export class InputText extends Component<InputTextProps, InputTextState> {
+export class InputText extends Component<InputProps, InputState> {
   titleInput: RefObject<HTMLInputElement>;
 
-  constructor(props: InputTextProps) {
+  constructor(props: InputProps) {
     super(props);
     this.titleInput = createRef();
 
