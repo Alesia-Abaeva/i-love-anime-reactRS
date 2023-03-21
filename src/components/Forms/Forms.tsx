@@ -94,21 +94,23 @@ export class Forms extends Component<FormProps, FormState> {
             onChange={(value) => this.handleChange(value, FormKeys.DATE)}
             validate={!this.state.date.isError}
           />
-          <InputFile
-            onChange={(value) => this.handleChange(value, FormKeys.FILE)}
-            validate={!this.state.file.isError}
-          />
+
           <InputSelect
             onChange={(value) => this.handleChange(value, FormKeys.SELECT)}
             validate={!this.state.select.isError}
           />
-          <InputCheckbox
-            onChange={(value) => this.handleChange(value, FormKeys.CHECK)}
-            validate={!this.state.check.isError}
-          />
           <InputRadio
             onChange={(value) => this.handleChange(value, FormKeys.RADIO)}
             validate={!this.state.radio.isError}
+          />
+          <InputFile
+            onChange={(value) => this.handleChange(value, FormKeys.FILE)}
+            validate={!this.state.file.isError}
+          />
+
+          <InputCheckbox
+            onChange={(value) => this.handleChange(value, FormKeys.CHECK)}
+            validate={!this.state.check.isError}
           />
 
           <Button onClick={this.handleSendForm.bind(this)} />

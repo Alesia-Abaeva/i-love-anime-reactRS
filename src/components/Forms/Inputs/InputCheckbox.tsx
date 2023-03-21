@@ -27,7 +27,7 @@ export class InputCheckbox extends Component<InputProps, InputState> {
       <div className={styles.item_input}>
         <input
           type="checkbox"
-          className={styles.input_check}
+          className={`${styles.input_check} ${!this.props.validate ? styles.error : ''}`} // !!!
           ref={this.checkboxInput}
           onChange={() => this.handlerChange()}
           id="input_check"

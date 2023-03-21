@@ -23,11 +23,13 @@ export class InputFile extends Component<InputProps, InputState> {
     return (
       <div className={styles.item_input}>
         <label htmlFor="input_file" className={styles.input_title}>
-          Upload file
+          Upload flag
         </label>
         <input
           type="file"
-          className={(styles.input_text, styles.input_file)}
+          className={`${styles.input_text} ${styles.input_file} ${
+            !this.props.validate ? styles.error : ''
+          }`}
           ref={this.fileInput}
           accept={'.jpg, .jpeg, .png'}
           onChange={() => this.handlerChange()}

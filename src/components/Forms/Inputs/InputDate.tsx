@@ -23,11 +23,11 @@ export class InputDate extends Component<InputProps, InputState> {
     return (
       <div className={styles.item_input}>
         <label htmlFor="input_date" className={styles.input_title}>
-          Date
+          Flag creation date
         </label>
         <input
           type="date"
-          className={styles.input_text}
+          className={`${styles.input_text} ${!this.props.validate ? styles.error : ''}`}
           ref={this.dateInput}
           onChange={() => this.handlerChange()}
           id="input_date"

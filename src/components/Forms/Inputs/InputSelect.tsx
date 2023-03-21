@@ -24,10 +24,10 @@ export class InputSelect extends Component<InputProps, InputState> {
     return (
       <div className={styles.item_input}>
         <label htmlFor="input_file" className={styles.input_title}>
-          Flag type
+          Choose a type flag
         </label>
         <select
-          className={styles.input_text}
+          className={`${styles.input_select} ${!this.props.validate ? styles.error : ''}`}
           onChange={() => this.handlerChange()}
           ref={this.SelectInput}
         >

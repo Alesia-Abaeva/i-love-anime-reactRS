@@ -23,11 +23,11 @@ export class InputText extends Component<InputProps, InputState> {
     return (
       <div className={styles.item_input}>
         <label className={styles.input_title} htmlFor="title_input">
-          Title
+          Enter the name of the flag
         </label>
         <input
           type="text"
-          className={styles.input_text}
+          className={`${styles.input_text} ${!this.props.validate ? styles.error : ''}`}
           ref={this.titleInput}
           onChange={() => this.handlerChange()}
           id="title_input"
