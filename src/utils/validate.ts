@@ -1,7 +1,7 @@
 export const dateValidate = (value: string): boolean => {
   const dataValue = new Date(value);
   const currentDay = new Date();
-  return dataValue <= currentDay || !value;
+  return dataValue >= currentDay || !value;
 };
 
 export const fileValidate = (value: string): boolean => {

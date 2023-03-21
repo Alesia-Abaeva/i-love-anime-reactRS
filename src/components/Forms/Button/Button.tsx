@@ -1,7 +1,23 @@
-import { Component, DOMAttributes } from 'react';
+import { Component, MouseEventHandler } from 'react';
 import style from './Button.module.scss';
 
-export class Button extends Component<Pick<DOMAttributes<HTMLButtonElement>, 'onClick'>> {
+interface ButtonProps {
+  onClick: MouseEventHandler<HTMLButtonElement>;
+  disabled: boolean;
+}
+
+interface ButtonState {
+  isDisabled: boolean;
+}
+
+export class Button extends Component<ButtonProps, ButtonState> {
+  constructor(props: ButtonProps) {
+    super(props);
+    this.state = {
+      isDisabled: true,
+    };
+  }
+
   render() {
     return (
       <>
@@ -9,6 +25,7 @@ export class Button extends Component<Pick<DOMAttributes<HTMLButtonElement>, 'on
           className={style.button_form}
           onClick={this.props.onClick?.bind(this)}
           type="submit"
+          // disabled={this.state.isDisabled || this.props.disabled}
         >
           Send
         </button>

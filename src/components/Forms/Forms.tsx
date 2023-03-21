@@ -1,4 +1,4 @@
-import { Component, ReactNode } from 'react';
+import { Component, MouseEvent, ReactNode } from 'react';
 import { Button } from './Button/Button';
 import { InputText } from './Inputs/InputText';
 import { InputDate } from './Inputs/InputDate';
@@ -39,6 +39,7 @@ interface FormState {
   select: { value: string; isError?: boolean };
   check: { value: string; isError?: boolean };
   radio: { value: string; isError?: boolean };
+  error: boolean[];
 }
 
 export class Forms extends Component<FormProps, FormState> {
@@ -51,6 +52,7 @@ export class Forms extends Component<FormProps, FormState> {
       select: { value: '', isError: false },
       check: { value: '', isError: false },
       radio: { value: '', isError: false },
+      error: [],
     };
   }
 
@@ -59,26 +61,46 @@ export class Forms extends Component<FormProps, FormState> {
   }
 
   validate() {
+    const arrayError: boolean[] = [];
+    this.setState({ error: [] });
     // валидация каждого поля и запись ошибки в массив ошибок errors
     // если он пуст - успешная валидация
+    // TODO: почему несколько раз пушится стейт???
     (Object.entries(validateMap) as [FormKeys, (value: string) => boolean][]).forEach(
       ([stateKey, validateFn]) => {
         this.setState((formState) => {
+          validateFn(formState[stateKey].value) &&
+            arrayError.push(validateFn(formState[stateKey].value));
           return {
             ...formState,
             [stateKey]: {
               ...formState[stateKey],
               isError: validateFn(formState[stateKey].value),
             },
+            error: [...formState.error, ...arrayError],
           };
         });
       }
     );
   }
 
-  handleSendForm() {
-    // вызвать валидацию формы validate()
+  handleSendForm(event: MouseEvent<HTMLButtonElement>) {
+    event.preventDefault();
     this.validate();
+    // TODO: как будет валидироваться?
+
+    const array = Object.entries(this.state)
+      .map(([key, props]) => {
+        if (typeof props === 'object' && !Array.isArray(props)) {
+          return [key, props.value];
+        }
+      })
+      .filter((el) => el !== undefined) as string[][];
+
+    const valideData = Object.fromEntries(array);
+
+    this.props.addCard(valideData);
+
     // успех - отправить, неуспех - ошибка
   }
 
@@ -113,7 +135,7 @@ export class Forms extends Component<FormProps, FormState> {
             validate={!this.state.check.isError}
           />
 
-          <Button onClick={this.handleSendForm.bind(this)} />
+          <Button onClick={this.handleSendForm.bind(this)} disabled={!this.state.error.length} />
         </form>
       </div>
     );

@@ -15,8 +15,9 @@ export class InputFile extends Component<InputProps, InputState> {
   }
 
   handlerChange() {
-    this.props.onChange(this.fileInput.current?.value ?? '');
-    this.setState({ value: this.fileInput.current?.value as string });
+    const files = URL.createObjectURL(this.fileInput.current?.files?.[0] as Blob);
+    this.props.onChange(files ?? '');
+    this.setState({ value: files as string });
   }
 
   render() {

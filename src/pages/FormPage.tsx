@@ -17,15 +17,15 @@ export class FormPage extends Component<object, FormState> {
   }
 
   addCard(newCard: NewCard) {
-    this.setState(({ cards: prev }) => {
-      return { cards: [...prev, newCard] };
+    this.setState((prev) => {
+      return { ...prev, cards: [...prev.cards, newCard] };
     });
   }
 
   render(): ReactNode {
     return (
       <div className="main_form container">
-        <Forms addCard={this.addCard} />
+        <Forms addCard={this.addCard.bind(this)} />
         <Card data={this.state.cards} />
       </div>
     );
