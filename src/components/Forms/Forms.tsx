@@ -8,6 +8,7 @@ import { dateValidate, fileValidate, textValidate } from '../../utils/validate';
 import { InputFile } from './Inputs/InputFile';
 import { InputSelect } from './Inputs/InputSelect';
 import { InputCheckbox } from './Inputs/InputCheckbox';
+import { InputRadio } from './Inputs/InputRadio';
 
 enum FormKeys {
   TITLE = 'title',
@@ -15,6 +16,7 @@ enum FormKeys {
   FILE = 'file',
   SELECT = 'select',
   CHECK = 'check',
+  RADIO = 'radio',
 }
 
 const validateMap: Record<FormKeys, (value: string) => boolean> = {
@@ -23,6 +25,7 @@ const validateMap: Record<FormKeys, (value: string) => boolean> = {
   [FormKeys.FILE]: fileValidate,
   [FormKeys.SELECT]: fileValidate,
   [FormKeys.CHECK]: fileValidate,
+  [FormKeys.RADIO]: fileValidate,
 };
 
 interface FormProps {
@@ -35,6 +38,7 @@ interface FormState {
   file: { value: string; isError?: boolean };
   select: { value: string; isError?: boolean };
   check: { value: string; isError?: boolean };
+  radio: { value: string; isError?: boolean };
 }
 
 export class Forms extends Component<FormProps, FormState> {
@@ -46,6 +50,7 @@ export class Forms extends Component<FormProps, FormState> {
       file: { value: '', isError: false },
       select: { value: '', isError: false },
       check: { value: '', isError: false },
+      radio: { value: '', isError: false },
     };
   }
 
@@ -101,13 +106,12 @@ export class Forms extends Component<FormProps, FormState> {
             onChange={(value) => this.handleChange(value, FormKeys.CHECK)}
             validate={!this.state.check.isError}
           />
+          <InputRadio
+            onChange={(value) => this.handleChange(value, FormKeys.RADIO)}
+            validate={!this.state.radio.isError}
+          />
 
-          {/* <input type="date" />
-          <input type="checkbox" />
-          <input type="radio" />
-          <input type="file" /> */}
           <Button onClick={this.handleSendForm.bind(this)} />
-          {/** <button onClick={this.handleSendForm.bind(this)} /> */}
         </form>
       </div>
     );
@@ -118,7 +122,8 @@ export class Forms extends Component<FormProps, FormState> {
 // Заголовок title
 // Выберите страну country
 // факт text
-// дата публикации data
+// дата публикации data дата утверждения флага
 // уведомить других пользователей о новой статье (свичер)  //notification
 //  я соглашаюсь с уловием пользования agree
 // загрузить картинку uploud
+// является ли флаг официальным?

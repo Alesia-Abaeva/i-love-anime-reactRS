@@ -22,7 +22,9 @@ export class InputText extends Component<InputProps, InputState> {
   render() {
     return (
       <div className={styles.item_input}>
-        <label htmlFor="title_input">Title</label>
+        <label className={styles.input_title} htmlFor="title_input">
+          Title
+        </label>
         <input
           type="text"
           className={styles.input_text}

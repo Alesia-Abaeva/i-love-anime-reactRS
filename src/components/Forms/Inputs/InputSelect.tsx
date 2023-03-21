@@ -23,7 +23,9 @@ export class InputSelect extends Component<InputProps, InputState> {
   render() {
     return (
       <div className={styles.item_input}>
-        <label htmlFor="input_file">Select options</label>
+        <label htmlFor="input_file" className={styles.input_title}>
+          Flag type
+        </label>
         <select
           className={styles.input_text}
           onChange={() => this.handlerChange()}

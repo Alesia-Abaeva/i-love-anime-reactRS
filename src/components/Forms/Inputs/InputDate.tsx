@@ -22,7 +22,9 @@ export class InputDate extends Component<InputProps, InputState> {
   render() {
     return (
       <div className={styles.item_input}>
-        <label htmlFor="input_date">Date</label>
+        <label htmlFor="input_date" className={styles.input_title}>
+          Date
+        </label>
         <input
           type="date"
           className={styles.input_text}

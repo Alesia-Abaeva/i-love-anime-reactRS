@@ -4,6 +4,11 @@
   @extend %input;
 }
 
+.input_title {
+  font-weight: bold;
+  font-size: 1.17rem;
+}
+
 .item_input {
   display: flex;
   flex-direction: column;
@@ -40,7 +45,7 @@
 $firstColor: #014862;
 $secondColor: #0fa800;
 
-.input_check {
+.input_radio {
   display: none;
   &:checked + label {
     &:after {
@@ -62,7 +67,7 @@ $secondColor: #0fa800;
       transform: scale(0.5);
       content: '';
       display: block;
-      opacity: 1;
+      opacity: 0;
       position: absolute;
       top: 0px;
       left: 0px;
@@ -134,4 +139,9 @@ $secondColor: #0fa800;
       transition: ease-in 0.15s;
     }
   }
+}
+
+.radio_container {
+  display: flex;
+  gap: 2rem;
 }

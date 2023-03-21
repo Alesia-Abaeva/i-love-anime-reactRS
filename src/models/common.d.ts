@@ -14,5 +14,5 @@ interface InputProps {
 }
 
 interface InputState {
-  value: string;
+  value: string | boolean | null;
 }

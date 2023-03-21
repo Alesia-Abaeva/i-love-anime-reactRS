@@ -3,11 +3,11 @@ import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
 import styles from './Input.module.scss';
 
 export class InputCheckbox extends Component<InputProps, InputState> {
-  titleInput: RefObject<HTMLInputElement>;
+  checkboxInput: RefObject<HTMLInputElement>;
 
   constructor(props: InputProps) {
     super(props);
-    this.titleInput = createRef();
+    this.checkboxInput = createRef();
 
     this.state = {
       value: '',
@@ -15,9 +15,11 @@ export class InputCheckbox extends Component<InputProps, InputState> {
   }
 
   handlerChange() {
-    const value = this.state.value === 'on' ? 'off' : 'on';
-    this.props.onChange(value);
-    this.setState({ value: value });
+    const isCheck = this.checkboxInput.current?.checked ? 'on' : 'off';
+    this.props.onChange(isCheck);
+    this.setState({ value: isCheck });
+
+    console.log(isCheck);
   }
 
   render() {
@@ -26,11 +28,11 @@ export class InputCheckbox extends Component<InputProps, InputState> {
         <input
           type="checkbox"
           className={styles.input_check}
-          ref={this.titleInput}
+          ref={this.checkboxInput}
           onChange={() => this.handlerChange()}
           id="input_check"
         />
-        <label htmlFor="input_check" className={styles.label_check}>
+        <label htmlFor="input_check" className={(styles.label_check, styles.input_title)}>
           Show you name
         </label>
 

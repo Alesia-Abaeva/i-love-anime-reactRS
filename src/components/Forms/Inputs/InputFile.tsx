@@ -22,7 +22,9 @@ export class InputFile extends Component<InputProps, InputState> {
   render() {
     return (
       <div className={styles.item_input}>
-        <label htmlFor="input_file">Upload file</label>
+        <label htmlFor="input_file" className={styles.input_title}>
+          Upload file
+        </label>
         <input
           type="file"
           className={(styles.input_text, styles.input_file)}
