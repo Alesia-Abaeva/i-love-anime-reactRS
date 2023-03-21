@@ -1,4 +1,5 @@
 import { Component, createRef, RefObject } from 'react';
+import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
 import styles from './Input.module.scss';
 
 export class InputDate extends Component<InputProps, InputState> {
@@ -29,13 +30,8 @@ export class InputDate extends Component<InputProps, InputState> {
           onChange={() => this.handlerChange()}
           id="input_date"
         />
-        {
-          <span
-            className={`${styles.error_title} ${!this.props.validate ? styles.error_active : ''}`}
-          >
-            {!this.props.validate && 'press valide date'}
-          </span>
-        }
+
+        <ErrorMessage validate={this.props.validate} errorMessage="press valide date" />
       </div>
     );
   }

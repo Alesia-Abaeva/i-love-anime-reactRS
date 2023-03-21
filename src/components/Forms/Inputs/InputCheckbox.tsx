@@ -1,4 +1,5 @@
 import { Component, createRef, RefObject } from 'react';
+import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
 import styles from './Input.module.scss';
 
 export class InputCheckbox extends Component<InputProps, InputState> {
@@ -33,13 +34,7 @@ export class InputCheckbox extends Component<InputProps, InputState> {
           Show you name
         </label>
 
-        {
-          <span
-            className={`${styles.error_title} ${!this.props.validate ? styles.error_active : ''}`}
-          >
-            {!this.props.validate && 'Error press valid data'}
-          </span>
-        }
+        <ErrorMessage validate={this.props.validate} errorMessage="Error press valid data" />
       </div>
     );
   }

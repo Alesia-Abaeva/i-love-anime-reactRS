@@ -1,6 +1,7 @@
 import { selectOptions } from '../../../const/select-options';
 import { Component, createRef, RefObject } from 'react';
 import styles from './Input.module.scss';
+import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
 
 export class InputSelect extends Component<InputProps, InputState> {
   SelectInput: RefObject<HTMLSelectElement>;
@@ -37,13 +38,7 @@ export class InputSelect extends Component<InputProps, InputState> {
           })}
         </select>
 
-        {
-          <span
-            className={`${styles.error_title} ${!this.props.validate ? styles.error_active : ''}`}
-          >
-            {!this.props.validate && 'choose options'}
-          </span>
-        }
+        <ErrorMessage validate={this.props.validate} errorMessage="select values" />
       </div>
     );
   }

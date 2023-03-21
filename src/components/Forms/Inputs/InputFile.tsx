@@ -1,4 +1,5 @@
 import { Component, createRef, RefObject } from 'react';
+import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
 import styles from './Input.module.scss';
 
 export class InputFile extends Component<InputProps, InputState> {
@@ -30,13 +31,8 @@ export class InputFile extends Component<InputProps, InputState> {
           onChange={() => this.handlerChange()}
           id="input_file"
         />
-        {
-          <span
-            className={`${styles.error_title} ${!this.props.validate ? styles.error_active : ''}`}
-          >
-            {!this.props.validate && 'download picture'}
-          </span>
-        }
+
+        <ErrorMessage validate={this.props.validate} errorMessage="download picture" />
       </div>
     );
   }
