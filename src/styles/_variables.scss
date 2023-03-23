@@ -42,3 +42,19 @@
     box-shadow: 0 0 0 1px $ligth-blue;
   }
 }
+
+%item {
+  margin-top: 1rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  outline: none;
+  border: 1px solid rgb(199, 199, 204);
+  border-radius: 5px;
+  background-color: rgba(199, 199, 204, 0.26);
+  transition: all 0.3s ease-in;
+
+  &:hover {
+    scale: 1.09;
+    transition: all 0.2s ease-in;
+  }
+}

@@ -1,0 +1,42 @@
+@import '/src/styles/variables';
+
+.flag_item {
+  @extend %item;
+}
+.flag_img {
+  width: 17rem;
+  height: 17rem;
+  border: 5px solid #515151;
+}
+
+.img_wrapper {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img_flag {
+  width: 17rem;
+  min-width: 100%;
+  min-height: 100%;
+  flex-shrink: 0;
+}
+
+.item_name {
+  // height: 5rem;
+  margin-bottom: 1rem;
+  margin-top: 0.4rem;
+  width: 15rem;
+  hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+.item_data {
+  margin-bottom: 0.2rem;
+  span {
+    font-weight: bold;
+  }
+}

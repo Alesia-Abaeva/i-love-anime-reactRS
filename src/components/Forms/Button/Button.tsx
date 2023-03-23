@@ -25,7 +25,7 @@ export class Button extends Component<ButtonProps, ButtonState> {
           className={style.button_form}
           onClick={this.props.onClick?.bind(this)}
           type="submit"
-          // disabled={this.state.isDisabled || this.props.disabled}
+          disabled={this.props.disabled}
         >
           Send
         </button>

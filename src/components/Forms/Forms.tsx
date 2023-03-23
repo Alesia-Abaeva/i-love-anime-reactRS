@@ -4,19 +4,21 @@ import { InputText } from './Inputs/InputText';
 import { InputDate } from './Inputs/InputDate';
 
 import style from './Forms.module.scss';
-import { dateValidate, fileValidate, textValidate } from '../../utils/validate';
+import { dateValidate, fileValidate, textDescrValidate, textValidate } from '../../utils/validate';
 import { InputFile } from './Inputs/InputFile';
 import { InputSelect } from './Inputs/InputSelect';
 import { InputCheckbox } from './Inputs/InputCheckbox';
 import { InputRadio } from './Inputs/InputRadio';
+import { TextArea } from './Inputs/TextArea';
 
-enum FormKeys {
+export enum FormKeys {
   TITLE = 'title',
   DATE = 'date',
   FILE = 'file',
   SELECT = 'select',
   CHECK = 'check',
   RADIO = 'radio',
+  DECSRIPTIONS = 'descriprion',
 }
 
 const validateMap: Record<FormKeys, (value: string) => boolean> = {
@@ -26,7 +28,9 @@ const validateMap: Record<FormKeys, (value: string) => boolean> = {
   [FormKeys.SELECT]: fileValidate,
   [FormKeys.CHECK]: fileValidate,
   [FormKeys.RADIO]: fileValidate,
+  [FormKeys.DECSRIPTIONS]: textDescrValidate,
 };
+// TODO: проверить валидацию
 
 interface FormProps {
   addCard: (card: NewCard) => void;
@@ -34,12 +38,13 @@ interface FormProps {
 
 interface FormState {
   title: { value: string; isError?: boolean };
+  descriprion: { value: string; isError?: boolean };
   date: { value: string; isError?: boolean };
   file: { value: string; isError?: boolean };
   select: { value: string; isError?: boolean };
   check: { value: string; isError?: boolean };
   radio: { value: string; isError?: boolean };
-  error: boolean[];
+  // error: boolean[];
 }
 
 export class Forms extends Component<FormProps, FormState> {
@@ -47,12 +52,12 @@ export class Forms extends Component<FormProps, FormState> {
     super(props);
     this.state = {
       title: { value: '', isError: false },
+      descriprion: { value: '', isError: false },
       date: { value: '', isError: false },
       file: { value: '', isError: false },
       select: { value: '', isError: false },
       check: { value: '', isError: false },
       radio: { value: '', isError: false },
-      error: [],
     };
   }
 
@@ -61,45 +66,50 @@ export class Forms extends Component<FormProps, FormState> {
   }
 
   validate() {
-    const arrayError: boolean[] = [];
-    this.setState({ error: [] });
     // валидация каждого поля и запись ошибки в массив ошибок errors
     // если он пуст - успешная валидация
     // TODO: почему несколько раз пушится стейт???
-    (Object.entries(validateMap) as [FormKeys, (value: string) => boolean][]).forEach(
-      ([stateKey, validateFn]) => {
-        this.setState((formState) => {
-          validateFn(formState[stateKey].value) &&
-            arrayError.push(validateFn(formState[stateKey].value));
-          return {
-            ...formState,
-            [stateKey]: {
-              ...formState[stateKey],
-              isError: validateFn(formState[stateKey].value),
-            },
-            error: [...formState.error, ...arrayError],
-          };
-        });
-      }
-    );
+    const prevState = this.state;
+
+    const newState = (
+      Object.entries(validateMap) as [FormKeys, (value: string) => boolean][]
+    ).reduce<FormState>((stateAcc, [stateKey, validateFn]) => {
+      const hasError = validateFn(prevState[stateKey].value);
+
+      return {
+        ...stateAcc,
+        [stateKey]: {
+          ...prevState[stateKey],
+          isError: hasError,
+        },
+      };
+    }, {} as FormState);
+
+    this.setState(newState);
+
+    return Object.values(newState).every(({ isError }) => !isError);
   }
 
   handleSendForm(event: MouseEvent<HTMLButtonElement>) {
     event.preventDefault();
-    this.validate();
+    const isEmptyErrors = this.validate();
+    console.log(isEmptyErrors);
+
+    if (isEmptyErrors) {
+      const array = Object.entries(this.state).map(([key, props]) => {
+        return [key, props.value];
+      });
+      // string[][]
+
+      const verifyData: NewCard = Object.fromEntries(array);
+
+      this.props.addCard(verifyData);
+
+      // очищать стейт
+    }
+
     // TODO: как будет валидироваться?
-
-    const array = Object.entries(this.state)
-      .map(([key, props]) => {
-        if (typeof props === 'object' && !Array.isArray(props)) {
-          return [key, props.value];
-        }
-      })
-      .filter((el) => el !== undefined) as string[][];
-
-    const valideData = Object.fromEntries(array);
-
-    this.props.addCard(valideData);
+    // Добавление карточки
 
     // успех - отправить, неуспех - ошибка
   }
@@ -108,10 +118,16 @@ export class Forms extends Component<FormProps, FormState> {
     return (
       <div className={style.main_form}>
         <form>
+          {/* TODO: очищять форму если она невалидная */}
           <InputText
             onChange={(value) => this.handleChange(value, FormKeys.TITLE)}
             validate={!this.state.title.isError}
           />
+          <TextArea
+            onChange={(value) => this.handleChange(value, FormKeys.DECSRIPTIONS)}
+            validate={!this.state.descriprion.isError}
+          />
+
           <InputDate
             onChange={(value) => this.handleChange(value, FormKeys.DATE)}
             validate={!this.state.date.isError}
@@ -135,19 +151,12 @@ export class Forms extends Component<FormProps, FormState> {
             validate={!this.state.check.isError}
           />
 
-          <Button onClick={this.handleSendForm.bind(this)} disabled={!this.state.error.length} />
+          <Button
+            onClick={this.handleSendForm.bind(this)}
+            disabled={Object.values(this.state).every(({ value }) => !value)}
+          />
         </form>
       </div>
     );
   }
 }
-
-// Интересные факты о странах
-// Заголовок title
-// Выберите страну country
-// факт text
-// дата публикации data дата утверждения флага
-// уведомить других пользователей о новой статье (свичер)  //notification
-//  я соглашаюсь с уловием пользования agree
-// загрузить картинку uploud
-// является ли флаг официальным?

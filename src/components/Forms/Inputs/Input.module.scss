@@ -4,6 +4,10 @@
   @extend %input;
 }
 
+.text_area {
+  height: 5rem;
+}
+
 .input_title {
   font-weight: bold;
   font-size: 1.17rem;
