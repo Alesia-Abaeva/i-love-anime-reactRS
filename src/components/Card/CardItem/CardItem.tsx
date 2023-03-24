@@ -11,7 +11,6 @@ export class CardItem extends Component<CardItemProps> {
     super(props);
   }
 
-  // TODO: сверстать страничку
   render() {
     return (
       <div className={styles.flag_item}>
@@ -22,19 +21,24 @@ export class CardItem extends Component<CardItemProps> {
             className={styles.img_flag}
           />
         </div>
-        <h3 className={styles.item_name}>
+        <h3 className={styles.flag_name}>
           <span>Title:</span> {this.props.data.title}
         </h3>
-        <p className={styles.item_data}>
+        <p className={styles.flag_data}>
+          <span>Descriptions:</span>
+          <span className={styles.item_descr}>{this.props.data.descriprion}</span>
+        </p>
+        <p className={styles.flag_data}>
           <span>Data creation:</span>
-          {this.props.data.date}
+          <span className={styles.item_descr}> {this.props.data.date}</span>
         </p>
-        <p className={styles.item_data}>
-          <span>{titleForms.select}:</span> {this.props.data.select}
+        <p className={styles.flag_data}>
+          <span>{titleForms.select}:</span>
+          <span className={styles.flag_descr}> {this.props.data.select}</span>
         </p>
-        <p className={styles.item_data}>
+        <p className={styles.flag_data}>
           <span> {titleForms.radio}:</span>
-          {this.props.data.radio}
+          <span className={styles.item_descr}>{this.props.data.radio}</span>
         </p>
       </div>
     );

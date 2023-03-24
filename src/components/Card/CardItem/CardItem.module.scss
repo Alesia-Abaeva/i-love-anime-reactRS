@@ -23,20 +23,32 @@
   flex-shrink: 0;
 }
 
-.item_name {
-  // height: 5rem;
-  margin-bottom: 1rem;
+.flag_name {
   margin-top: 0.4rem;
   width: 15rem;
   hyphens: auto;
   -moz-hyphens: auto;
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
+  height: auto;
 }
 
-.item_data {
+.flag_data {
   margin-bottom: 0.2rem;
+  width: 15rem;
+  font-size: 1.1rem;
+
   span {
+    width: 15rem;
     font-weight: bold;
+    hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+  }
+
+  .item_descr {
+    font-weight: 200;
+    font-size: 1rem;
   }
 }
