@@ -12,6 +12,7 @@ export class InputCheckbox extends Component<InputProps, InputState> {
   }
 
   handlerChange() {
+    console.log(this.checkboxInput.current?.checked ? 'on' : 'off');
     const isCheck = this.checkboxInput.current?.checked ? 'on' : 'off';
     this.props.onChange(isCheck);
   }
@@ -23,8 +24,9 @@ export class InputCheckbox extends Component<InputProps, InputState> {
           type="checkbox"
           className={`${styles.input_check} ${!this.props.validate ? styles.error : ''}`}
           ref={this.checkboxInput}
-          onChange={() => this.handlerChange()}
+          onClick={() => this.handlerChange()}
           id={FormKeys.CHECK}
+          data-testid={FormKeys.CHECK}
         />
         <label htmlFor={FormKeys.CHECK} className={(styles.label_check, styles.input_title)}>
           Show you name

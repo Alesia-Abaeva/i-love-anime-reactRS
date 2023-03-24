@@ -28,6 +28,7 @@ class TextAreaComponent extends Component<InputProps, InputState> {
           ref={this.titleInput}
           onChange={() => this.handlerChange()}
           id={FormKeys.DECSRIPTIONS}
+          data-testid={FormKeys.DECSRIPTIONS}
         />
         <ErrorMessage validate={this.props.validate} errorMessage="Error press valid data" />
       </div>

@@ -29,23 +29,23 @@ export class InputRadio extends Component<InputProps, InputState> {
           <input
             type="radio"
             className={styles.input_radio}
-            onChange={() => this.handlerChange()}
+            onClick={() => this.handlerChange()}
             id={FormKeys.RADIO}
             name="group-1"
             value="yes"
             ref={this.yesRadio}
-            // checked={this.state.value == 'yes' ? true : false}
           />
           <label htmlFor={FormKeys.RADIO}>yes</label>
 
           <input
             type="radio"
             className={styles.input_radio}
-            onChange={() => this.handlerChange()}
+            onClick={() => this.handlerChange()}
             id="radio-no"
             name="group-1"
             value="no"
             ref={this.noRadio}
+            data-testid={FormKeys.RADIO}
           />
           <label htmlFor="radio-no">no</label>
         </div>

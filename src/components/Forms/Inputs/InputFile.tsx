@@ -13,6 +13,7 @@ export class InputFile extends Component<InputProps, InputState> {
 
   handlerChange() {
     const files = URL.createObjectURL(this.fileInput.current?.files?.[0] as Blob);
+    console.log(files, 'TDFGKDFG');
     this.props.onChange(files ?? '');
   }
 
@@ -31,6 +32,7 @@ export class InputFile extends Component<InputProps, InputState> {
           accept={'.jpg, .jpeg, .png'}
           onChange={() => this.handlerChange()}
           id={FormKeys.FILE}
+          data-testid={FormKeys.FILE}
         />
 
         <ErrorMessage validate={this.props.validate} errorMessage="download picture" />

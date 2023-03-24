@@ -27,6 +27,7 @@ export class InputDate extends Component<InputProps, InputState> {
           ref={this.dateInput}
           onChange={() => this.handlerChange()}
           id={FormKeys.DATE}
+          data-testid={FormKeys.DATE}
         />
 
         <ErrorMessage validate={this.props.validate} errorMessage="press valide date" />

@@ -27,6 +27,7 @@ export class InputSelect extends Component<InputProps, InputState> {
           onChange={() => this.handlerChange()}
           ref={this.SelectInput}
           id={FormKeys.SELECT}
+          data-testid={FormKeys.SELECT}
         >
           {selectOptions.map((options, index) => {
             return (

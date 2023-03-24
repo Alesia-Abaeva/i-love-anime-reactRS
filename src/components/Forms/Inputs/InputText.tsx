@@ -27,6 +27,7 @@ export class InputText extends Component<InputProps, InputState> {
           ref={this.titleInput}
           onChange={() => this.handlerChange()}
           id={FormKeys.TITLE}
+          data-testid={FormKeys.TITLE}
         />
         <ErrorMessage validate={this.props.validate} errorMessage="Error press valid data" />
       </div>

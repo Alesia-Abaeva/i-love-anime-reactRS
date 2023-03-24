@@ -26,6 +26,7 @@ export class Button extends Component<ButtonProps, ButtonState> {
           onClick={this.props.onClick?.bind(this)}
           type="submit"
           disabled={this.props.disabled}
+          data-testid="button"
         >
           Send
         </button>

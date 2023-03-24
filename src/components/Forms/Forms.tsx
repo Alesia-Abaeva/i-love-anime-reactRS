@@ -11,8 +11,8 @@ import { InputCheckbox } from './Inputs/InputCheckbox';
 import { InputRadio } from './Inputs/InputRadio';
 import { TextArea } from './Inputs/TextArea';
 import { initialStateForm } from '../../const/initial-state-form';
-import { Modal } from '../Modal/Modal';
 
+// TODO: перенести в константы
 export enum FormKeys {
   TITLE = 'title',
   DATE = 'date',
@@ -102,7 +102,10 @@ export class Forms extends Component<FormProps, FormState> {
   }
 
   resetForm() {
-    this.formRef.current?.reset();
+    const formElement = this.formRef.current;
+
+    formElement?.reset();
+
     this.setState((prev) => ({ ...prev, ...initialStateForm }));
   }
 

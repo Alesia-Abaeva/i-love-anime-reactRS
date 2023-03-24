@@ -42,4 +42,16 @@ describe('App', () => {
       })
     ).toHaveTextContent('Countries');
   });
+  it('Renders form page', () => {
+    render(
+      <MemoryRouter initialEntries={['/forms']}>
+        <App />
+      </MemoryRouter>
+    );
+    expect(
+      screen.getByRole('heading', {
+        level: 2,
+      })
+    ).toHaveTextContent('Add another flag');
+  });
 });

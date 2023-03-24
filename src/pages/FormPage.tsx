@@ -1,8 +1,8 @@
 import { Forms } from '../components/Forms/Forms';
 import { Card } from '../components/Card/Card';
 import { Component, ReactNode } from 'react';
-import './Pages.module.scss';
 import { Modal } from '../components/Modal/Modal';
+import styles from './Pages.module.scss';
 
 interface FormState {
   cards: NewCard[];
@@ -35,7 +35,8 @@ export class FormPage extends Component<object, FormState> {
 
   render(): ReactNode {
     return (
-      <div className="main_form container">
+      <div className={`${styles.main_container} ${styles.form_page}`}>
+        <h2>Add another flag</h2>
         <Forms addCard={this.addCard.bind(this)} showModal={this.showModal.bind(this)} />
         <Card data={this.state.cards} />
         {this.state.modal && <Modal onClose={() => this.showModal(false)} />}
