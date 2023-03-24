@@ -30,7 +30,10 @@ class TextAreaComponent extends Component<InputProps, InputState> {
           id={FormKeys.DECSRIPTIONS}
           data-testid={FormKeys.DECSRIPTIONS}
         />
-        <ErrorMessage validate={this.props.validate} errorMessage="Error press valid data" />
+        <ErrorMessage
+          validate={this.props.validate}
+          errorMessage="describe a little more (more than 10 characters)"
+        />
       </div>
     );
   }

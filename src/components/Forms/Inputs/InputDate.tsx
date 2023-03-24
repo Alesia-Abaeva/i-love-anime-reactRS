@@ -30,7 +30,10 @@ export class InputDate extends Component<InputProps, InputState> {
           data-testid={FormKeys.DATE}
         />
 
-        <ErrorMessage validate={this.props.validate} errorMessage="press valide date" />
+        <ErrorMessage
+          validate={this.props.validate}
+          errorMessage="the flag could not be created in the future"
+        />
       </div>
     );
   }

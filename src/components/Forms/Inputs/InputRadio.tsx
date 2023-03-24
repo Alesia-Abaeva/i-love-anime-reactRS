@@ -49,9 +49,11 @@ export class InputRadio extends Component<InputProps, InputState> {
           />
           <label htmlFor="radio-no">no</label>
         </div>
-        {/* TODO: при добавлении нового элемента не обновляет поле  */}
 
-        <ErrorMessage validate={this.props.validate} errorMessage="you should agree whith at" />
+        <ErrorMessage
+          validate={this.props.validate}
+          errorMessage="we cannot make a choice for you, choose"
+        />
       </div>
     );
   }

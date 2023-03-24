@@ -29,7 +29,10 @@ export class InputText extends Component<InputProps, InputState> {
           id={FormKeys.TITLE}
           data-testid={FormKeys.TITLE}
         />
-        <ErrorMessage validate={this.props.validate} errorMessage="Error press valid data" />
+        <ErrorMessage
+          validate={this.props.validate}
+          errorMessage="the name must be more than 2 characters"
+        />
       </div>
     );
   }

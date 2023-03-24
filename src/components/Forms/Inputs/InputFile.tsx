@@ -35,7 +35,7 @@ export class InputFile extends Component<InputProps, InputState> {
           data-testid={FormKeys.FILE}
         />
 
-        <ErrorMessage validate={this.props.validate} errorMessage="download picture" />
+        <ErrorMessage validate={this.props.validate} errorMessage="upload the image" />
       </div>
     );
   }

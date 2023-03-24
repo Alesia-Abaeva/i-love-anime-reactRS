@@ -32,7 +32,10 @@ export class InputCheckbox extends Component<InputProps, InputState> {
           Show you name
         </label>
 
-        <ErrorMessage validate={this.props.validate} errorMessage="Error press valid data" />
+        <ErrorMessage
+          validate={this.props.validate}
+          errorMessage="oooops you need to agree with the claims "
+        />
       </div>
     );
   }
