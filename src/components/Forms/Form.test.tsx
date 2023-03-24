@@ -1,7 +1,8 @@
-import { describe, it, vi } from 'vitest';
-import { render, screen } from '@testing-library/react';
-import { FormKeys, Forms } from './Forms';
 import userEvent from '@testing-library/user-event';
+import { render, screen } from '@testing-library/react';
+import { describe, it, vi } from 'vitest';
+import { FormKeys } from '../../const/validate-form-keys';
+import { Forms } from './Forms';
 
 describe('Test Form component', () => {
   const addCard = vi.fn();

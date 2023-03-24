@@ -1,6 +1,6 @@
 import { Component, createRef, memo, RefObject } from 'react';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
-import { FormKeys } from '../Forms';
+import { FormKeys } from '../../../const/validate-form-keys';
 import styles from './Input.module.scss';
 
 class TextAreaComponent extends Component<InputProps, InputState> {

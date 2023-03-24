@@ -1,4 +1,4 @@
-import { FormKeys } from '../components/Forms/Forms';
+import { FormKeys } from './validate-form-keys';
 
 export const titleForms: Record<FormKeys, string> = {
   [FormKeys.TITLE]: 'Name of the flag',

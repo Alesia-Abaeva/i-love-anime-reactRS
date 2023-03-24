@@ -1,6 +1,6 @@
+import { FormKeys } from '../../../const/validate-form-keys';
 import { Component, createRef, RefObject } from 'react';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
-import { FormKeys } from '../Forms';
 import styles from './Input.module.scss';
 
 export class InputCheckbox extends Component<InputProps, InputState> {

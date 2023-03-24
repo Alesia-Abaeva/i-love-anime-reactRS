@@ -2,37 +2,14 @@ import { Component, createRef, MouseEvent, ReactNode, RefObject } from 'react';
 import { Button } from './Button/Button';
 import { InputText } from './Inputs/InputText';
 import { InputDate } from './Inputs/InputDate';
-
 import style from './Forms.module.scss';
-import { dateValidate, fileValidate, textDescrValidate, textValidate } from '../../utils/validate';
 import { InputFile } from './Inputs/InputFile';
 import { InputSelect } from './Inputs/InputSelect';
 import { InputCheckbox } from './Inputs/InputCheckbox';
 import { InputRadio } from './Inputs/InputRadio';
 import { TextArea } from './Inputs/TextArea';
 import { initialStateForm } from '../../const/initial-state-form';
-
-// TODO: перенести в константы
-export enum FormKeys {
-  TITLE = 'title',
-  DATE = 'date',
-  FILE = 'file',
-  SELECT = 'select',
-  CHECK = 'check',
-  RADIO = 'radio',
-  DECSRIPTIONS = 'descriprion',
-}
-
-const validateMap: Record<FormKeys, (value: string) => boolean> = {
-  [FormKeys.TITLE]: textValidate,
-  [FormKeys.DATE]: dateValidate,
-  [FormKeys.FILE]: fileValidate,
-  [FormKeys.SELECT]: fileValidate,
-  [FormKeys.CHECK]: fileValidate,
-  [FormKeys.RADIO]: fileValidate,
-  [FormKeys.DECSRIPTIONS]: textDescrValidate,
-};
-// TODO: проверить валидацию
+import { FormKeys, validateMap } from '../../const/validate-form-keys';
 
 interface FormProps {
   addCard: (card: NewCard) => void;

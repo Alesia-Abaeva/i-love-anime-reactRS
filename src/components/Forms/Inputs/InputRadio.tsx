@@ -1,7 +1,7 @@
 import { Component, createRef, RefObject } from 'react';
 import styles from './Input.module.scss';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
-import { FormKeys } from '../Forms';
+import { FormKeys } from '../../../const/validate-form-keys';
 
 export class InputRadio extends Component<InputProps, InputState> {
   yesRadio: RefObject<HTMLInputElement>;
