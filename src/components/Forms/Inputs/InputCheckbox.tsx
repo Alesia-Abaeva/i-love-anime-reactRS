@@ -34,7 +34,7 @@ export class InputCheckbox extends Component<InputProps, InputState> {
 
         <ErrorMessage
           validate={this.props.validate}
-          errorMessage="oooops you need to agree with the claims "
+          errorMessage="oooops you need to agree with the claims"
         />
       </div>
     );
