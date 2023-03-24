@@ -1,5 +1,6 @@
 import { Component, createRef, RefObject } from 'react';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
+import { FormKeys } from '../Forms';
 import styles from './Input.module.scss';
 
 export class InputCheckbox extends Component<InputProps, InputState> {
@@ -8,18 +9,11 @@ export class InputCheckbox extends Component<InputProps, InputState> {
   constructor(props: InputProps) {
     super(props);
     this.checkboxInput = createRef();
-
-    this.state = {
-      value: '',
-    };
   }
 
   handlerChange() {
     const isCheck = this.checkboxInput.current?.checked ? 'on' : 'off';
     this.props.onChange(isCheck);
-    this.setState({ value: isCheck });
-
-    console.log(isCheck);
   }
 
   render() {
@@ -27,12 +21,12 @@ export class InputCheckbox extends Component<InputProps, InputState> {
       <div className={styles.item_input}>
         <input
           type="checkbox"
-          className={`${styles.input_check} ${!this.props.validate ? styles.error : ''}`} // !!!
+          className={`${styles.input_check} ${!this.props.validate ? styles.error : ''}`}
           ref={this.checkboxInput}
           onChange={() => this.handlerChange()}
-          id="input_check"
+          id={FormKeys.CHECK}
         />
-        <label htmlFor="input_check" className={(styles.label_check, styles.input_title)}>
+        <label htmlFor={FormKeys.CHECK} className={(styles.label_check, styles.input_title)}>
           Show you name
         </label>
 

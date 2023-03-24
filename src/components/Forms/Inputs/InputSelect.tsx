@@ -2,6 +2,7 @@ import { selectOptions } from '../../../const/select-options';
 import { Component, createRef, RefObject } from 'react';
 import styles from './Input.module.scss';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
+import { FormKeys } from '../Forms';
 
 export class InputSelect extends Component<InputProps, InputState> {
   SelectInput: RefObject<HTMLSelectElement>;
@@ -9,27 +10,23 @@ export class InputSelect extends Component<InputProps, InputState> {
   constructor(props: InputProps) {
     super(props);
     this.SelectInput = createRef();
-
-    this.state = {
-      value: '',
-    };
   }
 
   handlerChange() {
     this.props.onChange(this.SelectInput.current?.value ?? '');
-    this.setState({ value: this.SelectInput.current?.value as string });
   }
 
   render() {
     return (
       <div className={styles.item_input}>
-        <label htmlFor="input_file" className={styles.input_title}>
+        <label htmlFor={FormKeys.SELECT} className={styles.input_title}>
           Choose a type flag
         </label>
         <select
           className={`${styles.input_select} ${!this.props.validate ? styles.error : ''}`}
           onChange={() => this.handlerChange()}
           ref={this.SelectInput}
+          id={FormKeys.SELECT}
         >
           {selectOptions.map((options, index) => {
             return (

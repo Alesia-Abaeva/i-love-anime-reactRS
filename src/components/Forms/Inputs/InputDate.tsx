@@ -1,5 +1,6 @@
 import { Component, createRef, RefObject } from 'react';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
+import { FormKeys } from '../Forms';
 import styles from './Input.module.scss';
 
 export class InputDate extends Component<InputProps, InputState> {
@@ -8,21 +9,16 @@ export class InputDate extends Component<InputProps, InputState> {
   constructor(props: InputProps) {
     super(props);
     this.dateInput = createRef();
-
-    this.state = {
-      value: '',
-    };
   }
 
   handlerChange() {
     this.props.onChange(this.dateInput.current?.value ?? '');
-    this.setState({ value: this.dateInput.current?.value as string });
   }
 
   render() {
     return (
       <div className={styles.item_input}>
-        <label htmlFor="input_date" className={styles.input_title}>
+        <label htmlFor={FormKeys.DATE} className={styles.input_title}>
           Flag creation date
         </label>
         <input
@@ -30,7 +26,7 @@ export class InputDate extends Component<InputProps, InputState> {
           className={`${styles.input_text} ${!this.props.validate ? styles.error : ''}`}
           ref={this.dateInput}
           onChange={() => this.handlerChange()}
-          id="input_date"
+          id={FormKeys.DATE}
         />
 
         <ErrorMessage validate={this.props.validate} errorMessage="press valide date" />

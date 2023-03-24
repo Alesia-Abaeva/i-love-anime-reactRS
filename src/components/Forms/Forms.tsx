@@ -1,4 +1,4 @@
-import { Component, MouseEvent, ReactNode } from 'react';
+import { Component, createRef, MouseEvent, ReactNode, RefObject } from 'react';
 import { Button } from './Button/Button';
 import { InputText } from './Inputs/InputText';
 import { InputDate } from './Inputs/InputDate';
@@ -10,6 +10,8 @@ import { InputSelect } from './Inputs/InputSelect';
 import { InputCheckbox } from './Inputs/InputCheckbox';
 import { InputRadio } from './Inputs/InputRadio';
 import { TextArea } from './Inputs/TextArea';
+import { initialStateForm } from '../../const/initial-state-form';
+import { Modal } from '../Modal/Modal';
 
 export enum FormKeys {
   TITLE = 'title',
@@ -34,9 +36,10 @@ const validateMap: Record<FormKeys, (value: string) => boolean> = {
 
 interface FormProps {
   addCard: (card: NewCard) => void;
+  showModal: (isActive: boolean) => void;
 }
 
-interface FormState {
+export interface FormState {
   title: { value: string; isError?: boolean };
   descriprion: { value: string; isError?: boolean };
   date: { value: string; isError?: boolean };
@@ -44,12 +47,15 @@ interface FormState {
   select: { value: string; isError?: boolean };
   check: { value: string; isError?: boolean };
   radio: { value: string; isError?: boolean };
-  // error: boolean[];
 }
 
 export class Forms extends Component<FormProps, FormState> {
+  formRef: RefObject<HTMLFormElement>;
+
   constructor(props: FormProps) {
     super(props);
+    this.formRef = createRef();
+
     this.state = {
       title: { value: '', isError: false },
       descriprion: { value: '', isError: false },
@@ -66,15 +72,20 @@ export class Forms extends Component<FormProps, FormState> {
   }
 
   validate() {
-    // валидация каждого поля и запись ошибки в массив ошибок errors
-    // если он пуст - успешная валидация
-    // TODO: почему несколько раз пушится стейт???
     const prevState = this.state;
 
     const newState = (
       Object.entries(validateMap) as [FormKeys, (value: string) => boolean][]
     ).reduce<FormState>((stateAcc, [stateKey, validateFn]) => {
       const hasError = validateFn(prevState[stateKey].value);
+
+      if (hasError) {
+        const formElement = this.formRef.current!.elements.namedItem(stateKey) as
+          | HTMLTextAreaElement
+          | HTMLInputElement
+          | HTMLSelectElement;
+        formElement && (formElement.value = '');
+      }
 
       return {
         ...stateAcc,
@@ -90,35 +101,36 @@ export class Forms extends Component<FormProps, FormState> {
     return Object.values(newState).every(({ isError }) => !isError);
   }
 
+  resetForm() {
+    this.formRef.current?.reset();
+    this.setState((prev) => ({ ...prev, ...initialStateForm }));
+  }
+
+  showModal() {
+    return Object.values(this.state).every(({ isError }) => !isError);
+  }
+
   handleSendForm(event: MouseEvent<HTMLButtonElement>) {
     event.preventDefault();
     const isEmptyErrors = this.validate();
-    console.log(isEmptyErrors);
 
     if (isEmptyErrors) {
-      const array = Object.entries(this.state).map(([key, props]) => {
-        return [key, props.value];
-      });
-      // string[][]
+      const data: NewCard = Object.fromEntries(
+        Object.entries(this.state).map(([key, props]) => {
+          return [key, props.value];
+        })
+      );
 
-      const verifyData: NewCard = Object.fromEntries(array);
-
-      this.props.addCard(verifyData);
-
-      // очищать стейт
+      this.props.addCard(data);
+      this.resetForm();
+      this.props.showModal(true);
     }
-
-    // TODO: как будет валидироваться?
-    // Добавление карточки
-
-    // успех - отправить, неуспех - ошибка
   }
 
   render(): ReactNode {
     return (
       <div className={style.main_form}>
-        <form>
-          {/* TODO: очищять форму если она невалидная */}
+        <form ref={this.formRef}>
           <InputText
             onChange={(value) => this.handleChange(value, FormKeys.TITLE)}
             validate={!this.state.title.isError}
@@ -127,12 +139,10 @@ export class Forms extends Component<FormProps, FormState> {
             onChange={(value) => this.handleChange(value, FormKeys.DECSRIPTIONS)}
             validate={!this.state.descriprion.isError}
           />
-
           <InputDate
             onChange={(value) => this.handleChange(value, FormKeys.DATE)}
             validate={!this.state.date.isError}
           />
-
           <InputSelect
             onChange={(value) => this.handleChange(value, FormKeys.SELECT)}
             validate={!this.state.select.isError}
@@ -145,12 +155,10 @@ export class Forms extends Component<FormProps, FormState> {
             onChange={(value) => this.handleChange(value, FormKeys.FILE)}
             validate={!this.state.file.isError}
           />
-
           <InputCheckbox
             onChange={(value) => this.handleChange(value, FormKeys.CHECK)}
             validate={!this.state.check.isError}
           />
-
           <Button
             onClick={this.handleSendForm.bind(this)}
             disabled={Object.values(this.state).every(({ value }) => !value)}

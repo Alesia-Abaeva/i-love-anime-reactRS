@@ -1,0 +1,23 @@
+@import '/src/styles/variables';
+
+.shadow_ovelay {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.374);
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.modal_container {
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  width: 20rem;
+  padding: 2rem;
+  background-color: white;
+  h1 {
+    text-align: center;
+    font-size: 1rem;
+  }
+}

@@ -1,6 +1,7 @@
 import { Component, createRef, RefObject } from 'react';
 import styles from './Input.module.scss';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
+import { FormKeys } from '../Forms';
 
 export class InputRadio extends Component<InputProps, InputState> {
   yesRadio: RefObject<HTMLInputElement>;
@@ -10,10 +11,6 @@ export class InputRadio extends Component<InputProps, InputState> {
     super(props);
     this.noRadio = createRef();
     this.yesRadio = createRef();
-
-    this.state = {
-      value: '',
-    };
   }
 
   handlerChange() {
@@ -22,7 +19,6 @@ export class InputRadio extends Component<InputProps, InputState> {
       : this.noRadio.current?.value;
 
     this.props.onChange(selectRadio ?? '');
-    this.setState({ value: selectRadio as string });
   }
 
   render() {
@@ -34,13 +30,13 @@ export class InputRadio extends Component<InputProps, InputState> {
             type="radio"
             className={styles.input_radio}
             onChange={() => this.handlerChange()}
-            id="radio"
+            id={FormKeys.RADIO}
             name="group-1"
             value="yes"
             ref={this.yesRadio}
-            checked={this.state.value == 'yes' ? true : false}
+            // checked={this.state.value == 'yes' ? true : false}
           />
-          <label htmlFor="radio">yes</label>
+          <label htmlFor={FormKeys.RADIO}>yes</label>
 
           <input
             type="radio"
@@ -50,10 +46,10 @@ export class InputRadio extends Component<InputProps, InputState> {
             name="group-1"
             value="no"
             ref={this.noRadio}
-            checked={this.state.value == 'no' ? true : false}
           />
           <label htmlFor="radio-no">no</label>
         </div>
+        {/* TODO: при добавлении нового элемента не обновляет поле  */}
 
         <ErrorMessage validate={this.props.validate} errorMessage="you should agree whith at" />
       </div>
