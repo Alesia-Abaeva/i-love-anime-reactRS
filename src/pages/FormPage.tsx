@@ -36,8 +36,10 @@ export class FormPage extends Component<object, FormState> {
   render(): ReactNode {
     return (
       <div className={`${styles.main_container} ${styles.form_page}`}>
-        <h2>Add another flag</h2>
-        <Forms addCard={this.addCard.bind(this)} showModal={this.showModal.bind(this)} />
+        <div>
+          <h2>Add another flag</h2>
+          <Forms addCard={this.addCard.bind(this)} showModal={this.showModal.bind(this)} />
+        </div>
         <Card data={this.state.cards} />
         {this.state.modal && <Modal onClose={() => this.showModal(false)} />}
       </div>

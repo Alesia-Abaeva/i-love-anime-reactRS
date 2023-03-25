@@ -20,7 +20,12 @@
 
 .form_page {
   height: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
   h2 {
+    padding-left: 3rem;
+    padding-right: 3rem;
     margin-top: 1rem;
   }
 }
