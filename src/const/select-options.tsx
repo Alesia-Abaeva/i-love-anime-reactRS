@@ -1,0 +1,15 @@
+export const selectOptions = [
+  'National flags',
+  'International flags',
+  'Sea flags',
+  'Flags of houses',
+  'Courtesy Flag',
+  'Sports flags',
+  'Political flags',
+  'Swimming flags',
+  'Railway flags',
+  'Semaphore flags',
+  'Pirate Flag',
+  'LGBT flag',
+  'Other',
+];

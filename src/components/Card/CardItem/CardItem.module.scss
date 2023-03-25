@@ -1,0 +1,54 @@
+@import '/src/styles/variables';
+
+.flag_item {
+  @extend %item;
+}
+.flag_img {
+  width: 17rem;
+  height: 10rem;
+  border: 5px solid #515151;
+}
+
+.img_wrapper {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img_flag {
+  width: 17rem;
+  min-width: 100%;
+  min-height: 100%;
+  flex-shrink: 0;
+}
+
+.flag_name {
+  margin-top: 0.4rem;
+  width: 15rem;
+  hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  height: auto;
+}
+
+.flag_data {
+  margin-bottom: 0.2rem;
+  width: 15rem;
+  font-size: 1.1rem;
+
+  span {
+    width: 15rem;
+    font-weight: bold;
+    hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+  }
+
+  .item_descr {
+    font-weight: 200;
+    font-size: 1rem;
+  }
+}

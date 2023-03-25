@@ -1,0 +1,54 @@
+@import '/src/styles/variables';
+
+.navbar {
+  background: $background;
+  height: 80px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  gap: 4rem;
+}
+
+.navbar_logo {
+  color: $white;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.logo {
+  background: url('../../assets/react.svg');
+  background-repeat: no-repeat;
+  width: 2.3rem;
+  height: 2.3rem;
+  display: block;
+}
+
+.navbar_lists {
+  display: flex;
+  list-style-type: none;
+  gap: 4rem;
+  color: white;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.active {
+  color: $ligth-blue;
+  text-decoration: underline;
+}
+
+.nav-links:hover {
+  color: $ligth-blue;
+}
+
+.navbar_logo {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+  gap: 1.5rem;
+}

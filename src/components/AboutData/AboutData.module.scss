@@ -1,0 +1,12 @@
+@import '/src/styles/variables';
+
+.main_about {
+  @extend %main-container;
+}
+.about_link {
+  margin-top: 1rem;
+
+  &:hover {
+    color: $ligth-blue;
+  }
+}

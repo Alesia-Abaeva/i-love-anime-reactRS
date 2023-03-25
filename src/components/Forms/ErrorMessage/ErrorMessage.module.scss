@@ -1,0 +1,14 @@
+@import '/src/styles/variables';
+
+.error_title {
+  color: transparent;
+  height: 1rem;
+  transition: all 0.3 ease-in;
+  width: 20rem;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.error_active {
+  color: red;
+}
