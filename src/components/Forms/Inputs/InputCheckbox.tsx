@@ -12,7 +12,6 @@ export class InputCheckbox extends Component<InputProps, InputState> {
   }
 
   handlerChange() {
-    console.log(this.checkboxInput.current?.checked ? 'on' : 'off');
     const isCheck = this.checkboxInput.current?.checked ? 'on' : 'off';
     this.props.onChange(isCheck);
   }
@@ -29,7 +28,7 @@ export class InputCheckbox extends Component<InputProps, InputState> {
           data-testid={FormKeys.CHECK}
         />
         <label htmlFor={FormKeys.CHECK} className={(styles.label_check, styles.input_title)}>
-          Show you name
+          I consent to my personal data
         </label>
 
         <ErrorMessage

@@ -101,7 +101,6 @@ export class Forms extends Component<FormProps, FormState> {
         })
       );
 
-      console.log(data);
       this.props.addCard(data);
       this.resetForm();
       this.props.showModal(true);

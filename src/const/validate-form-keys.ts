@@ -1,4 +1,10 @@
-import { dateValidate, fileValidate, textDescrValidate, textValidate } from '../utils/validate';
+import {
+  agreeValidate,
+  dateValidate,
+  fileValidate,
+  textDescrValidate,
+  textValidate,
+} from '../utils/validate';
 
 export enum FormKeys {
   TITLE = 'title',
@@ -15,7 +21,7 @@ export const validateMap: Record<FormKeys, (value: string) => boolean> = {
   [FormKeys.DATE]: dateValidate,
   [FormKeys.FILE]: fileValidate,
   [FormKeys.SELECT]: fileValidate,
-  [FormKeys.CHECK]: fileValidate,
+  [FormKeys.CHECK]: agreeValidate,
   [FormKeys.RADIO]: fileValidate,
   [FormKeys.DECSRIPTIONS]: textDescrValidate,
 };

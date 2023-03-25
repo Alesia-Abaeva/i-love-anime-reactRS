@@ -13,7 +13,6 @@ export class InputFile extends Component<InputProps, InputState> {
 
   handlerChange() {
     const files = URL.createObjectURL(this.fileInput.current?.files?.[0] as Blob);
-    console.log(files, 'TDFGKDFG');
     this.props.onChange(files ?? '');
   }
 
