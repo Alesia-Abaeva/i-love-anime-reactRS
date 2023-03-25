@@ -93,7 +93,6 @@ export class Forms extends Component<FormProps, FormState> {
   handleSendForm(event: MouseEvent<HTMLButtonElement>) {
     event.preventDefault();
     const isEmptyErrors = this.validate();
-
     if (isEmptyErrors) {
       const data: NewCard = Object.fromEntries(
         Object.entries(this.state).map(([key, props]) => {

@@ -28,7 +28,7 @@ export class InputFile extends Component<InputProps, InputState> {
             !this.props.validate ? styles.error : ''
           }`}
           ref={this.fileInput}
-          accept={'.jpg, .jpeg, .png'}
+          accept={'.jpg,.jpeg,.png'}
           onChange={() => this.handlerChange()}
           id={FormKeys.FILE}
           data-testid={FormKeys.FILE}
