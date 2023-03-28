@@ -1,45 +1,29 @@
-import { selectOptions } from '../../../const/select-options';
-import { Component, createRef, RefObject } from 'react';
 import styles from './Input.module.scss';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
-import { FormKeys } from '../../../const/validate-form-keys';
+import { errorMessageTitile, FormKeys, selectOptions, titleForms } from '../../../const';
 
-export class InputSelect extends Component<InputProps, InputState> {
-  SelectInput: RefObject<HTMLSelectElement>;
+export const InputSelect: React.FC<InputProps> = ({ validate, onChange }) => {
+  return (
+    <div className={styles.item_input}>
+      <label htmlFor={FormKeys.SELECT} className={styles.input_title}>
+        {titleForms.select}
+      </label>
+      <select
+        className={`${styles.input_select} ${!validate ? styles.error : ''}`}
+        onChange={(event) => onChange(event.target.value)}
+        id={FormKeys.SELECT}
+        data-testid={FormKeys.SELECT}
+      >
+        {selectOptions.map((options, index) => {
+          return (
+            <option value={options} key={index}>
+              {options}
+            </option>
+          );
+        })}
+      </select>
 
-  constructor(props: InputProps) {
-    super(props);
-    this.SelectInput = createRef();
-  }
-
-  handlerChange() {
-    this.props.onChange(this.SelectInput.current?.value ?? '');
-  }
-
-  render() {
-    return (
-      <div className={styles.item_input}>
-        <label htmlFor={FormKeys.SELECT} className={styles.input_title}>
-          Choose a type flag
-        </label>
-        <select
-          className={`${styles.input_select} ${!this.props.validate ? styles.error : ''}`}
-          onChange={() => this.handlerChange()}
-          ref={this.SelectInput}
-          id={FormKeys.SELECT}
-          data-testid={FormKeys.SELECT}
-        >
-          {selectOptions.map((options, index) => {
-            return (
-              <option value={options} key={index}>
-                {options}
-              </option>
-            );
-          })}
-        </select>
-
-        <ErrorMessage validate={this.props.validate} errorMessage="select values" />
-      </div>
-    );
-  }
-}
+      <ErrorMessage validate={validate} errorMessage={errorMessageTitile.select} />
+    </div>
+  );
+};
