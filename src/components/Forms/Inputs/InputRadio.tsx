@@ -1,60 +1,49 @@
-import { Component, createRef, RefObject } from 'react';
 import styles from './Input.module.scss';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
-import { FormKeys } from '../../../const/validate-form-keys';
+import { errorMessageTitile, FormKeys, titleForms } from '../../../const';
+import React from 'react';
 
-export class InputRadio extends Component<InputProps, InputState> {
-  yesRadio: RefObject<HTMLInputElement>;
-  noRadio: RefObject<HTMLInputElement>;
+export const InputRadio: React.FC<InputProps> = ({ validate, onChange }) => {
+  const radioYesRef: React.MutableRefObject<HTMLInputElement | null> = React.useRef(null);
+  const radioNoRef: React.MutableRefObject<HTMLInputElement | null> = React.useRef(null);
 
-  constructor(props: InputProps) {
-    super(props);
-    this.noRadio = createRef();
-    this.yesRadio = createRef();
-  }
+  const handlerChange = () => {
+    const selectRadio = radioYesRef.current?.checked
+      ? radioYesRef.current?.value
+      : radioNoRef.current?.value;
 
-  handlerChange() {
-    const selectRadio = this.yesRadio.current?.checked
-      ? this.yesRadio.current?.value
-      : this.noRadio.current?.value;
+    onChange(selectRadio ?? '');
+  };
 
-    this.props.onChange(selectRadio ?? '');
-  }
-
-  render() {
-    return (
-      <div className={styles.item_input}>
-        <h3 className={styles.input_title}>Is the official flag</h3>
-        <div className={styles.radio_container}>
-          <input
-            type="radio"
-            className={styles.input_radio}
-            onClick={() => this.handlerChange()}
-            id={FormKeys.RADIO}
-            name="group-1"
-            value="yes"
-            ref={this.yesRadio}
-          />
-          <label htmlFor={FormKeys.RADIO}>yes</label>
-
-          <input
-            type="radio"
-            className={styles.input_radio}
-            onClick={() => this.handlerChange()}
-            id="radio-no"
-            name="group-1"
-            value="no"
-            ref={this.noRadio}
-            data-testid={FormKeys.RADIO}
-          />
-          <label htmlFor="radio-no">no</label>
-        </div>
-
-        <ErrorMessage
-          validate={this.props.validate}
-          errorMessage="we cannot make a choice for you, choose"
+  return (
+    <div className={styles.item_input}>
+      <h3 className={styles.input_title}>{titleForms.radio}</h3>
+      <div className={styles.radio_container}>
+        <input
+          type="radio"
+          className={styles.input_radio}
+          onClick={() => handlerChange()}
+          id={FormKeys.RADIO}
+          name="group-1"
+          value="yes"
+          ref={radioYesRef}
         />
+        <label htmlFor={FormKeys.RADIO}>yes</label>
+
+        <input
+          type="radio"
+          className={styles.input_radio}
+          onClick={() => handlerChange()}
+          id="radio-no"
+          name="group-1"
+          value="no"
+          ref={radioNoRef}
+          data-testid={FormKeys.RADIO}
+        />
+        <label htmlFor="radio-no">no</label>
       </div>
-    );
-  }
-}
+
+      <ErrorMessage validate={validate} errorMessage={errorMessageTitile.radio} />
+    </div>
+  );
+};
