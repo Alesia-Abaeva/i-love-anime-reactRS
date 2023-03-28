@@ -1,7 +1,7 @@
 import { FormKeys } from './validate-form-keys';
 
 export const errorMessageTitile: Record<FormKeys, string> = {
-  [FormKeys.TITLE]: 'Name of the flag',
+  [FormKeys.TITLE]: 'the name must be more than 2 characters',
   [FormKeys.DATE]: 'Flag creation date',
   [FormKeys.FILE]: 'Upload flag',
   [FormKeys.SELECT]: 'Type flag',

@@ -1,9 +1,7 @@
-import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
-import { FormKeys } from '../../../const/validate-form-keys';
 import styles from './Input.module.scss';
+import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
+import { errorMessageTitile, FormKeys, titleForms } from '../../../const';
 import { memo } from 'react';
-import { titleForms } from 'const/title-forms';
-import { errorMessageTitile } from 'const/error-message';
 
 export const TextAreaComponent: React.FC<InputProps> = ({ validate, onChange }) => {
   return (
