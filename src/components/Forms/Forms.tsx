@@ -1,15 +1,17 @@
 import { Component, createRef, MouseEvent, ReactNode, RefObject } from 'react';
 import { Button } from './Button/Button';
-import { InputText } from './Inputs/InputText';
-import { InputDate } from './Inputs/InputDate';
 import style from './Forms.module.scss';
-import { InputFile } from './Inputs/InputFile';
-import { InputSelect } from './Inputs/InputSelect';
-import { InputCheckbox } from './Inputs/InputCheckbox';
-import { InputRadio } from './Inputs/InputRadio';
-import { TextArea } from './Inputs/TextArea';
 import { initialStateForm } from '../../const/initial-state-form';
 import { FormKeys, validateMap } from '../../const/validate-form-keys';
+import {
+  InputCheckbox,
+  InputDate,
+  InputFile,
+  InputRadio,
+  InputSelect,
+  InputText,
+  TextArea,
+} from './Inputs';
 
 interface FormProps {
   addCard: (card: NewCard) => void;
