@@ -1,20 +1,13 @@
 import style from './Button.module.scss';
 
 interface ButtonProps {
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
   disabled: boolean;
 }
 
-export const Button: React.FC<ButtonProps> = ({ onClick, disabled }) => {
+export const Button: React.FC<ButtonProps> = ({ disabled }) => {
   return (
     <>
-      <button
-        className={style.button_form}
-        onClick={onClick}
-        type="submit"
-        disabled={disabled}
-        data-testid="button"
-      >
+      <button className={style.button_form} type="submit" disabled={disabled} data-testid="button">
         Send
       </button>
     </>

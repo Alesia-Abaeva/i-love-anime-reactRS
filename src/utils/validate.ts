@@ -1,7 +1,10 @@
-export const dateValidate = (value: string): boolean => {
+export const dateValidate = (value?: string): boolean => {
+  if (!value) {
+    return true;
+  }
   const dataValue = new Date(value);
   const currentDay = new Date();
-  return dataValue >= currentDay || !value;
+  return dataValue <= currentDay;
 };
 
 export const fileValidate = (value: string): boolean => {
@@ -13,7 +16,7 @@ export const agreeValidate = (value: string): boolean => {
 };
 
 export const textValidate = (value: string): boolean =>
-  !value.trim().length || value.trim().length <= 2 || !value;
+  !value.trim().length || value.trim().length >= 3 || !value;
 
 export const textDescrValidate = (value: string): boolean =>
-  !value.trim().length || value.trim().length <= 10 || !value;
+  !value.trim().length || value.trim().length >= 10 || !value;

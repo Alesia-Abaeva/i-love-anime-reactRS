@@ -3,18 +3,7 @@ import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
 import { errorMessageTitile, FormKeys, titleForms } from '../../../const';
 import React from 'react';
 
-export const InputRadio: React.FC<InputProps> = ({ validate, onChange }) => {
-  const radioYesRef: React.MutableRefObject<HTMLInputElement | null> = React.useRef(null);
-  const radioNoRef: React.MutableRefObject<HTMLInputElement | null> = React.useRef(null);
-
-  const handlerChange = () => {
-    const selectRadio = radioYesRef.current?.checked
-      ? radioYesRef.current?.value
-      : radioNoRef.current?.value;
-
-    onChange(selectRadio ?? '');
-  };
-
+export const InputRadio: React.FC<InputProps> = ({ validate, register }) => {
   return (
     <div className={styles.item_input}>
       <h3 className={styles.input_title}>{titleForms.radio}</h3>
@@ -22,23 +11,21 @@ export const InputRadio: React.FC<InputProps> = ({ validate, onChange }) => {
         <input
           type="radio"
           className={styles.input_radio}
-          onClick={() => handlerChange()}
           id={FormKeys.RADIO}
           name="group-1"
           value="yes"
-          ref={radioYesRef}
+          {...register}
         />
         <label htmlFor={FormKeys.RADIO}>yes</label>
 
         <input
           type="radio"
           className={styles.input_radio}
-          onClick={() => handlerChange()}
           id="radio-no"
           name="group-1"
           value="no"
-          ref={radioNoRef}
           data-testid={FormKeys.RADIO}
+          {...register}
         />
         <label htmlFor="radio-no">no</label>
       </div>

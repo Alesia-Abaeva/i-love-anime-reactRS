@@ -1,8 +1,7 @@
-import { Component, createRef, MouseEvent, ReactNode, RefObject } from 'react';
+import { defaultValues, FormKeys, VALIDATE_MESSAGE } from '../../const';
+import React from 'react';
 import { Button } from './Button/Button';
 import style from './Forms.module.scss';
-import { initialStateForm } from '../../const/initial-state-form';
-import { FormKeys, validateMap } from '../../const/validate-form-keys';
 import {
   InputCheckbox,
   InputDate,
@@ -12,140 +11,86 @@ import {
   InputText,
   TextArea,
 } from './Inputs';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { dateValidate, textDescrValidate, textValidate } from '../../utils/validate';
 
 interface FormProps {
   addCard: (card: NewCard) => void;
   showModal: (isActive: boolean) => void;
 }
 
-export interface FormState {
-  title: { value: string; isError?: boolean };
-  descriprion: { value: string; isError?: boolean };
-  date: { value: string; isError?: boolean };
-  file: { value: string; isError?: boolean };
-  select: { value: string; isError?: boolean };
-  check: { value: string; isError?: boolean };
-  radio: { value: string; isError?: boolean };
-}
+export const Forms: React.FC<FormProps> = ({ addCard, showModal }) => {
+  const [isDidabled, setDisable] = React.useState(true);
 
-export class Forms extends Component<FormProps, FormState> {
-  formRef: RefObject<HTMLFormElement>;
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+    getValues,
+    watch,
+  } = useForm<NewCard>({
+    defaultValues: defaultValues,
+    mode: 'onSubmit',
+    reValidateMode: 'onSubmit',
+  });
 
-  constructor(props: FormProps) {
-    super(props);
-    this.formRef = createRef();
+  const handleSendForm: SubmitHandler<NewCard> = (data) => {
+    const blobFiles = URL.createObjectURL((data.file as FileList)[0] as Blob);
+    const value = getValues();
 
-    this.state = {
-      title: { value: '', isError: false },
-      descriprion: { value: '', isError: false },
-      date: { value: '', isError: false },
-      file: { value: '', isError: false },
-      select: { value: '', isError: false },
-      check: { value: '', isError: false },
-      radio: { value: '', isError: false },
-    };
-  }
+    addCard({ ...value, file: blobFiles });
+    showModal(true);
+    reset();
+  };
 
-  handleChange(value: string, field: FormKeys) {
-    this.setState((formState) => ({ ...formState, [field]: { ...formState[field], value } }));
-  }
+  React.useEffect(() => {
+    const subscribe = watch((value) => setDisable(Object.values(value).every((inputs) => !inputs)));
+    return () => subscribe.unsubscribe();
+  }, [watch]);
 
-  validate() {
-    const prevState = this.state;
-
-    const newState = (
-      Object.entries(validateMap) as [FormKeys, (value: string) => boolean][]
-    ).reduce<FormState>((stateAcc, [stateKey, validateFn]) => {
-      const hasError = validateFn(prevState[stateKey].value);
-
-      if (hasError) {
-        const formElement = this.formRef.current!.elements.namedItem(stateKey) as
-          | HTMLTextAreaElement
-          | HTMLInputElement
-          | HTMLSelectElement;
-        formElement && (formElement.value = '');
-      }
-
-      return {
-        ...stateAcc,
-        [stateKey]: {
-          ...prevState[stateKey],
-          isError: hasError,
-        },
-      };
-    }, {} as FormState);
-
-    this.setState(newState);
-
-    return Object.values(newState).every(({ isError }) => !isError);
-  }
-
-  resetForm() {
-    const formElement = this.formRef.current;
-
-    formElement?.reset();
-
-    this.setState((prev) => ({ ...prev, ...initialStateForm }));
-  }
-
-  showModal() {
-    return Object.values(this.state).every(({ isError }) => !isError);
-  }
-
-  handleSendForm(event: MouseEvent<HTMLButtonElement>) {
-    event.preventDefault();
-    const isEmptyErrors = this.validate();
-    if (isEmptyErrors) {
-      const data: NewCard = Object.fromEntries(
-        Object.entries(this.state).map(([key, props]) => {
-          return [key, props.value];
-        })
-      );
-
-      this.props.addCard(data);
-      this.resetForm();
-      this.props.showModal(true);
-    }
-  }
-
-  render(): ReactNode {
-    return (
-      <div className={style.main_form}>
-        <form ref={this.formRef}>
-          <InputText
-            onChange={(value) => this.handleChange(value, FormKeys.TITLE)}
-            validate={!this.state.title.isError}
-          />
-          <TextArea
-            onChange={(value) => this.handleChange(value, FormKeys.DECSRIPTIONS)}
-            validate={!this.state.descriprion.isError}
-          />
-          <InputDate
-            onChange={(value) => this.handleChange(value, FormKeys.DATE)}
-            validate={!this.state.date.isError}
-          />
-          <InputSelect
-            onChange={(value) => this.handleChange(value, FormKeys.SELECT)}
-            validate={!this.state.select.isError}
-          />
-          <InputRadio
-            onChange={(value) => this.handleChange(value, FormKeys.RADIO)}
-            validate={!this.state.radio.isError}
-          />
-          <InputFile
-            onChange={(value) => this.handleChange(value, FormKeys.FILE)}
-            validate={!this.state.file.isError}
-          />
-          <InputCheckbox
-            onChange={(value) => this.handleChange(value, FormKeys.CHECK)}
-            validate={!this.state.check.isError}
-          />
-          <Button
-            onClick={this.handleSendForm.bind(this)}
-            disabled={Object.values(this.state).every(({ value }) => !value)}
-          />
-        </form>
-      </div>
-    );
-  }
-}
+  return (
+    <div className={style.main_form}>
+      <form onSubmit={handleSubmit(handleSendForm)}>
+        <InputText
+          validate={errors.title}
+          register={register(FormKeys.TITLE, {
+            required: VALIDATE_MESSAGE.title,
+            validate: (value) => textValidate(value) || VALIDATE_MESSAGE.title,
+          })}
+        />
+        <TextArea
+          validate={errors.descriprion}
+          register={register(FormKeys.DECSRIPTIONS, {
+            required: VALIDATE_MESSAGE.descriprion,
+            validate: (value) => textDescrValidate(value) || VALIDATE_MESSAGE.descriprion,
+          })}
+        />
+        <InputDate
+          validate={errors.date}
+          register={register(FormKeys.DATE, {
+            required: VALIDATE_MESSAGE.date,
+            validate: (value) => dateValidate(value),
+          })}
+        />
+        <InputSelect
+          validate={errors.select}
+          register={register(FormKeys.SELECT, { required: VALIDATE_MESSAGE.select })}
+        />
+        <InputRadio
+          validate={errors.radio}
+          register={register(FormKeys.RADIO, { required: VALIDATE_MESSAGE.radio })}
+        />
+        <InputFile
+          validate={errors.file}
+          register={register(FormKeys.FILE, { required: VALIDATE_MESSAGE.file })}
+        />
+        <InputCheckbox
+          validate={errors.check}
+          register={register(FormKeys.CHECK, { required: VALIDATE_MESSAGE.check })}
+        />
+        <Button disabled={isDidabled} />
+      </form>
+    </div>
+  );
+};
