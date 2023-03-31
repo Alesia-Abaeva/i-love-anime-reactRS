@@ -13,8 +13,13 @@ describe('Render card items', () => {
   };
 
   it('add items', () => {
-    const { getByText } = render(<CardItem data={data} key={1} />);
+    const { getByText } = render(<CardItem key={1} {...data} />);
     const element = getByText(/Sports flags/i);
+    expect(element).toBeInTheDocument;
+  });
+  it('check date', () => {
+    const { getByText } = render(<CardItem key={1} {...data} />);
+    const element = getByText(/2023-24-03/i);
     expect(element).toBeInTheDocument;
   });
 });
