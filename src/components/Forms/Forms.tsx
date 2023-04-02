@@ -56,14 +56,14 @@ export const Forms: React.FC<FormProps> = ({ addCard, showModal }) => {
           validate={errors.title}
           register={register(FormKeys.TITLE, {
             required: VALIDATE_MESSAGE.title,
-            validate: (value) => textValidate(value) || VALIDATE_MESSAGE.title,
+            validate: (value) => textValidate(value as string) || VALIDATE_MESSAGE.title,
           })}
         />
         <TextArea
           validate={errors.descriprion}
           register={register(FormKeys.DECSRIPTIONS, {
             required: VALIDATE_MESSAGE.descriprion,
-            validate: (value) => textDescrValidate(value) || VALIDATE_MESSAGE.descriprion,
+            validate: (value) => textDescrValidate(value as string) || VALIDATE_MESSAGE.descriprion,
           })}
         />
         <InputDate
