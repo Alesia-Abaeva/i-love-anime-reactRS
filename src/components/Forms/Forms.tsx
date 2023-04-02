@@ -70,7 +70,7 @@ export const Forms: React.FC<FormProps> = ({ addCard, showModal }) => {
           validate={errors.date}
           register={register(FormKeys.DATE, {
             required: VALIDATE_MESSAGE.date,
-            validate: (value) => dateValidate(value),
+            validate: (value) => dateValidate(value as string) || VALIDATE_MESSAGE.date,
           })}
         />
         <InputSelect
