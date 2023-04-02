@@ -42,7 +42,7 @@ describe('Test Form component', () => {
 
   it('file upload', async () => {
     window.URL.createObjectURL = vi.fn();
-    render(<InputFile onChange={() => console.log('changed')} validate={true} />);
+    render(<InputFile />);
     const inputFile = screen.getByLabelText<HTMLInputElement>(/Upload flag/i);
 
     await userEvent.upload(inputFile, file);
