@@ -9,8 +9,8 @@ interface MenuItem {
 }
 
 interface InputProps {
-  onChange: (value: string) => void;
-  validate?: boolean;
+  validate?: import('react-hook-form').FieldError;
+  register?: import('react-hook-form').UseFormRegisterReturn;
 }
 
 interface InputState {

@@ -1,41 +1,23 @@
-import { FormKeys } from '../../../const/validate-form-keys';
-import { Component, createRef, RefObject } from 'react';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
 import styles from './Input.module.scss';
+import { errorMessageTitile, FormKeys, titleForms } from '../../../const';
+import React from 'react';
 
-export class InputCheckbox extends Component<InputProps, InputState> {
-  checkboxInput: RefObject<HTMLInputElement>;
+export const InputCheckbox: React.FC<InputProps> = ({ validate, register }) => {
+  return (
+    <div className={styles.item_input}>
+      <input
+        {...register}
+        type="checkbox"
+        className={`${styles.input_check} ${validate ? styles.error : ''}`}
+        id={FormKeys.CHECK}
+        data-testid={FormKeys.CHECK}
+      />
+      <label htmlFor={FormKeys.CHECK} className={(styles.label_check, styles.input_title)}>
+        {titleForms.check}
+      </label>
 
-  constructor(props: InputProps) {
-    super(props);
-    this.checkboxInput = createRef();
-  }
-
-  handlerChange() {
-    const isCheck = this.checkboxInput.current?.checked ? 'on' : 'off';
-    this.props.onChange(isCheck);
-  }
-
-  render() {
-    return (
-      <div className={styles.item_input}>
-        <input
-          type="checkbox"
-          className={`${styles.input_check} ${!this.props.validate ? styles.error : ''}`}
-          ref={this.checkboxInput}
-          onClick={() => this.handlerChange()}
-          id={FormKeys.CHECK}
-          data-testid={FormKeys.CHECK}
-        />
-        <label htmlFor={FormKeys.CHECK} className={(styles.label_check, styles.input_title)}>
-          I consent to my personal data
-        </label>
-
-        <ErrorMessage
-          validate={this.props.validate}
-          errorMessage="oooops you need to agree with the claims"
-        />
-      </div>
-    );
-  }
-}
+      <ErrorMessage validate={validate} errorMessage={errorMessageTitile.check} />
+    </div>
+  );
+};

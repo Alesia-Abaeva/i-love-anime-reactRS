@@ -5,7 +5,7 @@ export const titleForms: Record<FormKeys, string> = {
   [FormKeys.DATE]: 'Flag creation date',
   [FormKeys.FILE]: 'Upload flag',
   [FormKeys.SELECT]: 'Type flag',
-  [FormKeys.CHECK]: 'Show you name',
+  [FormKeys.CHECK]: 'I consent to my personal data',
   [FormKeys.RADIO]: 'Is the official flag',
   [FormKeys.DECSRIPTIONS]: 'Descriprion of the flag',
 };
