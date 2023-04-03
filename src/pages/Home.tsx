@@ -1,52 +1,48 @@
 import React from 'react';
 import axios from 'axios';
-import { LOCAL_STORAGE_KEYS } from '../const/local-storage';
-import { Search } from '../components/Search/Search';
-
 import { useMount, useUnmount } from '../hooks';
-import { getStoredSearch } from '../utils/get-local';
+import { getStoredSearch, setLocalStorage } from '../utils/get-local';
+import { Search } from '../components/Search/Search';
 import { Animes } from '../components/Countries/Animes';
 import { Pagination } from '../components/Pagination/Pagination';
+import { defaultValueApi, getCurrentPage } from '../utils';
 
 export const Home = () => {
   const [search, setSearch] = React.useState(getStoredSearch);
-  const [countries, setCountries] = React.useState<Animes[]>([]);
+  const [animes, setAnimes] = React.useState<Animes[]>([]);
+  const [page, setPages] = React.useState(1);
 
-  const handleSearchChange = (value: string) => {
-    setSearch(value);
-  };
-
-  const getCountries = async () => {
+  const getCountries = async (page: number, search?: string) => {
     try {
-      const response = await axios.get<Animes[]>(
-        'https://shikimori.one/api/animes?limit=15&page=1&score=8&order=popularity'
-      );
-      setCountries([...countries, ...response.data]);
+      const response = await axios.get<Animes[]>(defaultValueApi(page, search));
+      setAnimes([...response.data]);
     } catch (e) {
       console.log(e);
     }
   };
 
-  const filterCountries = () => {
-    return countries.filter((anime) => {
-      return anime.name.toLowerCase().includes(search.toLowerCase());
-    });
+  const handleSearchChange = (value: string) => {
+    setSearch(value);
+    getCountries(page, value);
+  };
+
+  const handlerChangePage = (direction: string) => {
+    const current = getCurrentPage(direction, page, animes);
+    current && getCountries(current);
+    current && setPages(current);
   };
 
   useMount(() => {
-    getCountries();
+    getCountries(page, search);
   });
 
-  const setLocalStorage = () =>
-    localStorage.setItem(LOCAL_STORAGE_KEYS.INPUT_VALUE, JSON.stringify(search));
-
-  useUnmount(() => setLocalStorage());
+  useUnmount(() => setLocalStorage(search));
 
   return (
     <div>
       <Search value={search} onSearchChange={handleSearchChange} />
-      <Animes data={filterCountries()} />
-      <Pagination />
+      <Animes data={animes} />
+      <Pagination onClickChange={handlerChangePage} />
     </div>
   );
 };
