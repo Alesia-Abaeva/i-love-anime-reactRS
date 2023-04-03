@@ -8,7 +8,7 @@ import { getStoredSearch } from '../utils/get-local';
 
 export const Home = () => {
   const [search, setSearch] = React.useState(getStoredSearch);
-  const [countries, setCountries] = React.useState<CountriesData[]>([]);
+  const [countries, setCountries] = React.useState<Animes[]>([]);
 
   const handleSearchChange = (value: string) => {
     setSearch(value);
@@ -16,7 +16,9 @@ export const Home = () => {
 
   const getCountries = async () => {
     try {
-      const response = await axios.get<CountriesData[]>('https://restcountries.com/v3.1/all');
+      const response = await axios.get<Animes[]>(
+        'https://shikimori.one/api/animes?limit=15&page=1&score=8&order=popularity'
+      );
       setCountries([...countries, ...response.data]);
     } catch (e) {
       console.log(e);
@@ -24,8 +26,8 @@ export const Home = () => {
   };
 
   const filterCountries = () => {
-    return countries.filter((country) => {
-      return country.name.common.toLowerCase().includes(search.toLowerCase());
+    return countries.filter((anime) => {
+      return anime.name.toLowerCase().includes(search.toLowerCase());
     });
   };
 

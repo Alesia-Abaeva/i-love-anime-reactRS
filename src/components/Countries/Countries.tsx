@@ -3,7 +3,7 @@ import { CountryItem } from './CountryItem/CountryItem';
 import styles from './Countries.module.scss';
 
 interface CountriesProps {
-  data: CountriesData[];
+  data: Animes[];
 }
 
 export const Countries: React.FC<CountriesProps> = ({ data }) => {
@@ -11,8 +11,8 @@ export const Countries: React.FC<CountriesProps> = ({ data }) => {
     <div>
       <h2 className={styles.countries_title}>Countries</h2>
       <div className={styles.countries_container}>
-        {data.map((country) => (
-          <CountryItem data={country} key={country.name.common} />
+        {data.map((anime) => (
+          <CountryItem data={anime} key={anime.name} />
         ))}
       </div>
     </div>
