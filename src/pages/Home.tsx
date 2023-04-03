@@ -2,9 +2,11 @@ import React from 'react';
 import axios from 'axios';
 import { LOCAL_STORAGE_KEYS } from '../const/local-storage';
 import { Search } from '../components/Search/Search';
-import { Countries } from '../components/Countries/Countries';
+
 import { useMount, useUnmount } from '../hooks';
 import { getStoredSearch } from '../utils/get-local';
+import { Animes } from '../components/Countries/Animes';
+import { Pagination } from '../components/Pagination/Pagination';
 
 export const Home = () => {
   const [search, setSearch] = React.useState(getStoredSearch);
@@ -43,7 +45,8 @@ export const Home = () => {
   return (
     <div>
       <Search value={search} onSearchChange={handleSearchChange} />
-      <Countries data={filterCountries()} />
+      <Animes data={filterCountries()} />
+      <Pagination />
     </div>
   );
 };

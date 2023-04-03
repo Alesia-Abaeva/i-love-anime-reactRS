@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { CountryItem } from './CountryItem';
+import { AnineItem } from './AnineItem';
 import { describe, it } from 'vitest';
 
 describe('Render data countries', () => {
@@ -87,7 +87,7 @@ describe('Render data countries', () => {
     },
   };
   it('Renders about data', () => {
-    const { getByText } = render(<CountryItem data={data} key={1} />);
+    const { getByText } = render(<AnineItem data={data} key={1} />);
     const element = getByText(/Republic of the Congo/i);
     expect(element).toBeInTheDocument;
   });

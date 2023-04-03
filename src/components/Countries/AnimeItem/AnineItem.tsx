@@ -1,10 +1,10 @@
-import styles from './CountryItem.module.scss';
+import styles from './AnineItem.module.scss';
 
-interface CountriesItemProps {
+interface AnineItemProps {
   data: Animes;
 }
 
-export const CountryItem: React.FC<CountriesItemProps> = ({ data }) => {
+export const AnineItem: React.FC<AnineItemProps> = ({ data }) => {
   return (
     <div className={styles.country_item}>
       <div className={styles.item_img}>

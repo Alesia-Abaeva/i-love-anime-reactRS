@@ -1,0 +1,21 @@
+@import '/src/styles/variables';
+
+.pagination_cnt {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2.5rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  justify-content: center;
+
+  button {
+    @extend %button;
+    width: 5rem;
+    padding: 0.7rem;
+    font-size: 0.9rem;
+
+    &:disabled {
+      background-color: $white-50;
+    }
+  }
+}

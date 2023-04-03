@@ -1,18 +1,5 @@
-.button_form {
-  margin-top: 1rem;
-  text-align: center;
-  width: 10rem;
-  cursor: pointer;
-  border: none;
-  border-radius: 5px;
-  text-decoration: none;
-  color: #141414;
-  padding: 1rem;
-  font-size: 1rem;
-  background-color: #00d9ff9a;
-  margin-bottom: 1rem;
+@import '/src/styles/variables';
 
-  &:disabled {
-    background-color: cadetblue;
-  }
+.button_form {
+  @extend %button;
 }

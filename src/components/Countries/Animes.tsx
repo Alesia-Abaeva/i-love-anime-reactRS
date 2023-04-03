@@ -1,18 +1,19 @@
 import React from 'react';
-import { CountryItem } from './CountryItem/CountryItem';
-import styles from './Countries.module.scss';
 
-interface CountriesProps {
+import styles from './Anines.module.scss';
+import { AnineItem } from './AnimeItem/AnineItem';
+
+interface AnimesProps {
   data: Animes[];
 }
 
-export const Countries: React.FC<CountriesProps> = ({ data }) => {
+export const Animes: React.FC<AnimesProps> = ({ data }) => {
   return (
     <div>
       <h2 className={styles.countries_title}>Countries</h2>
       <div className={styles.countries_container}>
         {data.map((anime) => (
-          <CountryItem data={anime} key={anime.name} />
+          <AnineItem data={anime} key={anime.name} />
         ))}
       </div>
     </div>
