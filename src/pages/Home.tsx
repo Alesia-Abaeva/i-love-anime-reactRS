@@ -6,18 +6,23 @@ import { Search } from '../components/Search/Search';
 import { Animes } from '../components/Countries/Animes';
 import { Pagination } from '../components/Pagination/Pagination';
 import { defaultValueApi, getCurrentPage } from '../utils';
+import { Spinner } from '../components/Spinner/Spinner';
 
 export const Home = () => {
   const [search, setSearch] = React.useState(getStoredSearch);
   const [animes, setAnimes] = React.useState<Animes[]>([]);
   const [page, setPages] = React.useState(1);
+  const [loading, setLoading] = React.useState(false);
 
   const getCountries = async (page: number, search?: string) => {
     try {
+      setLoading(true);
       const response = await axios.get<Animes[]>(defaultValueApi(page, search));
       setAnimes([...response.data]);
     } catch (e) {
       console.log(e);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -41,6 +46,7 @@ export const Home = () => {
   return (
     <div>
       <Search value={search} onSearchChange={handleSearchChange} />
+      {loading && <Spinner />}
       <Animes data={animes} />
       <Pagination onClickChange={handlerChangePage} />
     </div>
