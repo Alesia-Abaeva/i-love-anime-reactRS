@@ -10,9 +10,10 @@
 
   button {
     @extend %button;
-    width: 5rem;
+    width: 9rem;
     padding: 0.7rem;
     font-size: 0.9rem;
+    border-radius: 0px;
 
     &:disabled {
       background-color: $white-50;

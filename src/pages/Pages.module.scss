@@ -1,7 +1,12 @@
 @import '/src/styles/variables';
 
+body {
+  background: $backg-default;
+}
+
 .main_container {
   @extend %main-container;
+  background: $backg-default;
 }
 
 .main_link {
@@ -19,11 +24,13 @@
 }
 
 .form_page {
+  background: $backg-default;
   height: 100%;
   flex-direction: row;
   align-items: start;
   justify-content: flex-start;
   h2 {
+    color: $color-default;
     padding-left: 3rem;
     padding-right: 3rem;
     margin-top: 1rem;
@@ -31,6 +38,7 @@
 }
 
 .home {
+  background: $backg-default;
   .error_title {
     width: 100%;
     display: block;

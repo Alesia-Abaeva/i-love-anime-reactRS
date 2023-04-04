@@ -22,6 +22,8 @@
   outline: none;
   border: 2px solid $background;
   border-radius: 5px;
+  background-color: $color-input-bg;
+  color: $color-btn-text;
 
   &:focus {
     border: 1px solid transparent;

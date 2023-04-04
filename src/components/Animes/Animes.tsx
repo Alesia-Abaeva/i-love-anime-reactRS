@@ -10,7 +10,7 @@ interface AnimesProps {
 export const Animes: React.FC<AnimesProps> = ({ data }) => {
   return (
     <div>
-      <h2 className={styles.countries_title}>Countries</h2>
+      <h2 className={styles.countries_title}>Animes</h2>
       <div className={styles.countries_container}>
         {data.map((anime) => (
           <AnineItem data={anime} key={anime.name} />
