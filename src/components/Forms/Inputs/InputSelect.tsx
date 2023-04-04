@@ -1,6 +1,6 @@
 import styles from './Input.module.scss';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
-import { errorMessageTitile, FormKeys, selectOptions, titleForms } from '../../../const';
+import { FormKeys, selectOptions, titleForms } from '../../../const';
 
 export const InputSelect: React.FC<InputProps> = ({ validate, register }) => {
   return (
@@ -23,7 +23,7 @@ export const InputSelect: React.FC<InputProps> = ({ validate, register }) => {
         })}
       </select>
 
-      <ErrorMessage validate={validate} errorMessage={errorMessageTitile.select} />
+      <ErrorMessage validate={validate} />
     </div>
   );
 };

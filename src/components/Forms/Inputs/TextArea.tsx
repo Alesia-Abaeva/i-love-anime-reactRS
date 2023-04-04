@@ -1,8 +1,7 @@
 import styles from './Input.module.scss';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
-import { errorMessageTitile, FormKeys, titleForms } from '../../../const';
+import { FormKeys, titleForms } from '../../../const';
 import { memo } from 'react';
-import { FieldError } from 'react-hook-form';
 
 export const TextAreaComponent: React.FC<InputProps> = ({ validate, register }) => {
   return (
@@ -16,10 +15,7 @@ export const TextAreaComponent: React.FC<InputProps> = ({ validate, register }) 
         data-testid={FormKeys.DECSRIPTIONS}
         {...register}
       />
-      <ErrorMessage
-        validate={validate as FieldError}
-        errorMessage={errorMessageTitile.descriprion}
-      />
+      <ErrorMessage validate={validate} />
     </div>
   );
 };

@@ -1,5 +1,4 @@
-import { FieldError } from 'react-hook-form';
-import { errorMessageTitile, FormKeys, titleForms } from '../../../const';
+import { FormKeys, titleForms } from '../../../const';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
 import styles from './Input.module.scss';
 
@@ -16,7 +15,7 @@ export const InputText: React.FC<InputProps> = ({ validate, register }) => {
         id={FormKeys.TITLE}
         data-testid={FormKeys.TITLE}
       />
-      <ErrorMessage validate={validate as FieldError} errorMessage={errorMessageTitile.title} />
+      <ErrorMessage validate={validate} />
     </div>
   );
 };

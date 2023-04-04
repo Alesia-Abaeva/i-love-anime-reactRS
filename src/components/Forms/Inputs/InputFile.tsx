@@ -1,6 +1,6 @@
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
 import styles from './Input.module.scss';
-import { errorMessageTitile, FormKeys, titleForms } from '../../../const';
+import { FormKeys, titleForms } from '../../../const';
 
 export const InputFile: React.FC<InputProps> = ({ validate, register }) => {
   return (
@@ -17,7 +17,7 @@ export const InputFile: React.FC<InputProps> = ({ validate, register }) => {
         {...register}
       />
 
-      <ErrorMessage validate={validate} errorMessage={errorMessageTitile.file} />
+      <ErrorMessage validate={validate} />
     </div>
   );
 };

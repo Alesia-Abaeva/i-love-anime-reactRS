@@ -1,6 +1,6 @@
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
 import styles from './Input.module.scss';
-import { errorMessageTitile, FormKeys, titleForms } from '../../../const';
+import { FormKeys, titleForms } from '../../../const';
 import React from 'react';
 
 export const InputCheckbox: React.FC<InputProps> = ({ validate, register }) => {
@@ -17,7 +17,7 @@ export const InputCheckbox: React.FC<InputProps> = ({ validate, register }) => {
         {titleForms.check}
       </label>
 
-      <ErrorMessage validate={validate} errorMessage={errorMessageTitile.check} />
+      <ErrorMessage validate={validate} />
     </div>
   );
 };
