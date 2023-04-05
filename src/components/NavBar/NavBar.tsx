@@ -6,7 +6,9 @@ export const NavBar = () => {
   return (
     <nav className={styles.navbar}>
       <h1 className={styles.navbar_logo}>
-        React Countries Project <i className={styles.logo}></i>
+        I<span>❤</span>
+        Anime
+        {/* <i className={styles.logo}></i> */}
       </h1>
 
       <ul className={styles.navbar_lists}>

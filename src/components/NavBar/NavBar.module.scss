@@ -13,9 +13,18 @@
 }
 
 .navbar_logo {
+  width: 30%;
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
   color: $white;
   font-weight: 400;
   font-size: 1.5rem;
+  font-family: Gang-of-Three;
+
+  span {
+    color: red;
+  }
 }
 
 .logo {
@@ -42,13 +51,4 @@
 
 .nav-links:hover {
   color: $ligth-blue;
-}
-
-.navbar_logo {
-  width: 30%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  flex-direction: row-reverse;
-  gap: 1.5rem;
 }

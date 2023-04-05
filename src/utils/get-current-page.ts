@@ -1,6 +1,6 @@
 import { DIRECTION } from '../const/direction-button';
 
-export const getCurrentPage = (direction: string, page: number, animes: Animes[]) => {
+export const getCurrentPage = <T>(direction: string, page: number, animes: T[]) => {
   let current = 1;
 
   if (direction === DIRECTION.NEXT && animes.length === 15) {

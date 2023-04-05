@@ -2,11 +2,12 @@ import styles from './AnineItem.module.scss';
 
 interface AnineItemProps {
   data: Animes;
+  open: () => void;
 }
 
-export const AnineItem: React.FC<AnineItemProps> = ({ data }) => {
+export const AnineItem: React.FC<AnineItemProps> = ({ data, open }) => {
   return (
-    <div className={styles.country_item}>
+    <div className={styles.country_item} onClick={open}>
       <div className={styles.item_img}>
         <img
           src={`https://shikimori.one${data.image.preview}`}
@@ -15,9 +16,15 @@ export const AnineItem: React.FC<AnineItemProps> = ({ data }) => {
         />
       </div>
       <h3 className={styles.item_name}>{data.name}</h3>
-      <p className={styles.item_data}>Region: {data.released_on}</p>
+      <p>{data.score}</p>
+      {/* TODO: отображать рейтинг определенным цветом */}
+
+      <p>{data.aired_on}</p>
+      {/* TODO: обрезать дату до года */}
+
+      {/* <p className={styles.item_data}>Region: {data.released_on}</p>
       <p className={styles.item_data}>Area: {data.score} sq.m</p>
-      <p className={styles.item_data}>Population: {data.episodes}</p>
+      <p className={styles.item_data}>Population: {data.episodes}</p> */}
     </div>
   );
 };

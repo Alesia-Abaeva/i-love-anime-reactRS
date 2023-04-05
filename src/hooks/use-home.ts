@@ -1,28 +1,16 @@
-import axios, { AxiosError } from 'axios';
 import React from 'react';
 import { defaultValueApi, getCurrentPage, getStoredSearch, setLocalStorage } from '../utils';
+import { useHttp } from './use-http';
 import { useMount } from './use-mount';
 import { useUnmount } from './use-unmount';
 
 export const useHome = () => {
   const [search, setSearch] = React.useState(getStoredSearch);
-  const [animes, setAnimes] = React.useState<Animes[]>([]);
   const [page, setPages] = React.useState(1);
-  const [loading, setLoading] = React.useState(false);
-  const [error, setError] = React.useState('');
+  const { loading, error, data: animes, request } = useHttp<Animes[]>([]);
 
   const getCountries = async (page: number, search?: string) => {
-    try {
-      setError('');
-      setLoading(true);
-      const response = await axios.get<Animes[]>(defaultValueApi(page, search));
-      setAnimes([...response.data]);
-    } catch (e: unknown) {
-      const error = e as AxiosError;
-      setError(error.message);
-    } finally {
-      setLoading(false);
-    }
+    request(defaultValueApi(page, search));
   };
 
   const handleSearchChange = (value: string) => {
@@ -32,8 +20,10 @@ export const useHome = () => {
 
   const handlerChangePage = (direction: string) => {
     const current = getCurrentPage(direction, page, animes);
-    current && getCountries(current);
-    current && setPages(current);
+    if (current) {
+      getCountries(current);
+      setPages(current);
+    }
   };
 
   useMount(() => {
