@@ -37,9 +37,9 @@
   padding: 1rem;
   margin-bottom: 1.5rem;
   outline: none;
-  border: 1px solid rgb(199, 199, 204);
-  border-radius: 5px;
-  background-color: rgba(199, 199, 204, 0.26);
+  border: 1px solid $color-muted;
+  // border-radius: 5px;
+  background-color: $backg-nav;
   transition: all 0.3s ease-in;
 
   &:hover {

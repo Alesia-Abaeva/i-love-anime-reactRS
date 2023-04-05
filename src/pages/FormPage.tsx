@@ -1,7 +1,5 @@
-import { Forms } from '../components/Forms/Forms';
-import { Card } from '../components/Card/Card';
+import { Card, Forms, Modal } from '../components';
 import React from 'react';
-import { Modal } from '../components/Modal/Modal';
 import styles from './Pages.module.scss';
 
 export const FormPage = () => {

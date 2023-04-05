@@ -1,7 +1,6 @@
 @import '/src/styles/variables';
 
 .navbar {
-  // @extend %pd-container;
   padding-left: 6rem;
   padding-right: 6rem;
   background: $backg-nav;
@@ -11,6 +10,8 @@
   align-items: center;
   width: 100%;
   gap: 4rem;
+  font-family: Gang-of-Three;
+  font-weight: 200;
 }
 
 .navbar_logo {
@@ -41,8 +42,15 @@
   list-style-type: none;
   gap: 4rem;
   color: white;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 1.5rem;
+
+  li {
+    a {
+      text-transform: uppercase;
+      // font-family: Gang-of-Three;
+    }
+  }
 }
 
 .active {

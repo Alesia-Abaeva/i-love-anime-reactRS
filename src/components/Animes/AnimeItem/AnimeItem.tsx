@@ -16,15 +16,14 @@ export const AnimeItem: React.FC<AnimeItemProps> = ({ data, open }) => {
         />
       </div>
       <h3 className={styles.item_name}>{data.name}</h3>
-      <p>{data.score}</p>
+      <div className={styles.item_description}>
+        <p>{data.score}</p>
+        <p>{data.aired_on.slice(0, 4)}</p>
+      </div>
+
       {/* TODO: отображать рейтинг определенным цветом */}
 
-      <p>{data.aired_on}</p>
       {/* TODO: обрезать дату до года */}
-
-      {/* <p className={styles.item_data}>Region: {data.released_on}</p>
-      <p className={styles.item_data}>Area: {data.score} sq.m</p>
-      <p className={styles.item_data}>Population: {data.episodes}</p> */}
     </div>
   );
 };

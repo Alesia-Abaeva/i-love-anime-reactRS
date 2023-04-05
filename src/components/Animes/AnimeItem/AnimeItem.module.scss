@@ -9,16 +9,24 @@
 }
 
 .item_name {
-  height: 5rem;
+  text-align: center;
   margin-bottom: 1rem;
   margin-top: 0.4rem;
-  width: 15rem;
+  width: 18rem;
   hyphens: auto;
   -moz-hyphens: auto;
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
+  color: $color-btn-text;
+  font-weight: 300;
 }
 
 .item_data {
   margin-bottom: 0.2rem;
+}
+
+.item_description {
+  display: flex;
+  justify-content: space-between;
+  color: $color-muted;
 }
