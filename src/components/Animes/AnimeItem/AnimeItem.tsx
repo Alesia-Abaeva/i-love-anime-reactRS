@@ -1,11 +1,11 @@
-import styles from './AnineItem.module.scss';
+import styles from './AnimeItem.module.scss';
 
-interface AnineItemProps {
-  data: Animes;
+interface AnimeItemProps {
+  data: AnimeData;
   open: () => void;
 }
 
-export const AnineItem: React.FC<AnineItemProps> = ({ data, open }) => {
+export const AnimeItem: React.FC<AnimeItemProps> = ({ data, open }) => {
   return (
     <div className={styles.country_item} onClick={open}>
       <div className={styles.item_img}>

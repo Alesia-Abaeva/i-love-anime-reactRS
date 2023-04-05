@@ -3,7 +3,7 @@ import styles from './Pages.module.scss';
 
 export const NotFound = () => {
   return (
-    <div className={styles.main_container}>
+    <div className={styles.not_found_page}>
       <h2>Page not found ( ´•︵•` )</h2>
       <Link to="/" className={styles.main_link}>
         main

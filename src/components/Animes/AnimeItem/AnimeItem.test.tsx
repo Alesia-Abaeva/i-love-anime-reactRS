@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { AnineItem } from './AnineItem';
+import { AnimeItem } from './AnimeItem';
 import { describe, it } from 'vitest';
 
 describe('Render data countries', () => {

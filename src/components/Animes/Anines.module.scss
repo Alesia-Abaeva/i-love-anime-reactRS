@@ -1,8 +1,8 @@
 @import '/src/styles/variables';
 
 .countries_container {
-  padding-left: 4rem;
-  padding-right: 4rem;
+  padding-left: 2rem;
+  padding-top: 2rem;
   display: flex;
   gap: 1.5rem;
   overflow: hidden;
@@ -10,7 +10,6 @@
 }
 
 .countries_title {
+  padding-left: 2rem;
   color: $color-default;
-  padding-left: 4rem;
-  padding-right: 4rem;
 }

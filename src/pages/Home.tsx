@@ -12,7 +12,7 @@ export const Home = () => {
   const { openModal, closeModal, modal } = useModal();
 
   return (
-    <div className={styles.home}>
+    <main className={styles.home_page}>
       <Search value={search} onSearchChange={handleSearchChange} />
       {loading && <Spinner />}
       {error && <ErrorMessage errorMessage={error} />}
@@ -21,6 +21,6 @@ export const Home = () => {
       <Pagination onClickChange={handlerChangePage} />
 
       {modal && <Modal onClose={closeModal} title={'ANIME'}></Modal>}
-    </div>
+    </main>
   );
 };

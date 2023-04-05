@@ -50,7 +50,7 @@ export const Forms: React.FC<FormProps> = ({ addCard, showModal }) => {
   }, [watch]);
 
   return (
-    <div className={style.main_form}>
+    <div className={style.form_container}>
       <form onSubmit={handleSubmit(handleSendForm)}>
         <InputText
           validate={errors.title}

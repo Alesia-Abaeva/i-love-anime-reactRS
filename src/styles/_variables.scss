@@ -2,8 +2,8 @@
 @import '/src/styles/fonts';
 
 %pd-container {
-  padding-left: 3rem;
-  padding-right: 3rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
 
 %main-container {
@@ -28,7 +28,7 @@
 
   &:focus {
     border: 1px solid transparent;
-    box-shadow: 0 0 0 1px $ligth-blue;
+    box-shadow: 0 0 0 1px;
   }
 }
 

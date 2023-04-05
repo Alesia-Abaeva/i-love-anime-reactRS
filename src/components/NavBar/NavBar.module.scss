@@ -1,14 +1,15 @@
 @import '/src/styles/variables';
 
 .navbar {
+  // @extend %pd-container;
+  padding-left: 6rem;
+  padding-right: 6rem;
   background: $backg-nav;
   height: 80px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  padding-left: 3rem;
-  padding-right: 3rem;
   gap: 4rem;
 }
 
@@ -45,10 +46,10 @@
 }
 
 .active {
-  color: $ligth-blue;
+  color: $light-blue;
   text-decoration: underline;
 }
 
 .nav-links:hover {
-  color: $ligth-blue;
+  color: $light-blue;
 }

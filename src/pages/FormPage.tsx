@@ -19,8 +19,8 @@ export const FormPage = () => {
   };
 
   return (
-    <div className={`${styles.main_container} ${styles.form_page}`}>
-      <div>
+    <div className={styles.form_page}>
+      <div className={styles.form_page_cnt}>
         <h2>Add another flag</h2>
         <Forms addCard={addCard} showModal={showModal} />
       </div>

@@ -4,9 +4,48 @@ body {
   background: $backg-default;
 }
 
-.main_container {
+.not_found_page {
   @extend %main-container;
+  @extend %pd-container;
   background: $backg-default;
+}
+
+.form_page {
+  @extend %main-container;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  background: $backg-default;
+  height: 100%;
+  flex-direction: row;
+  align-items: start;
+  justify-content: flex-start;
+  gap: 3rem;
+
+  h2 {
+    font-size: 1.5rem;
+    color: $color-default;
+    margin-top: 1rem;
+  }
+
+  .form_page_cnt {
+    margin-top: 1rem;
+  }
+}
+
+.home_page {
+  background: $backg-default;
+  @extend %pd-container;
+  .error_title {
+    width: 100%;
+    display: block;
+    font-size: 1.5rem;
+    color: black;
+    font-style: normal;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    height: auto;
+    text-align: center;
+  }
 }
 
 .main_link {
@@ -21,33 +60,4 @@ body {
   padding: 1rem;
   font-size: 1rem;
   background-color: $blue;
-}
-
-.form_page {
-  background: $backg-default;
-  height: 100%;
-  flex-direction: row;
-  align-items: start;
-  justify-content: flex-start;
-  h2 {
-    color: $color-default;
-    padding-left: 3rem;
-    padding-right: 3rem;
-    margin-top: 1rem;
-  }
-}
-
-.home {
-  background: $backg-default;
-  .error_title {
-    width: 100%;
-    display: block;
-    font-size: 1.5rem;
-    color: black;
-    font-style: normal;
-    padding-left: 4rem;
-    padding-right: 4rem;
-    height: auto;
-    text-align: center;
-  }
 }

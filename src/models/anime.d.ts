@@ -1,4 +1,4 @@
-interface Animes {
+interface AnimeData {
   id: number;
   name: string;
   russian: string;

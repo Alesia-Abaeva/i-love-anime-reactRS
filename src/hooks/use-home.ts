@@ -7,7 +7,7 @@ import { useUnmount } from './use-unmount';
 export const useHome = () => {
   const [search, setSearch] = React.useState(getStoredSearch);
   const [page, setPages] = React.useState(1);
-  const { loading, error, data: animes, request } = useHttp<Animes[]>([]);
+  const { loading, error, data: animes, request } = useHttp<AnimeData[]>([]);
 
   const getCountries = async (page: number, search?: string) => {
     request(defaultValueApi(page, search));

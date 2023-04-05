@@ -1,4 +1,3 @@
-import { AnineItem } from '../AnimeItem/AnineItem';
 import styles from './AnimeData.module.scss';
 
 export const AnimeData = () => {
