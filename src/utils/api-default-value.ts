@@ -4,4 +4,8 @@ export const defaultValueApi = (page: number, search?: string) => {
   }&order=popularity${search ? `&search=${search}` : ''}`;
 };
 
+export const idRequest = (id: number | string) => {
+  return `https://shikimori.one/api/animes/${id}`;
+};
+
 // &rating=r

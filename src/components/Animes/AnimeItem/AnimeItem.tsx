@@ -1,24 +1,26 @@
 import styles from './AnimeItem.module.scss';
 
 interface AnimeItemProps {
-  data: AnimeData;
-  open: () => void;
+  data: AnimeData | undefined;
+  open: (id?: string | number) => void;
 }
 
 export const AnimeItem: React.FC<AnimeItemProps> = ({ data, open }) => {
   return (
-    <div className={styles.country_item} onClick={open}>
+    <div className={styles.country_item} onClick={() => open(data?.id)}>
       <div className={styles.item_img}>
         <img
-          src={`https://shikimori.one${data.image.preview}`}
-          alt={data.name}
+          src={`https://shikimori.one${data?.image.preview}`}
+          alt={data?.name}
           className={styles.img}
         />
       </div>
-      <h3 className={styles.item_name}>{data.name}</h3>
+      <h3 className={styles.item_name}>{data?.name}</h3>
+      {/* <p className={styles.item_name_ru}>{data?.russian}</p> */}
+
       <div className={styles.item_description}>
-        <p>{data.score}</p>
-        <p>{data.aired_on.slice(0, 4)}</p>
+        <p>{data?.score}</p>
+        <p>{data?.aired_on.slice(0, 4)}</p>
       </div>
 
       {/* TODO: отображать рейтинг определенным цветом */}

@@ -1,10 +1,10 @@
 import axios, { AxiosError } from 'axios';
 import React from 'react';
 
-export const useHttp = <T>(initialData: T) => {
+export const useHttp = <T>(initialData?: T) => {
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState<null | string>(null);
-  const [data, setData] = React.useState<T>(initialData);
+  const [data, setData] = React.useState<T | undefined>(initialData);
 
   const request = React.useCallback(async (url: string) => {
     try {

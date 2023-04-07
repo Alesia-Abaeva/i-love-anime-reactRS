@@ -1,10 +1,17 @@
 import styles from './Pages.module.scss';
 import { useHome, useModal } from '../hooks';
-import { Animes, ErrorMessage, Modal, Pagination, Search, Spinner } from '../components';
+import { AnimeData, Animes, ErrorMessage, Modal, Pagination, Search, Spinner } from '../components';
+import { useState } from 'react';
 
 export const Home = () => {
   const { animes, loading, error, search, handleSearchChange, handlerChangePage } = useHome();
   const { openModal, closeModal, modal } = useModal();
+  const [clickedData, setClickedData] = useState<null | string>(null);
+
+  const handlerClickedData = (id?: string) => {
+    openModal();
+    setClickedData(id as string);
+  };
 
   return (
     <main className={styles.home_page}>
@@ -13,10 +20,14 @@ export const Home = () => {
       {loading && <Spinner />}
       {error && <ErrorMessage errorMessage={error} />}
 
-      <Animes data={animes} open={openModal} />
+      <Animes data={animes} open={handlerClickedData} />
       <Pagination onClickChange={handlerChangePage} />
 
-      {modal && <Modal onClose={closeModal} title={'ANIME'}></Modal>}
+      {modal && (
+        <Modal onClose={closeModal} title={'ANIME'}>
+          <AnimeData id={clickedData} />
+        </Modal>
+      )}
     </main>
   );
 };

@@ -10,12 +10,37 @@
 }
 
 .modal_container {
-  position: absolute;
-  top: 40%;
-  left: 45%;
-  width: 20rem;
-  padding: 2rem;
-  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100% - 1rem);
+  position: relative;
+  width: auto;
+  margin: 0.5rem;
+  pointer-events: none;
+  max-width: 70%;
+  margin: 1.75rem auto;
+  transition: transform 0.3s ease-out;
+  overflow: hidden;
+}
+
+.modal_wrapper {
+  scroll-behavior: smooth;
+  padding: 1rem;
+  pointer-events: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1000px;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  outline: 0;
+  overflow-y: auto;
+
   h1 {
     text-align: center;
     font-size: 1rem;

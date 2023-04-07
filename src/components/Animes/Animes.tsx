@@ -4,7 +4,7 @@ import styles from './Anines.module.scss';
 import { AnimeItem } from './AnimeItem/AnimeItem';
 
 interface AnimesProps {
-  data: AnimeData[];
+  data: AnimeData[] | undefined;
   open: () => void;
 }
 
@@ -13,7 +13,7 @@ export const Animes: React.FC<AnimesProps> = ({ data, open }) => {
     <div>
       <h2 className={styles.countries_title}>Animes</h2>
       <div className={styles.countries_container}>
-        {data.map((anime) => (
+        {data?.map((anime) => (
           <AnimeItem data={anime} key={anime.id} open={open} />
         ))}
       </div>

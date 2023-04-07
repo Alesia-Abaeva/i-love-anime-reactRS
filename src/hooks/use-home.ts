@@ -19,7 +19,7 @@ export const useHome = () => {
   };
 
   const handlerChangePage = (direction: string) => {
-    const current = getCurrentPage(direction, page, animes);
+    const current = getCurrentPage(direction, page, animes as AnimeData[]);
     if (current) {
       getCountries(current);
       setPages(current);
