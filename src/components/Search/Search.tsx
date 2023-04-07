@@ -1,4 +1,4 @@
-import img from '../../assets/search.svg';
+import img from '../../assets/icon/search.svg';
 import style from './Search.module.scss';
 
 interface SearchProps {

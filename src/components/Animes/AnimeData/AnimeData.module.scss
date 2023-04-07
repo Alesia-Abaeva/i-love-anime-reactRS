@@ -36,10 +36,8 @@
 
 .right_side {
   padding: 1.3rem;
+  width: 100%;
 
-  h3 {
-    margin-bottom: 1rem;
-  }
   .b-text_with_paragraphs {
     font-size: 0.9rem;
     margin-bottom: 1rem;
@@ -53,10 +51,40 @@
 
   p {
     font-size: 0.9rem;
-    padding-bottom: 0.4rem;
+    margin-bottom: 0.4rem;
 
     span {
       font-weight: bold;
+    }
+  }
+}
+
+.anime_name {
+  margin-bottom: 1rem;
+}
+
+.anime_loading {
+  .left_side {
+    .img_cnt {
+      @extend %is_loading;
+    }
+  }
+
+  .right_side {
+    p {
+      min-height: 0.9rem;
+      @extend %is_loading;
+      animation-delay: 0.05s;
+    }
+
+    .b-text_with_paragraphs {
+      min-height: 10rem;
+      @extend %is_loading;
+      animation-delay: 0.06s;
+    }
+
+    .anime_descr {
+      height: 10rem;
     }
   }
 }

@@ -38,7 +38,6 @@
   margin-bottom: 1.5rem;
   outline: none;
   border: 1px solid $color-muted;
-  // border-radius: 5px;
   background-color: $backg-nav;
   transition: all 0.3s ease-in;
 
@@ -59,10 +58,30 @@
   color: #141414;
   padding: 1rem;
   font-size: 1rem;
-  background-color: $blue;
+  background-color: $light-blue;
   margin-bottom: 1rem;
 
   &:disabled {
     background-color: $dark-blue;
+  }
+}
+
+%is_loading {
+  background-color: #ededed;
+  background: linear-gradient(
+      100deg,
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 255, 255, 0) 60%
+    )
+    #ededed;
+  background-size: 200% 100%;
+  background-position-x: 180%;
+  animation: 1s loading ease-in-out infinite;
+}
+
+@keyframes loading {
+  to {
+    background-position-x: -20%;
   }
 }
