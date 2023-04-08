@@ -66,25 +66,29 @@ export const Forms: React.FC<FormProps> = ({ addCard, showModal }) => {
             validate: (value) => textDescrValidate(value as string) || VALIDATE_MESSAGE.description,
           })}
         />
-        <InputDate
-          validate={errors.date}
-          register={register(FormKeys.DATE, {
-            required: VALIDATE_MESSAGE.date,
-            validate: (value) => dateValidate(value as string) || VALIDATE_MESSAGE.date,
-          })}
-        />
         <InputSelect
           validate={errors.select}
           register={register(FormKeys.SELECT, { required: VALIDATE_MESSAGE.select })}
         />
+        <div className={style.form_wrapper_date}>
+          <InputDate
+            validate={errors.date}
+            register={register(FormKeys.DATE, {
+              required: VALIDATE_MESSAGE.date,
+              validate: (value) => dateValidate(value as string) || VALIDATE_MESSAGE.date,
+            })}
+          />
+          <InputFile
+            validate={errors.file}
+            register={register(FormKeys.FILE, { required: VALIDATE_MESSAGE.file })}
+          />
+        </div>
+
         <InputRadio
           validate={errors.radio}
           register={register(FormKeys.RADIO, { required: VALIDATE_MESSAGE.radio })}
         />
-        <InputFile
-          validate={errors.file}
-          register={register(FormKeys.FILE, { required: VALIDATE_MESSAGE.file })}
-        />
+
         <InputCheckbox
           validate={errors.check}
           register={register(FormKeys.CHECK, { required: VALIDATE_MESSAGE.check })}

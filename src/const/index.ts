@@ -5,3 +5,4 @@ export * from './menu-items';
 export * from './select-options';
 export * from './title-forms';
 export * from './validate-form-keys';
+export * from './page-title';

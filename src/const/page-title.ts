@@ -1,5 +1,5 @@
 export const TITLE = {
   main: 'Anime',
-  form: 'Add another flag',
+  form: 'Add new character',
   404: 'Page not found ( ´•︵•` )',
 } as const;

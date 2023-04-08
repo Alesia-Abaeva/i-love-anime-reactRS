@@ -5,7 +5,7 @@ import React from 'react';
 
 export const InputRadio: React.FC<InputProps> = ({ validate, register }) => {
   return (
-    <div className={styles.item_input}>
+    <div className={`${styles.item_input} ${styles.input_colum}`}>
       <h3 className={styles.input_title}>{titleForms.radio}</h3>
       <div className={styles.radio_container}>
         <input

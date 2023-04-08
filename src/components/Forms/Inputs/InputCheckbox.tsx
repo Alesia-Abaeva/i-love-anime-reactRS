@@ -5,7 +5,7 @@ import React from 'react';
 
 export const InputCheckbox: React.FC<InputProps> = ({ validate, register }) => {
   return (
-    <div className={styles.item_input}>
+    <div className={`${styles.item_input} ${styles.item_check}`}>
       <input
         {...register}
         type="checkbox"
