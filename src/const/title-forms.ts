@@ -1,4 +1,4 @@
-import { FormKeys } from './validate-form-keys';
+import { FormKeys } from './form-keys';
 
 export const titleForms: Record<FormKeys, string> = {
   [FormKeys.TITLE]: 'character name',

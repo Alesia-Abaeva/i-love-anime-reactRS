@@ -1,4 +1,4 @@
-import { FormKeys } from './validate-form-keys';
+import { FormKeys } from './form-keys';
 
 export const VALIDATE_MESSAGE: Record<FormKeys, string> = {
   [FormKeys.TITLE]: 'the name must be more than 2 characters',

@@ -1,7 +1,7 @@
 import userEvent from '@testing-library/user-event';
 import { render, screen } from '@testing-library/react';
 import { describe, it, vi } from 'vitest';
-import { FormKeys } from '../../const/validate-form-keys';
+import { FormKeys } from '../../const/form-keys';
 import { Forms } from './Forms';
 import { InputFile } from './Inputs/InputFile';
 

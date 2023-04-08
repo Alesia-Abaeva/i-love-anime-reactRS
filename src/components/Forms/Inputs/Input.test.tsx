@@ -2,8 +2,9 @@ import { describe, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { InputText } from './InputText';
-import { FormKeys } from '../../../const/validate-form-keys';
+
 import { FieldError } from 'react-hook-form';
+import { FormKeys } from '../../../const';
 
 describe('Test Input components', () => {
   const inputValue = 'banana';
