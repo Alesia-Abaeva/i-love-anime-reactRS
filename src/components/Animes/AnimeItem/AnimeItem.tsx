@@ -16,7 +16,6 @@ export const AnimeItem: React.FC<AnimeItemProps> = ({ data, open }) => {
         />
       </div>
       <h3 className={styles.item_name}>{data?.name}</h3>
-      {/* <p className={styles.item_name_ru}>{data?.russian}</p> */}
 
       <div className={styles.item_description}>
         <p>{data?.score}</p>

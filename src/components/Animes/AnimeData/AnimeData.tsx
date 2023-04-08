@@ -9,9 +9,7 @@ interface AnimeDataProps {
 }
 
 export const AnimeData: React.FC<AnimeDataProps> = ({ id }) => {
-  const { loading, error, data, request } = useHttp<AnimeIdData>();
-
-  // const { name, image } = data as AnimeIdData;
+  const { loading, data, request } = useHttp<AnimeIdData>();
 
   console.log(data, id);
 

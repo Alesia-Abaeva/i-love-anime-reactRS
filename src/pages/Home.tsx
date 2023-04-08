@@ -1,12 +1,12 @@
 import styles from './Pages.module.scss';
 import { useHome, useModal } from '../hooks';
 import { AnimeData, Animes, ErrorMessage, Modal, Pagination, Search, Spinner } from '../components';
-import { useState } from 'react';
+import React from 'react';
 
 export const Home = () => {
   const { animes, loading, error, search, handleSearchChange, handlerChangePage } = useHome();
   const { openModal, closeModal, modal } = useModal();
-  const [clickedData, setClickedData] = useState<null | string>(null);
+  const [clickedData, setClickedData] = React.useState<null | string>(null);
 
   const handlerClickedData = (id?: string) => {
     openModal();
