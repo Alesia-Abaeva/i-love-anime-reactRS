@@ -7,12 +7,13 @@ import { TITLE } from '../../const/page-title';
 interface AnimesProps {
   data: AnimeData[] | undefined;
   open: () => void;
+  loading: boolean;
 }
 
-export const Animes: React.FC<AnimesProps> = ({ data, open }) => {
+export const Animes: React.FC<AnimesProps> = ({ data, open, loading }) => {
   return (
     <div>
-      <h2 className={styles.countries_title}>{TITLE.main}</h2>
+      {!loading && <h2 className={styles.countries_title}>{TITLE.main}</h2>}
       <div className={styles.countries_container}>
         {data?.map((anime) => (
           <AnimeItem data={anime} key={anime.id} open={open} />

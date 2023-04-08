@@ -13,7 +13,7 @@ export enum FormKeys {
   SELECT = 'select',
   CHECK = 'check',
   RADIO = 'radio',
-  DECSRIPTIONS = 'descriprion',
+  DESCRIPTIONS = 'description',
 }
 
 export const validateMap: Record<FormKeys, (value: string) => boolean> = {
@@ -23,5 +23,5 @@ export const validateMap: Record<FormKeys, (value: string) => boolean> = {
   [FormKeys.SELECT]: fileValidate,
   [FormKeys.CHECK]: agreeValidate,
   [FormKeys.RADIO]: fileValidate,
-  [FormKeys.DECSRIPTIONS]: textDescrValidate,
+  [FormKeys.DESCRIPTIONS]: textDescrValidate,
 };

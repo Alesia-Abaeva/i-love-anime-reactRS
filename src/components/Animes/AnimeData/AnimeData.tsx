@@ -11,8 +11,6 @@ interface AnimeDataProps {
 export const AnimeData: React.FC<AnimeDataProps> = ({ id }) => {
   const { loading, data, request } = useHttp<AnimeIdData>();
 
-  console.log(data, id);
-
   useMount(() => {
     request(idRequest(id as string));
   });

@@ -20,8 +20,8 @@ export const Home = () => {
       {loading && <Spinner />}
       {error && <ErrorMessage errorMessage={error} />}
 
-      <Animes data={animes} open={handlerClickedData} />
-      <Pagination onClickChange={handlerChangePage} />
+      <Animes data={animes} open={handlerClickedData} loading={loading} />
+      {!loading && !error && <Pagination onClickChange={handlerChangePage} />}
 
       {modal && (
         <Modal onClose={closeModal} title={'ANIME'}>

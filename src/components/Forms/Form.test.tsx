@@ -18,7 +18,7 @@ describe('Test Form component', () => {
 
   it('check input text area', async () => {
     render(<Forms addCard={addCard} showModal={showModal} />);
-    const inputDesc = screen.getByTestId<HTMLInputElement>(FormKeys.DECSRIPTIONS);
+    const inputDesc = screen.getByTestId<HTMLInputElement>(FormKeys.DESCRIPTIONS);
 
     await userEvent.type(inputDesc, descriptions);
     expect(inputDesc.value).toBe(descriptions);
@@ -52,7 +52,7 @@ describe('Test Form component', () => {
   it('check modal open', async () => {
     window.URL.createObjectURL = vi.fn().mockImplementation(() => 'file');
     render(<Forms addCard={addCard} showModal={showModal} />);
-    const inputDesc = screen.getByTestId<HTMLInputElement>(FormKeys.DECSRIPTIONS);
+    const inputDesc = screen.getByTestId<HTMLInputElement>(FormKeys.DESCRIPTIONS);
     const inputTitle = screen.getByTestId<HTMLInputElement>(FormKeys.TITLE);
     const InputSelect = screen.getByTestId<HTMLSelectElement>(FormKeys.SELECT);
     const inputCheck = screen.getByTestId<HTMLInputElement>(FormKeys.CHECK);

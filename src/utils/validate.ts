@@ -11,7 +11,7 @@ export const fileValidate = (value: string): boolean => {
   return value.length <= 0 || !value;
 };
 
-export const agreeValidate = (value: string): boolean => {
+export const agreeValidate = (value?: string): boolean => {
   return value !== 'on' || !value;
 };
 

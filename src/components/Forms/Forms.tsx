@@ -60,10 +60,10 @@ export const Forms: React.FC<FormProps> = ({ addCard, showModal }) => {
           })}
         />
         <TextArea
-          validate={errors.descriprion}
-          register={register(FormKeys.DECSRIPTIONS, {
-            required: VALIDATE_MESSAGE.descriprion,
-            validate: (value) => textDescrValidate(value as string) || VALIDATE_MESSAGE.descriprion,
+          validate={errors.description}
+          register={register(FormKeys.DESCRIPTIONS, {
+            required: VALIDATE_MESSAGE.description,
+            validate: (value) => textDescrValidate(value as string) || VALIDATE_MESSAGE.description,
           })}
         />
         <InputDate
