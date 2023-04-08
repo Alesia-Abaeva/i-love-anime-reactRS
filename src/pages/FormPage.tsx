@@ -1,6 +1,7 @@
 import { Card, Forms, Modal } from '../components';
 import React from 'react';
 import styles from './Pages.module.scss';
+import { TITLE } from '../const/page-title';
 
 export const FormPage = () => {
   const [cards, setCards] = React.useState<NewCard[]>([]);
@@ -19,7 +20,7 @@ export const FormPage = () => {
   return (
     <div className={styles.form_page}>
       <div className={styles.form_page_cnt}>
-        <h2>Add another flag</h2>
+        <h2>{TITLE.form}</h2>
         <Forms addCard={addCard} showModal={showModal} />
       </div>
       <Card data={cards} />

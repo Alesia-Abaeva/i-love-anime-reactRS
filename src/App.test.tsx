@@ -2,6 +2,7 @@ import { describe, it } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { App } from './App';
+import { TITLE } from './const/page-title';
 
 describe('App', () => {
   it('Renders not found is invalid path', () => {
@@ -14,7 +15,7 @@ describe('App', () => {
       screen.getByRole('heading', {
         level: 2,
       })
-    ).toHaveTextContent('Page not found ( ´•︵•` )');
+    ).toHaveTextContent(TITLE[404]);
   });
 
   it('Renders about page', () => {
@@ -40,7 +41,7 @@ describe('App', () => {
       screen.getByRole('heading', {
         level: 2,
       })
-    ).toHaveTextContent('Countries');
+    ).toHaveTextContent(TITLE.main);
   });
   it('Renders form page', () => {
     render(
@@ -52,6 +53,6 @@ describe('App', () => {
       screen.getByRole('heading', {
         level: 2,
       })
-    ).toHaveTextContent('Add another flag');
+    ).toHaveTextContent(TITLE.form);
   });
 });

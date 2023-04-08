@@ -8,7 +8,6 @@ export const NavBar = () => {
       <h1 className={styles.navbar_logo}>
         I<span>❤</span>
         Anime
-        {/* <i className={styles.logo}></i> */}
       </h1>
 
       <ul className={styles.navbar_lists}>
