@@ -4,6 +4,20 @@ body {
   background: $backg-default;
 }
 
+.canvas_page {
+  margin: 10px 0;
+  canvas,
+  img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+    z-index: 1;
+
+    background: #000;
+  }
+}
+
 .not_found_page {
   @extend %main-container;
   @extend %pd-container;
