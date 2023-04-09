@@ -14,19 +14,19 @@ export const CardItem: React.FC<CardItemProps> = (props) => {
       </h3>
       <p className={styles.flag_data}>
         <span>Descriptions:</span>
-        <span className={styles.item_descr}>{props.descriprion}</span>
+        <span className={styles.item_desc}>{props.description}</span>
       </p>
       <p className={styles.flag_data}>
         <span>Data creation:</span>
-        <span className={styles.item_descr}> {props.date}</span>
+        <span className={styles.item_desc}> {props.date}</span>
       </p>
       <p className={styles.flag_data}>
         <span>{titleForms.select}:</span>
-        <span className={styles.flag_descr}> {props.select}</span>
+        <span className={styles.flag_desc}> {props.select}</span>
       </p>
       <p className={styles.flag_data}>
         <span> {titleForms.radio}:</span>
-        <span className={styles.item_descr}>{props.radio}</span>
+        <span className={styles.item_desc}>{props.radio}</span>
       </p>
     </div>
   );
