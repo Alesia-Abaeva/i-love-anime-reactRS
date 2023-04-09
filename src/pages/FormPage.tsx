@@ -25,7 +25,6 @@ export const FormPage = () => {
       </div>
       <Card data={cards} />
       {modal && <Modal onClose={() => showModal(false)} title="Hoooray data send!" />}
-      {/* : заменить константой */}
     </div>
   );
 };

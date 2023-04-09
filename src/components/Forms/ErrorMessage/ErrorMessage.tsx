@@ -1,5 +1,5 @@
 import { FieldError } from 'react-hook-form';
-import { random_img } from '../../../utils/random-background';
+import { randomImg } from '../../../utils';
 import styles from './ErrorMessage.module.scss';
 
 interface ErrorMessageProps {
@@ -9,7 +9,7 @@ interface ErrorMessageProps {
 
 export const ErrorMessage: React.FC<ErrorMessageProps> = ({ validate, errorMessage }) => {
   const backStyle = {
-    backgroundImage: `url('${random_img()}')`,
+    backgroundImage: `url('${randomImg()}')`,
   };
 
   return (

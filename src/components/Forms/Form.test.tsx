@@ -43,7 +43,7 @@ describe('Test Form component', () => {
   it('file upload', async () => {
     window.URL.createObjectURL = vi.fn();
     render(<InputFile />);
-    const inputFile = screen.getByLabelText<HTMLInputElement>(/Upload flag/i);
+    const inputFile = screen.getByLabelText<HTMLInputElement>(/upload image/i);
 
     await userEvent.upload(inputFile, file);
     expect(inputFile.files).toHaveLength(1);

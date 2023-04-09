@@ -11,7 +11,7 @@
 
 ## Screenshot
 
-![image](https://user-images.githubusercontent.com/101274979/226210211-d04cfad6-c15e-4483-8b6b-478d7a207530.png)
+![image](https://user-images.githubusercontent.com/101274979/230780840-fac073d7-353c-4f14-882e-cc245680b6db.png)
 
 ## Tech stack
 
@@ -21,7 +21,7 @@
 
 ## 3-rd party API
 
-API Countries ([shikimori.one](https://shikimori.one/api/doc/1.0/animes/show))
+API Anime ([shikimori.one](https://shikimori.one/api/doc/1.0/animes/show))
 
 ## How run locally
 

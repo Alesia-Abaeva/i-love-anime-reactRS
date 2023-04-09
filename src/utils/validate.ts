@@ -18,5 +18,5 @@ export const agreeValidate = (value?: string): boolean => {
 export const textValidate = (value: string): boolean =>
   !value.trim().length || value.trim().length >= 3 || !value;
 
-export const textDescrValidate = (value: string): boolean =>
+export const textDescValidate = (value: string): boolean =>
   !value.trim().length || value.trim().length >= 10 || !value;

@@ -12,7 +12,7 @@ import {
   TextArea,
 } from './Inputs';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { dateValidate, textDescrValidate, textValidate } from '../../utils/validate';
+import { dateValidate, textDescValidate, textValidate } from '../../utils/validate';
 
 interface FormProps {
   addCard: (card: NewCard) => void;
@@ -20,7 +20,7 @@ interface FormProps {
 }
 
 export const Forms: React.FC<FormProps> = ({ addCard, showModal }) => {
-  const [isDidabled, setDisable] = React.useState(true);
+  const [isDisabled, setDisable] = React.useState(true);
 
   const {
     register,
@@ -63,7 +63,7 @@ export const Forms: React.FC<FormProps> = ({ addCard, showModal }) => {
           validate={errors.description}
           register={register(FormKeys.DESCRIPTIONS, {
             required: VALIDATE_MESSAGE.description,
-            validate: (value) => textDescrValidate(value as string) || VALIDATE_MESSAGE.description,
+            validate: (value) => textDescValidate(value as string) || VALIDATE_MESSAGE.description,
           })}
         />
         <InputSelect
@@ -93,7 +93,7 @@ export const Forms: React.FC<FormProps> = ({ addCard, showModal }) => {
           validate={errors.check}
           register={register(FormKeys.CHECK, { required: VALIDATE_MESSAGE.check })}
         />
-        <Button disabled={isDidabled} />
+        <Button disabled={isDisabled} />
       </form>
     </div>
   );

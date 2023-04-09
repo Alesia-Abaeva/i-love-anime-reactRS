@@ -31,17 +31,17 @@ describe('App', () => {
     ).toHaveTextContent('Alesia-Abaeva');
   });
 
-  it('Renders main page', () => {
+  it('Renders main page', async () => {
     render(
       <MemoryRouter initialEntries={['/']}>
         <App />
       </MemoryRouter>
     );
-    expect(
-      screen.getByRole('heading', {
-        level: 2,
-      })
-    ).toHaveTextContent(TITLE.main);
+
+    const heading = await screen.findByRole('heading', {
+      level: 2,
+    });
+    expect(heading).toHaveTextContent(TITLE.main);
   });
   it('Renders form page', () => {
     render(
