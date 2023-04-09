@@ -21,10 +21,6 @@ export const AnimeItem: React.FC<AnimeItemProps> = ({ data, open }) => {
         <p>{data?.score}</p>
         <p>{data?.aired_on.slice(0, 4)}</p>
       </div>
-
-      {/* TODO: отображать рейтинг определенным цветом */}
-
-      {/* TODO: обрезать дату до года */}
     </div>
   );
 };
