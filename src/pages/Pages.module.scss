@@ -4,18 +4,10 @@ body {
   background: $backg-default;
 }
 
-.canvas_page {
-  margin: 10px 0;
-  canvas,
-  img {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    margin-bottom: 20px;
-    z-index: 1;
-
-    background: #000;
-  }
+.home_page {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .not_found_page {

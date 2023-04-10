@@ -1,14 +1,14 @@
 import { DIRECTION } from '../const/direction-button';
 import { describe } from 'vitest';
 import { getCurrentPage } from './get-current-page';
-import { defaultValueApi } from './api-default-value';
+import { defaultValueApi, itemOnPage } from './api-default-value';
 import { agreeValidate, dateValidate, fileValidate } from './validate';
 
 describe('Test utils', () => {
   const page = 1;
   const array4 = ['t', 'e', 's', 't'];
-  const array15 = [...Array(15).keys()];
-  const array32 = [...Array(32).keys()];
+  const array15 = [...Array(itemOnPage).keys()];
+  const array32 = [...Array(33).keys()];
 
   const yesterday = String(new Date().setDate(new Date().getDate() - 1));
 
@@ -20,10 +20,10 @@ describe('Test utils', () => {
 
   it('check default values api', async () => {
     expect(defaultValueApi(page)).toBe(
-      'https://shikimori.one/api/animes?limit=15&page=1&censored=true&score=8&order=popularity'
+      'https://shikimori.one/api/animes?limit=16&page=1&censored=true&score=8&order=popularity'
     );
     expect(defaultValueApi(page, 'test')).toBe(
-      'https://shikimori.one/api/animes?limit=15&page=1&censored=true&order=popularity&search=test'
+      'https://shikimori.one/api/animes?limit=16&page=1&censored=true&order=popularity&search=test'
     );
   });
 

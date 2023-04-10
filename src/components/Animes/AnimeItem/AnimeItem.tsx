@@ -10,7 +10,7 @@ export const AnimeItem: React.FC<AnimeItemProps> = ({ data, open }) => {
     <div className={styles.country_item} onClick={() => open(data?.id)}>
       <div className={styles.item_img}>
         <img
-          src={`https://shikimori.one${data?.image.preview}`}
+          src={`https://shikimori.one${data?.image.original}`}
           alt={data?.name}
           className={styles.img}
         />
