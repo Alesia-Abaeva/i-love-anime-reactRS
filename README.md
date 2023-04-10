@@ -1,6 +1,6 @@
 # react-rs
 
-[React-rs](https://react-forms-rs.netlify.app/#/forms) application where you can find any anime and find out more information about it. This project was created as a task for the [RS School React course](https://rs.school/react/).
+[React-rs](https://iloveanime-rs.netlify.app/) application where you can find any anime and find out more information about it. This project was created as a task for the [RS School React course](https://rs.school/react/).
 
 ## Key features
 
