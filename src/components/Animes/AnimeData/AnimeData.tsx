@@ -44,7 +44,7 @@ export const AnimeData: React.FC<AnimeDataProps> = ({ id }) => {
           </p>
           <p className={styles.anime_text}>
             <span> Aired on: </span>
-            {data?.aired_on.slice(0, 4)}
+            {data?.aired_on?.slice(0, 4)}
           </p>
           <p className={styles.anime_text}>
             <span> Duration: </span>
