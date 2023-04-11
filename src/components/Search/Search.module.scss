@@ -1,7 +1,8 @@
+@import '/src/styles/variables';
+
 .form_container {
-  width: 90%;
-  margin-left: 4rem;
-  margin-right: 3rem;
+  width: 99%;
+  margin-left: 2rem;
   padding-top: 2rem;
 }
 
@@ -20,6 +21,8 @@
   outline: none;
   border: 2px solid #141414;
   border-radius: 5px;
+  background: $color-input-bg;
+  color: $color-btn-text;
 }
 
 .search__input :focus {

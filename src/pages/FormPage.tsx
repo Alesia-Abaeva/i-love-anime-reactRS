@@ -1,8 +1,7 @@
-import { Forms } from '../components/Forms/Forms';
-import { Card } from '../components/Card/Card';
+import { Card, Forms, Modal } from '../components';
 import React from 'react';
-import { Modal } from '../components/Modal/Modal';
 import styles from './Pages.module.scss';
+import { TITLE } from '../const/page-title';
 
 export const FormPage = () => {
   const [cards, setCards] = React.useState<NewCard[]>([]);
@@ -19,13 +18,13 @@ export const FormPage = () => {
   };
 
   return (
-    <div className={`${styles.main_container} ${styles.form_page}`}>
-      <div>
-        <h2>Add another flag</h2>
+    <div className={styles.form_page}>
+      <div className={styles.form_page_cnt}>
+        <h2>{TITLE.form}</h2>
         <Forms addCard={addCard} showModal={showModal} />
       </div>
       <Card data={cards} />
-      {modal && <Modal onClose={() => showModal(false)} />}
+      {modal && <Modal onClose={() => showModal(false)} title="Hoooray data send!" />}
     </div>
   );
 };

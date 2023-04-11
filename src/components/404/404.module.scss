@@ -1,0 +1,22 @@
+@import '/src/styles/variables';
+
+.canvas_page {
+  h2 {
+    background: $black;
+    color: $color-muted;
+    text-align: center;
+    height: 1.5rem;
+    font-size: 1rem;
+    margin: 0;
+    margin-block-start: 0;
+  }
+
+  canvas,
+  img {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 80px);
+    z-index: 1;
+    background: $black;
+  }
+}

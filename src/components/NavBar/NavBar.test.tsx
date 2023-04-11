@@ -27,6 +27,6 @@ describe('NavBar', () => {
       screen.getByRole('heading', {
         level: 1,
       })
-    ).toHaveTextContent('React Countries Project');
+    ).toHaveTextContent('I❤Anime');
   });
 });

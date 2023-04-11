@@ -1,7 +1,7 @@
 import userEvent from '@testing-library/user-event';
 import { render, screen } from '@testing-library/react';
 import { describe, it, vi } from 'vitest';
-import { FormKeys } from '../../const/validate-form-keys';
+import { FormKeys } from '../../const/form-keys';
 import { Forms } from './Forms';
 import { InputFile } from './Inputs/InputFile';
 
@@ -18,7 +18,7 @@ describe('Test Form component', () => {
 
   it('check input text area', async () => {
     render(<Forms addCard={addCard} showModal={showModal} />);
-    const inputDesc = screen.getByTestId<HTMLInputElement>(FormKeys.DECSRIPTIONS);
+    const inputDesc = screen.getByTestId<HTMLInputElement>(FormKeys.DESCRIPTIONS);
 
     await userEvent.type(inputDesc, descriptions);
     expect(inputDesc.value).toBe(descriptions);
@@ -43,7 +43,7 @@ describe('Test Form component', () => {
   it('file upload', async () => {
     window.URL.createObjectURL = vi.fn();
     render(<InputFile />);
-    const inputFile = screen.getByLabelText<HTMLInputElement>(/Upload flag/i);
+    const inputFile = screen.getByLabelText<HTMLInputElement>(/upload image/i);
 
     await userEvent.upload(inputFile, file);
     expect(inputFile.files).toHaveLength(1);
@@ -52,7 +52,7 @@ describe('Test Form component', () => {
   it('check modal open', async () => {
     window.URL.createObjectURL = vi.fn().mockImplementation(() => 'file');
     render(<Forms addCard={addCard} showModal={showModal} />);
-    const inputDesc = screen.getByTestId<HTMLInputElement>(FormKeys.DECSRIPTIONS);
+    const inputDesc = screen.getByTestId<HTMLInputElement>(FormKeys.DESCRIPTIONS);
     const inputTitle = screen.getByTestId<HTMLInputElement>(FormKeys.TITLE);
     const InputSelect = screen.getByTestId<HTMLSelectElement>(FormKeys.SELECT);
     const inputCheck = screen.getByTestId<HTMLInputElement>(FormKeys.CHECK);

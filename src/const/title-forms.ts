@@ -1,11 +1,11 @@
-import { FormKeys } from './validate-form-keys';
+import { FormKeys } from './form-keys';
 
 export const titleForms: Record<FormKeys, string> = {
-  [FormKeys.TITLE]: 'Name of the flag',
-  [FormKeys.DATE]: 'Flag creation date',
-  [FormKeys.FILE]: 'Upload flag',
-  [FormKeys.SELECT]: 'Type flag',
+  [FormKeys.TITLE]: 'character name',
+  [FormKeys.DATE]: 'date of appearance',
+  [FormKeys.FILE]: 'upload image',
+  [FormKeys.SELECT]: 'type of character',
   [FormKeys.CHECK]: 'I consent to my personal data',
-  [FormKeys.RADIO]: 'Is the official flag',
-  [FormKeys.DECSRIPTIONS]: 'Descriprion of the flag',
+  [FormKeys.RADIO]: 'hero is alive',
+  [FormKeys.DESCRIPTIONS]: 'description of the character ',
 };

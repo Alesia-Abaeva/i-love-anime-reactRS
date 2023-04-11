@@ -1,11 +1,11 @@
 import styles from './Input.module.scss';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
-import { errorMessageTitile, FormKeys, titleForms } from '../../../const';
+import { FormKeys, titleForms } from '../../../const';
 import React from 'react';
 
 export const InputRadio: React.FC<InputProps> = ({ validate, register }) => {
   return (
-    <div className={styles.item_input}>
+    <div className={`${styles.item_input} ${styles.input_colum}`}>
       <h3 className={styles.input_title}>{titleForms.radio}</h3>
       <div className={styles.radio_container}>
         <input
@@ -30,7 +30,7 @@ export const InputRadio: React.FC<InputProps> = ({ validate, register }) => {
         <label htmlFor="radio-no">no</label>
       </div>
 
-      <ErrorMessage validate={validate} errorMessage={errorMessageTitile.radio} />
+      <ErrorMessage validate={validate} />
     </div>
   );
 };

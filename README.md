@@ -1,16 +1,17 @@
 # react-rs
 
-[React-rs](https://react-forms-rs.netlify.app/#/forms) is an application for studying flags of different countries Here are all the flags of the world This project was created as a task for the [RS School React course](https://rs.school/react/).
+[React-rs](https://iloveanime-rs.netlify.app/) application where you can find any anime and find out more information about it. This project was created as a task for the [RS School React course](https://rs.school/react/).
 
 ## Key features
 
-- all flags with a description (continent, area, area) are presented on the main page
-- search for countries implement
-- form for add new flag
+- presents anime with description, rating and release date
+- search by anime name
+- pagination on the main page
+- form for adding character information
 
 ## Screenshot
 
-![image](https://user-images.githubusercontent.com/101274979/226210211-d04cfad6-c15e-4483-8b6b-478d7a207530.png)
+![image](https://user-images.githubusercontent.com/101274979/230780840-fac073d7-353c-4f14-882e-cc245680b6db.png)
 
 ## Tech stack
 
@@ -20,7 +21,7 @@
 
 ## 3-rd party API
 
-API Countries ([REST COUNTRIES](https://restcountries.com/))
+API Anime ([shikimori.one](https://shikimori.one/api/doc/1.0/animes/show))
 
 ## How run locally
 

@@ -12,3 +12,13 @@
 .error_active {
   color: red;
 }
+
+.error_img {
+  width: 7rem;
+  height: 7rem;
+  margin: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  // background-image: url('../../../assets/img/err/err_1.jpg');
+}

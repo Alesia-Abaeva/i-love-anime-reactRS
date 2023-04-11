@@ -11,12 +11,12 @@ export const fileValidate = (value: string): boolean => {
   return value.length <= 0 || !value;
 };
 
-export const agreeValidate = (value: string): boolean => {
+export const agreeValidate = (value?: string): boolean => {
   return value !== 'on' || !value;
 };
 
 export const textValidate = (value: string): boolean =>
   !value.trim().length || value.trim().length >= 3 || !value;
 
-export const textDescrValidate = (value: string): boolean =>
+export const textDescValidate = (value: string): boolean =>
   !value.trim().length || value.trim().length >= 10 || !value;

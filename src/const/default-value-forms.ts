@@ -5,5 +5,5 @@ export const defaultValues = {
   select: '',
   check: '',
   radio: '',
-  descriprion: '',
+  description: '',
 };

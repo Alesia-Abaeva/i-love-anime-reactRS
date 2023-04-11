@@ -6,3 +6,6 @@ export const getStoredSearch = () => {
 
   return storedSearch || '';
 };
+
+export const setLocalStorage = (search: string) =>
+  localStorage.setItem(LOCAL_STORAGE_KEYS.INPUT_VALUE, JSON.stringify(search));

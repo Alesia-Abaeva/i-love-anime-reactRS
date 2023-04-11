@@ -5,5 +5,5 @@ interface NewCard {
   select?: string;
   check?: string;
   radio?: string;
-  descriprion?: string;
+  description?: string;
 }

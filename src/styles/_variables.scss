@@ -1,22 +1,9 @@
 @import '/src/styles/colors';
-
-@mixin input($border-color, $box-shadow) {
-  width: 30rem;
-  height: 3rem;
-  padding: 1rem;
-  outline: none;
-  border: 1px solid $border-color;
-  border-radius: 5px;
-
-  &:focus {
-    border: 1px solid transparent;
-    box-shadow: 0 0 0 1px $box-shadow;
-  }
-}
+@import '/src/styles/fonts';
 
 %pd-container {
-  padding-left: 3rem;
-  padding-right: 3rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
 
 %main-container {
@@ -36,10 +23,12 @@
   outline: none;
   border: 2px solid $background;
   border-radius: 5px;
+  background-color: $color-input-bg;
+  color: $color-btn-text;
 
   &:focus {
     border: 1px solid transparent;
-    box-shadow: 0 0 0 1px $ligth-blue;
+    box-shadow: 0 0 0 1px;
   }
 }
 
@@ -48,13 +37,51 @@
   padding: 1rem;
   margin-bottom: 1.5rem;
   outline: none;
-  border: 1px solid rgb(199, 199, 204);
-  border-radius: 5px;
-  background-color: rgba(199, 199, 204, 0.26);
+  border: 1px solid $color-muted;
+  background-color: $backg-nav;
   transition: all 0.3s ease-in;
 
   &:hover {
     scale: 1.09;
     transition: all 0.2s ease-in;
+  }
+}
+
+%button {
+  margin-top: 1rem;
+  text-align: center;
+  width: 10rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #141414;
+  padding: 1rem;
+  font-size: 1rem;
+  background-color: $light-blue;
+  margin-bottom: 1rem;
+
+  &:disabled {
+    background-color: $dark-blue;
+  }
+}
+
+%is_loading {
+  background-color: #ededed;
+  background: linear-gradient(
+      100deg,
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 255, 255, 0) 60%
+    )
+    #ededed;
+  background-size: 200% 100%;
+  background-position-x: 180%;
+  animation: 1s loading ease-in-out infinite;
+}
+
+@keyframes loading {
+  to {
+    background-position-x: -20%;
   }
 }

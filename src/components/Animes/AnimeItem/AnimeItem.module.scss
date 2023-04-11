@@ -1,0 +1,33 @@
+@import '/src/styles/variables';
+.country_item {
+  @extend %item;
+  cursor: pointer;
+}
+
+.img {
+  width: 18rem;
+  height: 28rem;
+}
+
+.item_name {
+  text-align: center;
+  margin-top: 0.4rem;
+  width: 18rem;
+  hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  color: $color-btn-text;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.item_data {
+  margin-bottom: 0.2rem;
+}
+
+.item_description {
+  display: flex;
+  justify-content: space-between;
+  color: $color-muted;
+}

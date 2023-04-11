@@ -5,7 +5,7 @@ import { Modal } from './Modal';
 describe('NavBar', () => {
   const onClose = vi.fn();
   it('Renders navbar title', () => {
-    render(<Modal onClose={onClose} />);
+    render(<Modal onClose={onClose} title="Hoooray data send!" />);
 
     expect(
       screen.getByRole('heading', {

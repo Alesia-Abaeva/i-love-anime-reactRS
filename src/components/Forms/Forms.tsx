@@ -12,7 +12,7 @@ import {
   TextArea,
 } from './Inputs';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { dateValidate, textDescrValidate, textValidate } from '../../utils/validate';
+import { dateValidate, textDescValidate, textValidate } from '../../utils/validate';
 
 interface FormProps {
   addCard: (card: NewCard) => void;
@@ -20,7 +20,7 @@ interface FormProps {
 }
 
 export const Forms: React.FC<FormProps> = ({ addCard, showModal }) => {
-  const [isDidabled, setDisable] = React.useState(true);
+  const [isDisabled, setDisable] = React.useState(true);
 
   const {
     register,
@@ -50,7 +50,7 @@ export const Forms: React.FC<FormProps> = ({ addCard, showModal }) => {
   }, [watch]);
 
   return (
-    <div className={style.main_form}>
+    <div className={style.form_container}>
       <form onSubmit={handleSubmit(handleSendForm)}>
         <InputText
           validate={errors.title}
@@ -60,36 +60,40 @@ export const Forms: React.FC<FormProps> = ({ addCard, showModal }) => {
           })}
         />
         <TextArea
-          validate={errors.descriprion}
-          register={register(FormKeys.DECSRIPTIONS, {
-            required: VALIDATE_MESSAGE.descriprion,
-            validate: (value) => textDescrValidate(value as string) || VALIDATE_MESSAGE.descriprion,
-          })}
-        />
-        <InputDate
-          validate={errors.date}
-          register={register(FormKeys.DATE, {
-            required: VALIDATE_MESSAGE.date,
-            validate: (value) => dateValidate(value as string) || VALIDATE_MESSAGE.date,
+          validate={errors.description}
+          register={register(FormKeys.DESCRIPTIONS, {
+            required: VALIDATE_MESSAGE.description,
+            validate: (value) => textDescValidate(value as string) || VALIDATE_MESSAGE.description,
           })}
         />
         <InputSelect
           validate={errors.select}
           register={register(FormKeys.SELECT, { required: VALIDATE_MESSAGE.select })}
         />
+        <div className={style.form_wrapper_date}>
+          <InputDate
+            validate={errors.date}
+            register={register(FormKeys.DATE, {
+              required: VALIDATE_MESSAGE.date,
+              validate: (value) => dateValidate(value as string) || VALIDATE_MESSAGE.date,
+            })}
+          />
+          <InputFile
+            validate={errors.file}
+            register={register(FormKeys.FILE, { required: VALIDATE_MESSAGE.file })}
+          />
+        </div>
+
         <InputRadio
           validate={errors.radio}
           register={register(FormKeys.RADIO, { required: VALIDATE_MESSAGE.radio })}
         />
-        <InputFile
-          validate={errors.file}
-          register={register(FormKeys.FILE, { required: VALIDATE_MESSAGE.file })}
-        />
+
         <InputCheckbox
           validate={errors.check}
           register={register(FormKeys.CHECK, { required: VALIDATE_MESSAGE.check })}
         />
-        <Button disabled={isDidabled} />
+        <Button disabled={isDisabled} />
       </form>
     </div>
   );

@@ -2,11 +2,12 @@
 
 .main_about {
   @extend %main-container;
+  color: $color-btn-text;
 }
 .about_link {
   margin-top: 1rem;
 
   &:hover {
-    color: $ligth-blue;
+    color: $light-blue;
   }
 }

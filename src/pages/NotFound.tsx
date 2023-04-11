@@ -1,13 +1,14 @@
-import { Link } from 'react-router-dom';
-import styles from './Pages.module.scss';
+import { TITLE } from '../const/page-title';
+import { Page404 } from '../components/404/404';
+import canvas from '../components/404/404.module.scss';
 
 export const NotFound = () => {
   return (
-    <div className={styles.main_container}>
-      <h2>Page not found ( ´•︵•` )</h2>
-      <Link to="/" className={styles.main_link}>
-        main
-      </Link>
-    </div>
+    <>
+      <div className={canvas.canvas_page}>
+        <Page404 />
+        <h2>{TITLE[404]}</h2>
+      </div>
+    </>
   );
 };

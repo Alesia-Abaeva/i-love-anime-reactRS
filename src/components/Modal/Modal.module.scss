@@ -1,23 +1,66 @@
 @import '/src/styles/variables';
 
-.shadow_ovelay {
+.shadow_overlay {
   position: fixed;
-  background-color: rgba(0, 0, 0, 0.374);
+  background-color: rgba(0, 0, 0, 0.581);
   top: 0;
   right: 0;
   left: 0;
   bottom: 0;
+  z-index: 99;
 }
 
 .modal_container {
-  position: absolute;
-  top: 40%;
-  left: 45%;
-  width: 20rem;
-  padding: 2rem;
-  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100% - 1rem);
+  position: relative;
+  width: auto;
+  margin: 0.5rem;
+  pointer-events: none;
+  max-width: 70%;
+  margin: 1.75rem auto;
+  transition: transform 0.3s ease-out;
+  overflow: hidden;
+  z-index: 100;
+}
+
+.modal_wrapper {
+  scroll-behavior: smooth;
+  padding: 1rem;
+  pointer-events: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1000px;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  outline: 0;
+  overflow-y: auto;
+
   h1 {
     text-align: center;
     font-size: 1rem;
   }
+}
+
+.btn_close {
+  box-sizing: content-box;
+  width: 1em;
+  height: 1em;
+  padding: 0.25em 0.25em;
+  color: #000;
+  background: transparent url('../../assets/icon/close.svg') center/1em auto no-repeat;
+  border: 0;
+  border-radius: 0.25rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  cursor: pointer;
 }
