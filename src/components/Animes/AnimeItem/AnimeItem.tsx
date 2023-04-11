@@ -19,7 +19,7 @@ export const AnimeItem: React.FC<AnimeItemProps> = ({ data, open }) => {
 
       <div className={styles.item_description}>
         <p>{data?.score}</p>
-        <p>{data?.aired_on.slice(0, 4)}</p>
+        <p>{data?.aired_on?.slice(0, 4)}</p>
       </div>
     </div>
   );

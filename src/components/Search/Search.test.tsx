@@ -6,7 +6,9 @@ describe('Search', () => {
   it('Renders placeholder text', () => {
     const value = 'test value';
     const onChangeInput = vi.fn();
-    render(<Search value={value} onSearchChange={onChangeInput} />);
-    expect(screen.getByPlaceholderText('Search in the country...'));
+    const handleClick = vi.fn();
+
+    render(<Search value={value} onSearchChange={onChangeInput} handleClick={handleClick} />);
+    expect(screen.getByPlaceholderText('Search in the anime...'));
   });
 });

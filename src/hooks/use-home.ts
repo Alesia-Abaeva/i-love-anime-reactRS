@@ -15,7 +15,13 @@ export const useHome = () => {
 
   const handleSearchChange = (value: string) => {
     setSearch(value);
-    getCountries(page, value);
+  };
+
+  const handleClick = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      getCountries(page, search);
+    }
   };
 
   const handlerChangePage = (direction: string) => {
@@ -32,5 +38,5 @@ export const useHome = () => {
 
   useUnmount(() => setLocalStorage(search));
 
-  return { animes, loading, error, search, handleSearchChange, handlerChangePage };
+  return { animes, loading, error, search, handleSearchChange, handlerChangePage, handleClick };
 };

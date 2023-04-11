@@ -14,7 +14,7 @@ interface AnimeData {
   status: string;
   episodes: number;
   episodes_aired: number;
-  aired_on: string;
+  aired_on?: string;
   released_on: string;
 }
 
