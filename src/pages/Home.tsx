@@ -1,11 +1,45 @@
 import styles from './Pages.module.scss';
-import { useHome, useModal } from '../hooks';
+import { useHttp, useModal, useMount, useUnmount } from '../hooks';
 import { AnimeData, Animes, ErrorMessage, Modal, Pagination, Search, Spinner } from '../components';
 import React from 'react';
+import { useAppDispatch, useAppSelector } from '../hooks/redux';
+import { searchSlice } from '../store/reducers/SearchSlice';
+import { defaultValueApi, getCurrentPage, setLocalStorage } from '../utils';
 
 export const Home = () => {
-  const { animes, loading, error, search, handleSearchChange, handlerChangePage, handleClick } =
-    useHome();
+  const { search } = useAppSelector((state) => state.searchReducer);
+  const { setSearch } = searchSlice.actions;
+  const dispatch = useAppDispatch();
+
+  const [page, setPages] = React.useState(1);
+  const { loading, error, data: animes, request } = useHttp<AnimeData[]>([]);
+
+  const handleSearchChange = (value: string) => dispatch(setSearch(value));
+
+  const getCountries = async (page: number, search?: string) => {
+    request(defaultValueApi(page, search));
+  };
+
+  const handleClick = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      getCountries(page, search);
+    }
+  };
+
+  const handlerChangePage = (direction: string) => {
+    const current = getCurrentPage(direction, page, animes as AnimeData[]);
+    if (current) {
+      getCountries(current);
+      setPages(current);
+    }
+  };
+
+  useMount(() => {
+    getCountries(page, search);
+  });
+
+  useUnmount(() => setLocalStorage(search));
   const { openModal, closeModal, modal } = useModal();
   const [clickedData, setClickedData] = React.useState<null | string>(null);
 
@@ -13,6 +47,8 @@ export const Home = () => {
     openModal();
     setClickedData(id as string);
   };
+
+  // ==============
 
   return (
     <main className={styles.home_page}>
