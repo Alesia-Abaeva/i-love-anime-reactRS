@@ -3,7 +3,6 @@ import React from 'react';
 import styles from './Anines.module.scss';
 import { AnimeItem } from './AnimeItem/AnimeItem';
 import { TITLE } from '../../const/page-title';
-import { ErrorMessage } from '../../components/Forms/ErrorMessage/ErrorMessage';
 
 interface AnimesProps {
   data: AnimeData[] | undefined;
