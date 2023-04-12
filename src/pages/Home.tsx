@@ -12,13 +12,15 @@ export const Home = () => {
   const dispatch = useAppDispatch();
 
   const [page, setPages] = React.useState(1);
+  const { openModal, closeModal, modal } = useModal();
+  const [clickedData, setClickedData] = React.useState<null | string>(null);
   const { loading, error, data: animes, request } = useHttp<AnimeData[]>([]);
-
-  const handleSearchChange = (value: string) => dispatch(setSearch(value));
 
   const getCountries = async (page: number, search?: string) => {
     request(defaultValueApi(page, search));
   };
+
+  const handleSearchChange = (value: string) => dispatch(setSearch(value));
 
   const handleClick = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
@@ -40,8 +42,6 @@ export const Home = () => {
   });
 
   useUnmount(() => setLocalStorage(search));
-  const { openModal, closeModal, modal } = useModal();
-  const [clickedData, setClickedData] = React.useState<null | string>(null);
 
   const handlerClickedData = (id?: string) => {
     openModal();
