@@ -4,6 +4,7 @@ import style from './Search.module.scss';
 interface SearchProps {
   value: string;
   onSearchChange: (value: string) => void;
+  // TODO: переименовать
   handleClick: (e: React.KeyboardEvent<HTMLInputElement>) => void;
 }
 

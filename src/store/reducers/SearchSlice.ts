@@ -1,17 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface SearchState {
-  anime: AnimeData[];
-  isLoading: boolean;
-  error: string | null;
   search: string;
+  searchResults: AnimeData[] | undefined;
 }
 
 const initialState: SearchState = {
-  anime: [],
-  isLoading: false,
-  error: null,
   search: '',
+  searchResults: [],
 };
 
 export const searchSlice = createSlice({
@@ -21,7 +17,16 @@ export const searchSlice = createSlice({
     setSearch(state, action: PayloadAction<string>) {
       state.search = action.payload;
     },
+    setAnime(state, action: PayloadAction<AnimeData[]>) {
+      state.searchResults = action.payload;
+    },
   },
 });
 
-export default searchSlice.reducer;
+const { actions, reducer } = searchSlice;
+
+export const { setSearch, setAnime } = actions;
+
+export default reducer;
+
+// export default searchSlice.reducer;

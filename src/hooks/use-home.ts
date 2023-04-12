@@ -4,6 +4,8 @@ import { useHttp } from './use-http';
 import { useMount } from './use-mount';
 import { useUnmount } from './use-unmount';
 
+// TODO: delete
+
 export const useHome = () => {
   const [search, setSearch] = React.useState(getStoredSearch);
   const [page, setPages] = React.useState(1);
