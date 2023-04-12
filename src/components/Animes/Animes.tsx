@@ -14,7 +14,9 @@ interface AnimesProps {
 export const Animes: React.FC<AnimesProps> = ({ data, open, loading }) => {
   return (
     <div>
-      {!loading && <h2 className={styles.countries_title}>{TITLE.main}</h2>}
+      {!loading && (
+        <h2 className={styles.countries_title}>{data?.length === 0 ? 'not found' : TITLE.main}</h2>
+      )}
       <div className={styles.countries_container}>
         {data?.map((anime) => (
           <AnimeItem data={anime} key={anime.id} open={open} />

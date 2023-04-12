@@ -20,8 +20,6 @@ export const Home = () => {
 
       {loading && <Spinner />}
       {error && <ErrorMessage errorMessage={error} />}
-      {/* {!animes?.length && <ErrorMessage errorMessage="not found" />} */}
-
       <Animes data={animes} open={handlerClickedData} loading={loading} />
       {!loading && !error && !animes && <Pagination onClickChange={handlerChangePage} />}
 
