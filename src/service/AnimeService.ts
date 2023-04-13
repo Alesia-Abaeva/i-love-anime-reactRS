@@ -13,7 +13,7 @@ export const animeAPI = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: ANIME_API_ALL,
   }),
-  tagTypes: ['Anime'],
+  tagTypes: ['Anime', 'AnimeID'],
   endpoints: (builder) => ({
     fetchAllAnime: builder.query<AnimeData[], QueryAnimeApi>({
       query: ({ limit = itemOnPage, page, search }) => ({
@@ -29,7 +29,13 @@ export const animeAPI = createApi({
       }),
       providesTags: ['Anime'],
     }),
+    fetchIDAnime: builder.query<AnimeIdData, number>({
+      query: (id) => ({
+        url: `/animes/${id}`,
+      }),
+      providesTags: ['AnimeID'],
+    }),
   }),
 });
 
-export const { useFetchAllAnimeQuery } = animeAPI;
+export const { useFetchAllAnimeQuery, useFetchIDAnimeQuery } = animeAPI;
