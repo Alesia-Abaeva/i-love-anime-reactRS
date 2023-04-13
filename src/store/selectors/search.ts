@@ -5,8 +5,3 @@ export const searchValueSelector = createSelector(
   rootStateSelector,
   (state) => state.searchReducer.search
 );
-
-export const searchResultSelector = createSelector(
-  rootStateSelector,
-  (state) => state.searchReducer.searchResults
-);

@@ -1,21 +1,16 @@
 import HTMLReactParser from 'html-react-parser';
-import { useMount, useHttp } from '../../../hooks';
-import { idRequest } from '../../../utils';
-import styles from './AnimeData.module.scss';
+import { useFetchIDAnimeQuery } from '../../../service/AnimeService';
 import { AnimeDataLoading } from './AnimeDataLoading';
+import styles from './AnimeData.module.scss';
 
 interface AnimeDataProps {
   id: string | number | null;
 }
 
 export const AnimeData: React.FC<AnimeDataProps> = ({ id }) => {
-  const { loading, data, request } = useHttp<AnimeIdData>();
+  const { data, isLoading } = useFetchIDAnimeQuery(id as string);
 
-  useMount(() => {
-    request(idRequest(id as string));
-  });
-
-  if (loading || !data) {
+  if (isLoading || !data) {
     return (
       <>
         <AnimeDataLoading />

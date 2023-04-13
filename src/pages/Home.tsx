@@ -18,7 +18,6 @@ export const Home = () => {
   const { data: animes, error, isLoading } = useFetchAllAnimeQuery({ page, search });
 
   const [enterSearch, setEnterSearch] = React.useState(search);
-  // TODO: delete this?
 
   const handleSearchChange = (value: string) => setEnterSearch(value);
 

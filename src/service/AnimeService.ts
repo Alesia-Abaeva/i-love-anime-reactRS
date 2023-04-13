@@ -29,7 +29,7 @@ export const animeAPI = createApi({
       }),
       providesTags: ['Anime'],
     }),
-    fetchIDAnime: builder.query<AnimeIdData, number>({
+    fetchIDAnime: builder.query<AnimeIdData, string | null>({
       query: (id) => ({
         url: `/animes/${id}`,
       }),
