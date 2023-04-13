@@ -63,7 +63,7 @@ export const Forms: React.FC<FormProps> = ({ addCard, showModal }) => {
       dispatch(setButtonDisabled(Object.values(value).every((inputs) => !inputs)))
     );
     return () => subscribe.unsubscribe();
-  }, [watch]);
+  }, [watch, dispatch]);
 
   return (
     <div className={style.form_container}>

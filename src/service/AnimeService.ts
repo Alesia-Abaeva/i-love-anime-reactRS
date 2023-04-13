@@ -1,6 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { ANIME_API_ALL } from '../const/api-query';
-import { itemOnPage } from '../utils';
+import { ANIME_API_ALL, ITEM_ON_PAGE } from '../const';
 
 interface QueryAnimeApi {
   limit?: number;
@@ -16,7 +15,7 @@ export const animeAPI = createApi({
   tagTypes: ['Anime', 'AnimeID'],
   endpoints: (builder) => ({
     fetchAllAnime: builder.query<AnimeData[], QueryAnimeApi>({
-      query: ({ limit = itemOnPage, page, search }) => ({
+      query: ({ limit = ITEM_ON_PAGE, page, search }) => ({
         url: '/animes',
         params: {
           limit,

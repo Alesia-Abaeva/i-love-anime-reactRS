@@ -21,7 +21,7 @@ export const Home = () => {
 
   const handleSearchChange = (value: string) => setEnterSearch(value);
 
-  const handleClick = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       e.preventDefault();
       dispatch(setSearch((e.target as HTMLInputElement).value));
@@ -40,7 +40,7 @@ export const Home = () => {
 
   return (
     <main className={styles.home_page}>
-      <Search value={enterSearch} onSearchChange={handleSearchChange} handleClick={handleClick} />
+      <Search value={enterSearch} onSearchChange={handleSearchChange} onKeyDown={handleKeyDown} />
 
       {isLoading && <Spinner />}
       {error && <ErrorMessage errorMessage={'ошибочка'} />}
