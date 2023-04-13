@@ -1,12 +1,13 @@
 import styles from './Pages.module.scss';
 import { useModal } from '../hooks';
-import { AnimeData, Animes, ErrorMessage, Modal, Pagination, Search, Spinner } from '../components';
 import React from 'react';
 import { useAppDispatch, useAppSelector } from '../hooks/redux';
 import { setSearch } from '../store/reducers/SearchSlice';
 import { getCurrentPage } from '../utils';
 import { useFetchAllAnimeQuery } from '../service/AnimeService';
 import { searchValueSelector } from '../store/selectors/search';
+import { REQUEST_ERROR } from '../const';
+import { AnimeData, Animes, ErrorMessage, Modal, Pagination, Search, Spinner } from '../components';
 
 export const Home = () => {
   const [clickedData, setClickedData] = React.useState<null | string>(null);
@@ -43,7 +44,7 @@ export const Home = () => {
       <Search value={enterSearch} onSearchChange={handleSearchChange} onKeyDown={handleKeyDown} />
 
       {isLoading && <Spinner />}
-      {error && <ErrorMessage errorMessage={'ошибочка'} />}
+      {error && <ErrorMessage errorMessage={REQUEST_ERROR} />}
       <Animes data={animes} open={handlerClickedData} loading={isLoading} />
       {!isLoading && !error && !!animes?.length && <Pagination onClickChange={handlerChangePage} />}
 

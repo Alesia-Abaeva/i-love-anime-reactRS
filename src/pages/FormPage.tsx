@@ -1,7 +1,7 @@
 import { Card, Forms, Modal } from '../components';
 import React from 'react';
 import styles from './Pages.module.scss';
-import { TITLE } from '../const/page-title';
+import { TITLE } from '../const';
 
 export const FormPage = () => {
   const [cards, setCards] = React.useState<NewCard[]>([]);

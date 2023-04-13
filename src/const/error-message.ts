@@ -9,3 +9,5 @@ export const VALIDATE_MESSAGE: Record<FormKeys, string> = {
   [FormKeys.RADIO]: 'you have to fill in the field',
   [FormKeys.DESCRIPTIONS]: 'describe a little more (more than 10 characters)',
 };
+
+export const REQUEST_ERROR = 'nothing was found';
