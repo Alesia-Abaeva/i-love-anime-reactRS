@@ -38,8 +38,6 @@ export const Home = () => {
     setClickedData(id as string);
   };
 
-  // ==============
-
   return (
     <main className={styles.home_page}>
       <Search value={enterSearch} onSearchChange={handleSearchChange} handleClick={handleClick} />

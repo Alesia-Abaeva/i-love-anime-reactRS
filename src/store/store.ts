@@ -1,9 +1,11 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { animeAPI } from '../service/AnimeService';
 import searchReducer from '../store/reducers/SearchSlice';
+import formReducer from '../store/reducers/FormSlice';
 
 const rootReducer = combineReducers({
   searchReducer,
+  formReducer,
   [animeAPI.reducerPath]: animeAPI.reducer,
 });
 

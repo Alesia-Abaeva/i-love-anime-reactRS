@@ -23,5 +23,3 @@ const { actions, reducer } = searchSlice;
 export const { setSearch } = actions;
 
 export default reducer;
-
-// export default searchSlice.reducer;
