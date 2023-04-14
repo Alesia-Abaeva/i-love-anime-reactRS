@@ -10,4 +10,7 @@ export const VALIDATE_MESSAGE: Record<FormKeys, string> = {
   [FormKeys.DESCRIPTIONS]: 'describe a little more (more than 10 characters)',
 };
 
-export const REQUEST_ERROR = 'nothing was found';
+export enum REQUEST_ERROR {
+  NOT_FOUND = 'nothing was found',
+  SERVER_ERR = 'server error',
+}

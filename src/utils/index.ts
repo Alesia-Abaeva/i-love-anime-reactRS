@@ -1,3 +1,4 @@
 export * from './get-current-page';
-export * from './get-local';
 export * from './random-background';
+export * from './test-util';
+export * from './validate';

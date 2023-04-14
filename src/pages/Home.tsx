@@ -44,8 +44,8 @@ export const Home = () => {
       <Search value={enterSearch} onSearchChange={handleSearchChange} onKeyDown={handleKeyDown} />
 
       {isLoading && <Spinner />}
-      {error && <ErrorMessage errorMessage={REQUEST_ERROR} />}
       <Animes data={animes} open={handlerClickedData} loading={isLoading} />
+      {error && <ErrorMessage errorMessage={REQUEST_ERROR.SERVER_ERR} />}
       {!isLoading && !error && !!animes?.length && <Pagination onClickChange={handlerChangePage} />}
 
       {modal && (

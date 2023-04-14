@@ -2,6 +2,7 @@ import HTMLReactParser from 'html-react-parser';
 import { useFetchIDAnimeQuery } from '../../../service/AnimeService';
 import { AnimeDataLoading } from './AnimeDataLoading';
 import styles from './AnimeData.module.scss';
+import { ANIME_API } from '../../../const';
 
 interface AnimeDataProps {
   id: string | number | null;
@@ -24,7 +25,7 @@ export const AnimeData: React.FC<AnimeDataProps> = ({ id }) => {
         <div className={styles.left_side}>
           <div className={styles.img_cnt}>
             <img
-              src={`https://shikimori.one${data?.image?.original}`}
+              src={`${ANIME_API}${data?.image?.original}`}
               alt={data?.name}
               className={styles.img}
             />

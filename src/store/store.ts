@@ -1,4 +1,4 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { combineReducers, configureStore, PreloadedState } from '@reduxjs/toolkit';
 import { animeAPI } from '../service/AnimeService';
 import searchReducer from '../store/reducers/SearchSlice';
 import formReducer from '../store/reducers/FormSlice';
@@ -9,10 +9,11 @@ const rootReducer = combineReducers({
   [animeAPI.reducerPath]: animeAPI.reducer,
 });
 
-export const setupStore = () => {
+export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
   return configureStore({
     reducer: rootReducer,
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(animeAPI.middleware),
+    preloadedState,
   });
 };
 
