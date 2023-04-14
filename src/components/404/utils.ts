@@ -51,8 +51,6 @@ export const initEyes = (canvasNode?: HTMLCanvasElement) => {
           new Eye(canvas, 0.5, 0.5, 5.0, 0.1),
         ];
 
-        console.log(eyes);
-
         const startTime = Date.now();
 
         animate({ context, startTime, eyes });
