@@ -9,7 +9,7 @@ import { searchValueSelector } from '../store/selectors/search';
 import { REQUEST_ERROR } from '../const';
 import { AnimeData, Animes, ErrorMessage, Modal, Pagination, Search, Spinner } from '../components';
 
-export const Home = () => {
+export const Home: React.FC = () => {
   const [clickedData, setClickedData] = React.useState<null | string>(null);
   const [page, setPages] = React.useState(1);
   const { openModal, closeModal, modal } = useModal();
