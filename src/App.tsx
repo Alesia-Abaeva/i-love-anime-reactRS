@@ -5,8 +5,19 @@ import { NotFound } from './pages/NotFound';
 import { Route, Routes } from 'react-router-dom';
 import { NavBar } from './components/NavBar/NavBar';
 import { FormPage } from './pages/FormPage';
+import React from 'react';
 
 export const App = () => {
+  // const [isConnect, setConnect] = React.useState(false);
+
+  // React.useEffect(() => {
+  //   setConnect(true);
+  // }, []);
+
+  // if (!isConnect) {
+  //   return null;
+  // }
+
   return (
     <>
       <NavBar />

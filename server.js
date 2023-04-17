@@ -20,7 +20,13 @@ let vite;
 if (!isProduction) {
   const { createServer } = await import('vite');
   vite = await createServer({
-    server: { middlewareMode: true },
+    server: {
+      middlewareMode: true,
+      watch: {
+        usePolling: true,
+        interval: 100,
+      },
+    },
     appType: 'custom',
     base,
   });
@@ -51,14 +57,12 @@ app.use('*', async (req, res) => {
 
     const rendered = await render(url, ssrManifest);
 
-    const html = template
-      .replace(`<!--app-head-->`, rendered.head ?? '')
-      .replace(`<!--app-html-->`, rendered.html ?? '');
+    const html = template.replace(`<!--app-html-->`, rendered ?? '');
 
     res.status(200).set({ 'Content-Type': 'text/html' }).end(html);
   } catch (e) {
     vite?.ssrFixStacktrace(e);
-    console.log(e.stack);
+    // console.log(e.stack);
     res.status(500).end(e.stack);
   }
 });
