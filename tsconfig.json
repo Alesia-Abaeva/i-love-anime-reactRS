@@ -18,6 +18,5 @@
     "baseUrl": "./src",
     "noFallthroughCasesInSwitch": true
   },
-  "include": [".eslintrc.cjs", "src", "vite.config.ts", "server.js"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": [".eslintrc.cjs", "src", "vite.config.ts", "server.js"]
 }

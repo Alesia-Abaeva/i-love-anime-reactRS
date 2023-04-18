@@ -8,14 +8,16 @@ import './index.scss';
 
 const store = setupStore();
 
-export function render(url: string) {
-  return ReactDOMServer.renderToString(
+export function render(url: string, options?: ReactDOMServer.RenderToPipeableStreamOptions) {
+  const stream = ReactDOMServer.renderToPipeableStream(
     <React.StrictMode>
       <Provider store={store}>
         <StaticRouter location={url}>
           <App />
         </StaticRouter>
       </Provider>
-    </React.StrictMode>
+    </React.StrictMode>,
+    options
   );
+  return stream;
 }
