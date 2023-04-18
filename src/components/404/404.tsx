@@ -1,6 +1,6 @@
 import { useMount } from '../../hooks';
 import React from 'react';
-import { DISPLAY_HEIGHT, DISPLAY_WIDTH, initEyes } from './404.helpers';
+import { DISPLAY_HEIGHT, DISPLAY_WIDTH, initEyes } from './utils';
 
 export const Page404 = () => {
   const canvasRef = React.useRef<HTMLCanvasElement | null>(null);
@@ -9,5 +9,7 @@ export const Page404 = () => {
     canvasRef.current && initEyes(canvasRef.current);
   });
 
-  return <canvas ref={canvasRef} width={DISPLAY_WIDTH} height={DISPLAY_HEIGHT} />;
+  return (
+    <canvas data-testid="canvas" ref={canvasRef} width={DISPLAY_WIDTH} height={DISPLAY_HEIGHT} />
+  );
 };

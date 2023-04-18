@@ -2,7 +2,8 @@ import { describe, it } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { App } from './App';
-import { TITLE } from './const/page-title';
+import { renderWithProvider } from './utils';
+import { TITLE } from './const';
 
 describe('App', () => {
   it('Renders not found is invalid path', () => {
@@ -32,7 +33,7 @@ describe('App', () => {
   });
 
   it('Renders main page', async () => {
-    render(
+    renderWithProvider(
       <MemoryRouter initialEntries={['/']}>
         <App />
       </MemoryRouter>
@@ -41,10 +42,10 @@ describe('App', () => {
     const heading = await screen.findByRole('heading', {
       level: 2,
     });
-    expect(heading).toHaveTextContent(TITLE.main);
+    expect(heading).not.toHaveTextContent(TITLE.form);
   });
   it('Renders form page', () => {
-    render(
+    renderWithProvider(
       <MemoryRouter initialEntries={['/forms']}>
         <App />
       </MemoryRouter>

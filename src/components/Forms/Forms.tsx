@@ -13,6 +13,19 @@ import {
 } from './Inputs';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { dateValidate, textDescValidate, textValidate } from '../../utils/validate';
+import {
+  setCheck,
+  setDescription,
+  setDate,
+  setFile,
+  setRadio,
+  setSelect,
+  setTitle,
+  setFormState,
+  setButtonDisabled,
+} from '../../store/reducers/FormSlice';
+import { useAppDispatch, useAppSelector } from '../../hooks/redux';
+import { formValueSelector } from '../../store/selectors/form';
 
 interface FormProps {
   addCard: (card: NewCard) => void;
@@ -20,7 +33,8 @@ interface FormProps {
 }
 
 export const Forms: React.FC<FormProps> = ({ addCard, showModal }) => {
-  const [isDisabled, setDisable] = React.useState(true);
+  const formState1 = useAppSelector(formValueSelector);
+  const dispatch = useAppDispatch();
 
   const {
     register,
@@ -30,7 +44,7 @@ export const Forms: React.FC<FormProps> = ({ addCard, showModal }) => {
     getValues,
     watch,
   } = useForm<NewCard>({
-    defaultValues: defaultValues,
+    defaultValues: formState1,
     mode: 'onSubmit',
     reValidateMode: 'onSubmit',
   });
@@ -38,16 +52,18 @@ export const Forms: React.FC<FormProps> = ({ addCard, showModal }) => {
   const handleSendForm: SubmitHandler<NewCard> = (data) => {
     const blobFiles = URL.createObjectURL((data.file as FileList)[0] as Blob);
     const value = getValues();
-
     addCard({ ...value, file: blobFiles });
     showModal(true);
+    dispatch(setFormState(defaultValues));
     reset();
   };
 
   React.useEffect(() => {
-    const subscribe = watch((value) => setDisable(Object.values(value).every((inputs) => !inputs)));
+    const subscribe = watch((value) =>
+      dispatch(setButtonDisabled(Object.values(value).every((inputs) => !inputs)))
+    );
     return () => subscribe.unsubscribe();
-  }, [watch]);
+  }, [watch, dispatch]);
 
   return (
     <div className={style.form_container}>
@@ -55,6 +71,9 @@ export const Forms: React.FC<FormProps> = ({ addCard, showModal }) => {
         <InputText
           validate={errors.title}
           register={register(FormKeys.TITLE, {
+            onChange: (e) => {
+              dispatch(setTitle(e.target.value));
+            },
             required: VALIDATE_MESSAGE.title,
             validate: (value) => textValidate(value as string) || VALIDATE_MESSAGE.title,
           })}
@@ -62,13 +81,21 @@ export const Forms: React.FC<FormProps> = ({ addCard, showModal }) => {
         <TextArea
           validate={errors.description}
           register={register(FormKeys.DESCRIPTIONS, {
+            onChange: (e) => {
+              dispatch(setDescription(e.target.value));
+            },
             required: VALIDATE_MESSAGE.description,
             validate: (value) => textDescValidate(value as string) || VALIDATE_MESSAGE.description,
           })}
         />
         <InputSelect
           validate={errors.select}
-          register={register(FormKeys.SELECT, { required: VALIDATE_MESSAGE.select })}
+          register={register(FormKeys.SELECT, {
+            required: VALIDATE_MESSAGE.select,
+            onChange: (e) => {
+              dispatch(setSelect(e.target.value));
+            },
+          })}
         />
         <div className={style.form_wrapper_date}>
           <InputDate
@@ -76,24 +103,42 @@ export const Forms: React.FC<FormProps> = ({ addCard, showModal }) => {
             register={register(FormKeys.DATE, {
               required: VALIDATE_MESSAGE.date,
               validate: (value) => dateValidate(value as string) || VALIDATE_MESSAGE.date,
+              onChange: (e) => {
+                dispatch(setDate(e.target.value));
+              },
             })}
           />
           <InputFile
             validate={errors.file}
-            register={register(FormKeys.FILE, { required: VALIDATE_MESSAGE.file })}
+            register={register(FormKeys.FILE, {
+              required: VALIDATE_MESSAGE.file,
+              onChange: (e) => {
+                dispatch(setFile(e.target.value));
+              },
+            })}
           />
         </div>
 
         <InputRadio
           validate={errors.radio}
-          register={register(FormKeys.RADIO, { required: VALIDATE_MESSAGE.radio })}
+          register={register(FormKeys.RADIO, {
+            required: VALIDATE_MESSAGE.radio,
+            onChange: (e) => {
+              dispatch(setRadio(e.target.value));
+            },
+          })}
         />
 
         <InputCheckbox
           validate={errors.check}
-          register={register(FormKeys.CHECK, { required: VALIDATE_MESSAGE.check })}
+          register={register(FormKeys.CHECK, {
+            required: VALIDATE_MESSAGE.check,
+            onChange: (e) => {
+              dispatch(setCheck(e.target.value));
+            },
+          })}
         />
-        <Button disabled={isDisabled} />
+        <Button disabled={formState1.buttonDisabled} />
       </form>
     </div>
   );

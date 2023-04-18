@@ -1,4 +1,4 @@
-export const defaultValues = {
+export const defaultValues: FormState = {
   title: '',
   date: '',
   file: '',
@@ -6,4 +6,6 @@ export const defaultValues = {
   check: '',
   radio: '',
   description: '',
+  buttonDisabled: true,
+  cards: [],
 };

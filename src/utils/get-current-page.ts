@@ -1,10 +1,9 @@
-import { DIRECTION } from '../const/direction-button';
-import { itemOnPage } from './api-default-value';
+import { DIRECTION, ITEM_ON_PAGE } from '../const';
 
 export const getCurrentPage = <T>(direction: string, page: number, animes: T[]) => {
   let current = 1;
 
-  if (direction === DIRECTION.NEXT && animes.length === itemOnPage) {
+  if (direction === DIRECTION.NEXT && animes.length === ITEM_ON_PAGE) {
     current = page + 1;
     return current;
   }

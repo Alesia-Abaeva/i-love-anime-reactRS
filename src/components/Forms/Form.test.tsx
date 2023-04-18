@@ -4,6 +4,7 @@ import { describe, it, vi } from 'vitest';
 import { FormKeys } from '../../const/form-keys';
 import { Forms } from './Forms';
 import { InputFile } from './Inputs/InputFile';
+import { renderWithProvider } from '../../utils/test-util';
 
 describe('Test Form component', () => {
   const addCard = vi.fn();
@@ -17,7 +18,7 @@ describe('Test Form component', () => {
   });
 
   it('check input text area', async () => {
-    render(<Forms addCard={addCard} showModal={showModal} />);
+    renderWithProvider(<Forms addCard={addCard} showModal={showModal} />);
     const inputDesc = screen.getByTestId<HTMLInputElement>(FormKeys.DESCRIPTIONS);
 
     await userEvent.type(inputDesc, descriptions);
@@ -25,7 +26,7 @@ describe('Test Form component', () => {
   });
 
   it('check input date', async () => {
-    render(<Forms addCard={addCard} showModal={showModal} />);
+    renderWithProvider(<Forms addCard={addCard} showModal={showModal} />);
     const inputDate = screen.getByTestId<HTMLInputElement>(FormKeys.DATE);
 
     await userEvent.type(inputDate, '2020-01-02');
@@ -33,7 +34,7 @@ describe('Test Form component', () => {
   });
 
   it('type input checkbox', async () => {
-    render(<Forms addCard={addCard} showModal={showModal} />);
+    renderWithProvider(<Forms addCard={addCard} showModal={showModal} />);
     const inputCheck = screen.getByTestId<HTMLInputElement>(FormKeys.CHECK);
 
     await userEvent.click(inputCheck);
@@ -51,7 +52,7 @@ describe('Test Form component', () => {
 
   it('check modal open', async () => {
     window.URL.createObjectURL = vi.fn().mockImplementation(() => 'file');
-    render(<Forms addCard={addCard} showModal={showModal} />);
+    renderWithProvider(<Forms addCard={addCard} showModal={showModal} />);
     const inputDesc = screen.getByTestId<HTMLInputElement>(FormKeys.DESCRIPTIONS);
     const inputTitle = screen.getByTestId<HTMLInputElement>(FormKeys.TITLE);
     const InputSelect = screen.getByTestId<HTMLSelectElement>(FormKeys.SELECT);

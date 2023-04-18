@@ -1,21 +1,17 @@
 import HTMLReactParser from 'html-react-parser';
-import { useMount, useHttp } from '../../../hooks';
-import { idRequest } from '../../../utils';
-import styles from './AnimeData.module.scss';
+import { useFetchIDAnimeQuery } from '../../../service/AnimeService';
 import { AnimeDataLoading } from './AnimeDataLoading';
+import styles from './AnimeData.module.scss';
+import { ANIME_API } from '../../../const';
 
 interface AnimeDataProps {
   id: string | number | null;
 }
 
 export const AnimeData: React.FC<AnimeDataProps> = ({ id }) => {
-  const { loading, data, request } = useHttp<AnimeIdData>();
+  const { data, isLoading } = useFetchIDAnimeQuery(id as string);
 
-  useMount(() => {
-    request(idRequest(id as string));
-  });
-
-  if (loading || !data) {
+  if (isLoading || !data) {
     return (
       <>
         <AnimeDataLoading />
@@ -29,7 +25,7 @@ export const AnimeData: React.FC<AnimeDataProps> = ({ id }) => {
         <div className={styles.left_side}>
           <div className={styles.img_cnt}>
             <img
-              src={`https://shikimori.one${data?.image?.original}`}
+              src={`${ANIME_API}${data?.image?.original}`}
               alt={data?.name}
               className={styles.img}
             />
