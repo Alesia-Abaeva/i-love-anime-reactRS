@@ -7,4 +7,5 @@ interface FormState {
   radio: string;
   description: string;
   buttonDisabled: boolean;
+  cards: NewCard[];
 }
