@@ -15,6 +15,9 @@ export default defineConfig({
         classNameStrategy: 'non-scoped',
       },
     },
+    // coverage: {
+    //   provider: 'istanbul',
+    // },
   },
   css: {
     modules: {

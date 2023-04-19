@@ -16,7 +16,8 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "baseUrl": "./src",
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "types": ["cypress", "cypress-file-upload"]
   },
   "include": [".eslintrc.cjs", "src", "vite.config.ts", "server.js"]
 }
