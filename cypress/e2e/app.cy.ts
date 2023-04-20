@@ -60,6 +60,10 @@ describe('testing app', () => {
     cy.get('.countries_container .country_item h3')
       .eq(1)
       .should('have.text', 'Kimetsu no Yaiba: Katanakaji no Sato-hen');
+
+    cy.get('[data-testid=search]').clear();
+    cy.get('[data-testid=search]').type('sddadad{enter}');
+    cy.get('.countries_title').should('have.text', 'nothing was found');
   });
 
   it('should add card in form', () => {
