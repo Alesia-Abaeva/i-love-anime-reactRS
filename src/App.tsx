@@ -1,4 +1,3 @@
-/* eslint-disable react/prefer-stateless-function */
 import { AboutUs } from './pages/AboutUs';
 import { Home } from './pages/Home';
 import { NotFound } from './pages/NotFound';
@@ -7,17 +6,7 @@ import { NavBar } from './components/NavBar/NavBar';
 import { FormPage } from './pages/FormPage';
 import React from 'react';
 
-export const App = () => {
-  // const [isConnect, setConnect] = React.useState(false);
-
-  // React.useEffect(() => {
-  //   setConnect(true);
-  // }, []);
-
-  // if (!isConnect) {
-  //   return null;
-  // }
-
+export const App: React.FC = () => {
   return (
     <>
       <NavBar />

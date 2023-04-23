@@ -5,7 +5,7 @@ import { TITLE } from '../const';
 
 export const FormPage = () => {
   const [cards, setCards] = React.useState<NewCard[]>([]);
-  const [modal, setModal] = React.useState<boolean>(false);
+  const [modal, setModal] = React.useState(false);
 
   const addCard = (newCard: NewCard) => setCards([...cards, newCard]);
 

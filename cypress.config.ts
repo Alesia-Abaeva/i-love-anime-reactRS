@@ -1,5 +1,6 @@
 import { defineConfig } from 'cypress';
 import coverage from '@cypress/code-coverage/task';
+import 'whatwg-fetch';
 
 export default defineConfig({
   e2e: {

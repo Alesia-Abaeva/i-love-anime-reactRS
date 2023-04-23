@@ -1,23 +1,20 @@
 import React from 'react';
-import styles from './Anines.module.scss';
+import styles from './Animes.module.scss';
 import { AnimeItem } from './AnimeItem/AnimeItem';
 import { REQUEST_ERROR, TITLE } from '../../const';
-import { SerializedError } from '@reduxjs/toolkit';
-import { FetchBaseQueryError } from '@reduxjs/toolkit/dist/query';
 
 interface AnimesProps {
-  data: AnimeData[] | undefined;
-  open: () => void;
+  open: (id?: number) => void;
   loading: boolean;
-  error?: FetchBaseQueryError | SerializedError;
+  data?: AnimeData[];
 }
 
-export const Animes: React.FC<AnimesProps> = ({ data, open, loading, error }) => {
+export const Animes: React.FC<AnimesProps> = ({ data, open, loading }) => {
   return (
     <div>
-      {!loading && !error && (
+      {!loading && (
         <h2 className={styles.countries_title}>
-          {data?.length === 0 ? REQUEST_ERROR.NOT_FOUND : TITLE.main}
+          {!data?.length ? REQUEST_ERROR.NOT_FOUND : TITLE.main}
         </h2>
       )}
       <div className={styles.countries_container}>

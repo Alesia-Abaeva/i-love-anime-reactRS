@@ -10,7 +10,7 @@ import { REQUEST_ERROR } from '../const';
 import { AnimeData, Animes, ErrorMessage, Modal, Pagination, Search, Spinner } from '../components';
 
 export const Home: React.FC = () => {
-  const [clickedData, setClickedData] = React.useState<null | string>(null);
+  const [clickedData, setClickedData] = React.useState<null | number>(null);
   const [page, setPages] = React.useState(1);
   const { openModal, closeModal, modal } = useModal();
 
@@ -34,9 +34,13 @@ export const Home: React.FC = () => {
     current && setPages(current);
   };
 
-  const handlerClickedData = (id?: string) => {
+  const handlerClickedData = (id?: number) => {
+    if (!id) {
+      return null;
+    }
+
     openModal();
-    setClickedData(id as string);
+    setClickedData(id);
   };
 
   return (
@@ -48,8 +52,8 @@ export const Home: React.FC = () => {
       {error && <ErrorMessage errorMessage={REQUEST_ERROR.SERVER_ERR} />}
       {!isLoading && !error && !!animes?.length && <Pagination onClickChange={handlerChangePage} />}
 
-      {modal && (
-        <Modal onClose={closeModal} title={'ANIME'}>
+      {modal && clickedData && (
+        <Modal onClose={closeModal} title="ANIME">
           <AnimeData id={clickedData} />
         </Modal>
       )}
