@@ -18,7 +18,6 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    // project: './tsconfig.json',
     extraFileExtension: ['.scss'],
   },
   plugins: ['react', '@typescript-eslint', 'prettier', 'react-hooks'],
@@ -40,4 +39,5 @@ module.exports = {
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
   },
+  settings: { react: { version: 'detect' } },
 };
