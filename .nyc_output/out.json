@@ -7711,7 +7711,7 @@
     },
     "inputSourceMap": {
       "version": 3,
-      "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAeYA;AAAA;AAAAC;AAAA;AAAA;AAAA;AAAAD;AAfZ,SAASE,iBAAiBC,sBAAsC;AAChE,SAASC,gBAAgB;AACzB,OAAOC,mBAAmB;AAC1B,OAAOC,iBAAiB;AAExB,MAAMC,eAAWP,yBAAGE,gBAAgB;AAAA,EAClCG;AAAAA,EACAC;AAAAA,EACA,CAACF,SAASI,WAAW,GAAGJ,SAASK;AACnC,CAAC;AAAET;AAEI,aAAMU,aAAaA,CAACC,mBAA+C;AAAAX;AAAAA;AACxE,SAAOG,eAAe;AAAA,IACpBM,SAASF;AAAAA,IACTK,YAAaC,0BAAyB;AAAAb;AAAAA;AAAA,kCAAoB,EAAGc,OAAOV,SAASQ,UAAU;AAAA;AAAA,IACvFD;AAAAA,EACF,CAAC;AACH",
+      "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAeYA;AAAA;AAAAC;AAAA;AAAA;AAAA;AAAAD;AAfZ,SAASE,iBAAiBC,sBAAsC;AAChE,SAASC,gBAAgB;AACzB,OAAOC,mBAAmB;AAC1B,OAAOC,iBAAiB;AAExB,MAAMC,eAAWP,yBAAGE,gBAAgB;AAAA,EAClCG;AAAAA,EACAC;AAAAA,EACA,CAACF,SAASI,WAAW,GAAGJ,SAASK;AACnC,CAAC;AAAET;AAEI,aAAMU,aAAaA,CAACC,mBAA+C;AAAAX;AAAAA;AACxE,SAAOG,eAAe;AAAA,IACpBM,SAASF;AAAAA,IACTK,YAAaC,0BAAyB;AAAAb;AAAAA;AAAA,kCAAqB,EAAEc,OAAOV,SAASQ,UAAU;AAAA;AAAA,IACvFD;AAAAA,EACF,CAAC;AACH",
       "names": [
         "cov_195w24hfae",
         "actualCoverage",
@@ -7735,7 +7735,7 @@
       "file": "C:/Users/Administrator.DESKTOP-C87CPRE/Documents/rsSchool-REACT/NEW/react-rs/src/store/store.ts"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "908d04e335843be9fadc24d85d21af206b111ed9"
+    "hash": "60770cf91459bc5bc1af88ff4d192d82f82322db"
   },
   "C:\\Users\\Administrator.DESKTOP-C87CPRE\\Documents\\rsSchool-REACT\\NEW\\react-rs\\src\\store\\store.ts": {
     "path": "C:\\Users\\Administrator.DESKTOP-C87CPRE\\Documents\\rsSchool-REACT\\NEW\\react-rs\\src\\store\\store.ts",
@@ -10813,14 +10813,14 @@
       "15": 5,
       "16": 5,
       "17": 5,
-      "18": 2703,
+      "18": 2709,
       "19": 5,
       "20": 5,
       "21": 5,
       "22": 5,
-      "23": 82,
-      "24": 82,
-      "25": 82,
+      "23": 84,
+      "24": 84,
+      "25": 84,
       "26": 1152,
       "27": 1152,
       "28": 1152,
@@ -10841,8 +10841,8 @@
     "f": {
       "0": 5,
       "1": 5,
-      "2": 2703,
-      "3": 82,
+      "2": 2709,
+      "3": 84,
       "4": 1152,
       "5": 4,
       "6": 0
@@ -10869,7 +10869,7 @@
         0
       ],
       "5": [
-        82,
+        84,
         74
       ],
       "6": [
@@ -11082,16 +11082,16 @@
     },
     "s": {
       "0": 5,
-      "1": 82,
+      "1": 84,
       "2": 1152
     },
     "f": {
-      "0": 82,
+      "0": 84,
       "1": 1152
     },
     "b": {
       "0": [
-        82,
+        84,
         74
       ],
       "1": [
@@ -17926,7 +17926,7 @@
     },
     "inputSourceMap": {
       "version": 3,
-      "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAeYA;AAAA;AAAAC;AAAA;AAAA;AAAA;AAAAD;AAfZ,OAAOE,UAAU;AACjB,OAAOC,UAAU;AACjB,OAAOC,UAAU;AACjB,OAAOC,UAAU;AACjB,OAAOC,UAAU;AACjB,OAAOC,UAAU;AACjB,OAAOC,UAAU;AACjB,OAAOC,UAAU;AAA8BT;AAExC,aAAMU,YAAYA,MAAc;AAAAV;AACrC,QAAMW,OAAGX,yBAAG,CAACK,MAAMH,MAAMC,MAAMC,MAAME,MAAMC,MAAMC,MAAMC,IAAI;AAC3D,QAAMG,QAAIZ,yBAAGW,IAAIE,KAAKC,MAAMD,KAAKE,OAAM,IAAKJ,IAAIK,MAAM,CAAC;AAAEhB;AACzD,SAAOY;AACT",
+      "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAeYA;AAAA;AAAAC;AAAA;AAAA;AAAA;AAAAD;AAfZ,OAAOE,UAAU;AACjB,OAAOC,UAAU;AACjB,OAAOC,UAAU;AACjB,OAAOC,UAAU;AACjB,OAAOC,UAAU;AACjB,OAAOC,UAAU;AACjB,OAAOC,UAAU;AACjB,OAAOC,UAAU;AAA8BT;AAExC,aAAMU,YAAYA,MAAc;AAAAV;AACrC,QAAMW,OAAGX,yBAAG,CAACK,MAAMH,MAAMC,MAAMC,MAAME,MAAMC,MAAMC,MAAMC,IAAI;AAC3D,QAAMG,QAAIZ,yBAAGW,IAAIE,KAAKC,MAAMD,KAAKE,OAAO,IAAIJ,IAAIK,MAAM,CAAC;AAAEhB;AACzD,SAAOY;AACT",
       "names": [
         "cov_20r6v88z6t",
         "actualCoverage",
@@ -17952,7 +17952,7 @@
       "file": "C:/Users/Administrator.DESKTOP-C87CPRE/Documents/rsSchool-REACT/NEW/react-rs/src/utils/random-background.ts"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "b3b2f39cc7b55014953b5c7403b0bcaaf0a206f2"
+    "hash": "3c4e6997e2f8011f5f8107739b63c8a5b3a85f68"
   },
   "C:\\Users\\Administrator.DESKTOP-C87CPRE\\Documents\\rsSchool-REACT\\NEW\\react-rs\\src\\utils\\random-background.ts": {
     "path": "C:\\Users\\Administrator.DESKTOP-C87CPRE\\Documents\\rsSchool-REACT\\NEW\\react-rs\\src\\utils\\random-background.ts",
@@ -19830,7 +19830,7 @@
     },
     "inputSourceMap": {
       "version": 3,
-      "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAeYA;AAAA;AAAAC;AAAA;AAAA;AAAA;AAAAD;AAAAA;AAfL,aAAME,eAAeA,CAACC,UAA4B;AAAAH;AAAAA;AACvD,MAAI,CAACG,OAAO;AAAAH;AAAAA;AACV,WAAO;AAAA,EACT,OAAC;AAAAA;AAAA;AACD,QAAMI,aAASJ,wBAAG,IAAIK,KAAKF,KAAK;AAChC,QAAMG,cAAUN,wBAAG,oBAAIK,KAAI;AAAGL;AAC9B,SAAOI,aAAaE;AACtB;AAAEN;AAEK,aAAMO,eAAeA,CAACJ,UAA2B;AAAAH;AAAAA;AACtD,UAAOA,iCAAMQ,UAAU,OAACR,2BAAI,CAACG;AAC/B;AAAEH;AAEK,aAAMS,gBAAgBA,CAACN,UAA4B;AAAAH;AAAAA;AACxD,UAAOA,qCAAU,UAAIA,2BAAI,CAACG;AAC5B;AAAEH;AAEK,aAAMU,eAAeA,CAACP,UAC3B;AAAAH;AAAAA;AAAA,sCAACG,MAAMQ,KAAI,EAAGH,YAAMR,2BAAIG,MAAMQ,KAAI,EAAGH,UAAU,OAACR,2BAAI,CAACG;AAAI;AAAEH;AAEtD,aAAMY,mBAAmBA,CAACT,UAC/B;AAAAH;AAAAA;AAAA,sCAACG,MAAMQ,KAAI,EAAGH,YAAMR,2BAAIG,MAAMQ,KAAI,EAAGH,UAAU,QAAER,2BAAI,CAACG;AAAI",
+      "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAeYA;AAAA;AAAAC;AAAA;AAAA;AAAA;AAAAD;AAAAA;AAfL,aAAME,eAAeA,CAACC,UAA4B;AAAAH;AAAAA;AACvD,MAAI,CAACG,OAAO;AAAAH;AAAAA;AACV,WAAO;AAAA,EACT,OAAC;AAAAA;AAAA;AACD,QAAMI,aAASJ,wBAAG,IAAIK,KAAKF,KAAK;AAChC,QAAMG,cAAUN,wBAAG,oBAAIK,KAAK;AAAEL;AAC9B,SAAOI,aAAaE;AACtB;AAAEN;AAEK,aAAMO,eAAeA,CAACJ,UAA2B;AAAAH;AAAAA;AACtD,UAAOA,iCAAMQ,UAAU,OAACR,2BAAI,CAACG;AAC/B;AAAEH;AAEK,aAAMS,gBAAgBA,CAACN,UAA4B;AAAAH;AAAAA;AACxD,UAAOA,qCAAU,UAAIA,2BAAI,CAACG;AAC5B;AAAEH;AAEK,aAAMU,eAAeA,CAACP,UAC3B;AAAAH;AAAAA;AAAA,sCAACG,MAAMQ,KAAK,EAAEH,YAAMR,2BAAIG,MAAMQ,KAAK,EAAEH,UAAU,OAACR,2BAAI,CAACG;AAAI;AAAEH;AAEtD,aAAMY,mBAAmBA,CAACT,UAC/B;AAAAH;AAAAA;AAAA,sCAACG,MAAMQ,KAAK,EAAEH,YAAMR,2BAAIG,MAAMQ,KAAK,EAAEH,UAAU,QAAER,2BAAI,CAACG;AAAI",
       "names": [
         "cov_h7ffcts89",
         "actualCoverage",
@@ -19852,7 +19852,7 @@
       "file": "C:/Users/Administrator.DESKTOP-C87CPRE/Documents/rsSchool-REACT/NEW/react-rs/src/utils/validate.ts"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "4a545b0c42d68cd6a3d6d07b29704db7942bf042"
+    "hash": "a5c4775ac34bc6899bb45e2dfdf900ba99abc2eb"
   },
   "C:\\Users\\Administrator.DESKTOP-C87CPRE\\Documents\\rsSchool-REACT\\NEW\\react-rs\\src\\utils\\validate.ts": {
     "path": "C:\\Users\\Administrator.DESKTOP-C87CPRE\\Documents\\rsSchool-REACT\\NEW\\react-rs\\src\\utils\\validate.ts",
@@ -21723,7 +21723,7 @@
     },
     "inputSourceMap": {
       "version": 3,
-      "mappings": "AAeI,mBACE,cADF;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAQA;AAAA;AAAAC;AAAA;AAAA;AAAA;AAAAD;AAdZ,SAASE,iBAAiB;AAC1B,OAAOC,YAAY;AAKlBH;AAEM,aAAMI,eAA4CA,CAAC;AAAA,EAAEC;AAAAA,EAAUC;AAAa,MAAM;AAAAN;AACvF,QAAMO,aAASP,wBAAG;AAAA,IAChBQ,iBAAkB,QAAON,UAAS;AAAA,EACpC;AAAEF;AAEF,SACE,mCACE;AAAA,2BAAC,UAAK,WAAY,GAAEG,OAAOM,eAAeJ,YAAQL,2BAAGG,OAAOO,iBAAYV,2BAAG,OACxEA;AAAAA,gDAAQA,2BAAIK,SAASM;AAAAA,MACrBL;AAAAA,SAFH;AAAA;AAAA;AAAA;AAAA,WAGA;AAAA,KACCN,6CAAYA,2BAAI,uBAAC,SAAI,WAAWG,OAAOS,WAAW,OAAOL,aAAzC;AAAA;AAAA;AAAA;AAAA,WAAoD;AAAA,OALvE;AAAA;AAAA;AAAA;AAAA,SAMA;AAEJ;AAAEM,KAdWT;AAAyC;AAAAU",
+      "mappings": "AAeI,mBACE,cADF;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAQA;AAAA;AAAAC;AAAA;AAAA;AAAA;AAAAD;AAdZ,SAASE,iBAAiB;AAC1B,OAAOC,YAAY;AAKlBH;AAEM,aAAMI,eAA4CA,CAAC;AAAA,EAAEC;AAAAA,EAAUC;AAAa,MAAM;AAAAN;AACvF,QAAMO,aAASP,wBAAG;AAAA,IAChBQ,iBAAkB,QAAON,UAAU;AAAA,EACrC;AAAEF;AAEF,SACE,mCACE;AAAA,2BAAC,UAAK,WAAY,GAAEG,OAAOM,eAAeJ,YAAQL,2BAAGG,OAAOO,iBAAYV,2BAAG,OACxEA;AAAAA,gDAAQA,2BAAIK,SAASM;AAAAA,MACrBL;AAAAA,SAFH;AAAA;AAAA;AAAA;AAAA,WAGA;AAAA,KACCN,6CAAYA,2BAAI,uBAAC,SAAI,WAAWG,OAAOS,WAAW,OAAOL,aAAzC;AAAA;AAAA;AAAA;AAAA,WAAoD;AAAA,OALvE;AAAA;AAAA;AAAA;AAAA,SAMA;AAEJ;AAAEM,KAdWT;AAAyC;AAAAU",
       "names": [
         "cov_fwcamk849",
         "actualCoverage",
@@ -21747,7 +21747,7 @@
       "file": "C:/Users/Administrator.DESKTOP-C87CPRE/Documents/rsSchool-REACT/NEW/react-rs/src/components/Forms/ErrorMessage/ErrorMessage.tsx"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "2699026ba68d6d7e811cbeac34fb9d4b802d7f21"
+    "hash": "9b1d737e4327d78bad2302a95e8c8e52449695c3"
   },
   "C:\\Users\\Administrator.DESKTOP-C87CPRE\\Documents\\rsSchool-REACT\\NEW\\react-rs\\src\\components\\Forms\\ErrorMessage\\ErrorMessage.tsx": {
     "path": "C:\\Users\\Administrator.DESKTOP-C87CPRE\\Documents\\rsSchool-REACT\\NEW\\react-rs\\src\\components\\Forms\\ErrorMessage\\ErrorMessage.tsx",
@@ -30076,20 +30076,20 @@
       "7": 5,
       "8": 5,
       "9": 5,
-      "10": 582,
+      "10": 586,
       "11": 5,
       "12": 5,
       "13": 5,
       "14": 5,
-      "15": 286,
-      "16": 286,
-      "17": 286,
+      "15": 288,
+      "16": 288,
+      "17": 288,
       "18": 5
     },
     "f": {
       "0": 5,
-      "1": 582,
-      "2": 286
+      "1": 586,
+      "2": 288
     },
     "b": {
       "0": [
@@ -30107,7 +30107,7 @@
     },
     "inputSourceMap": {
       "version": 3,
-      "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAeYA;AAAA;AAAAC;AAAA;AAAA;AAAA;AAAAD;AAfZ,SAASE,mBAAmB;AAC5B,SAA+BC,mBAAmB;AACMH;AAEjD,aAAMI,iBAAiBA,MAAM;AAAAJ;AAAAA;AAAA,qBAAwB;AAAC;AACtD,aAAMK,kBAA+CL,yBAAGE",
+      "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAeYA;AAAA;AAAAC;AAAA;AAAA;AAAA;AAAAD;AAfZ,SAASE,mBAAmB;AAC5B,SAA+BC,mBAAmB;AACMH;AAEjD,aAAMI,iBAAiBA,MAAM;AAAAJ;AAAAA;AAAA,qBAAyB;AAAA;AACtD,aAAMK,kBAA+CL,yBAAGE",
       "names": [
         "cov_1nx62spryg",
         "actualCoverage",
@@ -30122,7 +30122,7 @@
       "file": "C:/Users/Administrator.DESKTOP-C87CPRE/Documents/rsSchool-REACT/NEW/react-rs/src/hooks/redux.ts"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "a7c98c846ee95678da9736df3d1b1cf07e12046d"
+    "hash": "d1143059f1a797fb516db274947eabcd6ee3151d"
   },
   "C:\\Users\\Administrator.DESKTOP-C87CPRE\\Documents\\rsSchool-REACT\\NEW\\react-rs\\src\\hooks\\redux.ts": {
     "path": "C:\\Users\\Administrator.DESKTOP-C87CPRE\\Documents\\rsSchool-REACT\\NEW\\react-rs\\src\\hooks\\redux.ts",
@@ -30187,11 +30187,11 @@
     "branchMap": {},
     "s": {
       "0": 5,
-      "1": 286,
+      "1": 288,
       "2": 5
     },
     "f": {
-      "0": 286
+      "0": 288
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
@@ -30570,19 +30570,19 @@
       "7": 5,
       "8": 5,
       "9": 5,
-      "10": 265,
+      "10": 267,
       "11": 5,
       "12": 5,
       "13": 5,
       "14": 5,
-      "15": 130,
-      "16": 130,
-      "17": 130
+      "15": 131,
+      "16": 131,
+      "17": 131
     },
     "f": {
       "0": 5,
-      "1": 265,
-      "2": 130
+      "1": 267,
+      "2": 131
     },
     "b": {
       "0": [
@@ -30668,10 +30668,10 @@
     "branchMap": {},
     "s": {
       "0": 5,
-      "1": 130
+      "1": 131
     },
     "f": {
-      "0": 130
+      "0": 131
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
@@ -33263,7 +33263,7 @@
     },
     "inputSourceMap": {
       "version": 3,
-      "mappings": "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",
+      "mappings": "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",
       "names": [
         "cov_1bqzufrgmn",
         "actualCoverage",
@@ -33355,7 +33355,7 @@
       "file": "C:/Users/Administrator.DESKTOP-C87CPRE/Documents/rsSchool-REACT/NEW/react-rs/src/components/Forms/Forms.tsx"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "9d2ef3a3c1c2554b8e010fd2694643a228d43580"
+    "hash": "6562b0d0113adadf410934ff10dbc4bb6b10b5a2"
   },
   "C:\\Users\\Administrator.DESKTOP-C87CPRE\\Documents\\rsSchool-REACT\\NEW\\react-rs\\src\\components\\Forms\\Forms.tsx": {
     "path": "C:\\Users\\Administrator.DESKTOP-C87CPRE\\Documents\\rsSchool-REACT\\NEW\\react-rs\\src\\components\\Forms\\Forms.tsx",
@@ -35139,7 +35139,7 @@
     },
     "inputSourceMap": {
       "version": 3,
-      "mappings": "AAaU;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAEEA;AAAA;AAAAC;AAAA;AAAA;AAAA;AAAAD;AAfZ,OAAOE,YAAY;AAMlBF;AAEM,aAAMG,QAA8BA,CAAC;AAAA,EAAEC;AAAAA,EAASC;AAAAA,EAAUC;AAAM,MAAM;AAAAN;AAAAA;AAC3E,SACE,uBAAC,SAAI,WAAWE,OAAOK,gBAAgB,SAASH,SAC9C,iCAAC,SAAI,WAAWF,OAAOM,iBAAiB,SAAUC,WAAU;AAAAT;AAAAA;AAAA,iBAAMU,gBAAe;AAAA,EAAC,GAChF,iCAAC,SAAI,WAAWR,OAAOS,eACrB;AAAA,2BAAC,QAAIL,mBAAL;AAAA;AAAA;AAAA;AAAA,WAAW;AAAA,IACX,uBAAC,YAAO,WAAWJ,OAAOU,WAAW,SAASR,WAA9C;AAAA;AAAA;AAAA;AAAA,WAAuD;AAAA,IAEtDC;AAAAA,OAJH;AAAA;AAAA;AAAA;AAAA,SAKA,KANF;AAAA;AAAA;AAAA;AAAA,SAOA,KARF;AAAA;AAAA;AAAA;AAAA,SASA;AAEJ;AAAEQ,KAbWV;AAA2B;AAAAW",
+      "mappings": "AAaU;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAEEA;AAAA;AAAAC;AAAA;AAAA;AAAA;AAAAD;AAfZ,OAAOE,YAAY;AAMlBF;AAEM,aAAMG,QAA8BA,CAAC;AAAA,EAAEC;AAAAA,EAASC;AAAAA,EAAUC;AAAM,MAAM;AAAAN;AAAAA;AAC3E,SACE,uBAAC,SAAI,WAAWE,OAAOK,gBAAgB,SAASH,SAC9C,iCAAC,SAAI,WAAWF,OAAOM,iBAAiB,SAAUC,WAAU;AAAAT;AAAAA;AAAA,iBAAMU,gBAAgB;AAAA,KAChF,iCAAC,SAAI,WAAWR,OAAOS,eACrB;AAAA,2BAAC,QAAIL,mBAAL;AAAA;AAAA;AAAA;AAAA,WAAW;AAAA,IACX,uBAAC,YAAO,WAAWJ,OAAOU,WAAW,SAASR,WAA9C;AAAA;AAAA;AAAA;AAAA,WAAuD;AAAA,IAEtDC;AAAAA,OAJH;AAAA;AAAA;AAAA;AAAA,SAKA,KANF;AAAA;AAAA;AAAA;AAAA,SAOA,KARF;AAAA;AAAA;AAAA;AAAA,SASA;AAEJ;AAAEQ,KAbWV;AAA2B;AAAAW",
       "names": [
         "cov_1awozxbdrl",
         "actualCoverage",
@@ -35163,7 +35163,7 @@
       "file": "C:/Users/Administrator.DESKTOP-C87CPRE/Documents/rsSchool-REACT/NEW/react-rs/src/components/Modal/Modal.tsx"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "18463ca447e26058373ff49e31dc668d0f634a26"
+    "hash": "d1611f3f1098cbf80d299e7a1db435b6d1e68b22"
   },
   "C:\\Users\\Administrator.DESKTOP-C87CPRE\\Documents\\rsSchool-REACT\\NEW\\react-rs\\src\\components\\Modal\\Modal.tsx": {
     "path": "C:\\Users\\Administrator.DESKTOP-C87CPRE\\Documents\\rsSchool-REACT\\NEW\\react-rs\\src\\components\\Modal\\Modal.tsx",
@@ -38576,14 +38576,14 @@
       "15": 5,
       "16": 5,
       "17": 5,
-      "18": 269,
+      "18": 273,
       "19": 5,
       "20": 5,
       "21": 5,
       "22": 5,
-      "23": 82,
-      "24": 82,
-      "25": 82,
+      "23": 84,
+      "24": 84,
+      "25": 84,
       "26": 24,
       "27": 24,
       "28": 24,
@@ -38607,8 +38607,8 @@
     "f": {
       "0": 5,
       "1": 5,
-      "2": 269,
-      "3": 82,
+      "2": 273,
+      "3": 84,
       "4": 24,
       "5": 26,
       "6": 4,
@@ -38798,12 +38798,12 @@
     "branchMap": {},
     "s": {
       "0": 5,
-      "1": 82,
+      "1": 84,
       "2": 24,
       "3": 26
     },
     "f": {
-      "0": 82,
+      "0": 84,
       "1": 24,
       "2": 26
     },
@@ -39624,14 +39624,14 @@
       "15": 5,
       "16": 5,
       "17": 5,
-      "18": 21,
+      "18": 25,
       "19": 5,
       "20": 5,
       "21": 5,
       "22": 5,
-      "23": 8,
-      "24": 8,
-      "25": 8,
+      "23": 10,
+      "24": 10,
+      "25": 10,
       "26": 5,
       "27": 5,
       "28": 5,
@@ -39649,8 +39649,8 @@
     "f": {
       "0": 5,
       "1": 5,
-      "2": 21,
-      "3": 8,
+      "2": 25,
+      "3": 10,
       "4": 4,
       "5": 0
     },
@@ -39763,10 +39763,10 @@
     "branchMap": {},
     "s": {
       "0": 5,
-      "1": 8
+      "1": 10
     },
     "f": {
-      "0": 8
+      "0": 10
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
@@ -42025,7 +42025,7 @@
     },
     "inputSourceMap": {
       "version": 3,
-      "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAeYA;AAAA;AAAAC;AAAA;AAAA;AAAA;AAAAD;AAfZ,OAAOE,WAAW;AAAQF;AAEnB,aAAMG,WAAWA,CAACC,OAAmB;AAAAC;AAAAL;AAAAA;AAC1CE,QAAMI,UAAU,MAAM;AAAAN;AAAAA;AACpBI,OAAE;AAAA,EAEJ,GAAG,EAAE;AACP;AAAEC,GALWF,UAAQ",
+      "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAeYA;AAAA;AAAAC;AAAA;AAAA;AAAA;AAAAD;AAfZ,OAAOE,WAAW;AAAQF;AAEnB,aAAMG,WAAWA,CAACC,OAAmB;AAAAC;AAAAL;AAAAA;AAC1CE,QAAMI,UAAU,MAAM;AAAAN;AAAAA;AACpBI,OAAG;AAAA,EAEL,GAAG,EAAE;AACP;AAAEC,GALWF,UAAQ",
       "names": [
         "cov_23awconc79",
         "actualCoverage",
@@ -42041,7 +42041,7 @@
       "file": "C:/Users/Administrator.DESKTOP-C87CPRE/Documents/rsSchool-REACT/NEW/react-rs/src/hooks/use-mount.ts"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "ee27202ba1b036fcf641d4442fcdca8f8a395bef"
+    "hash": "97f81df691f03c70feed25fa4f2cba26279f870c"
   },
   "C:\\Users\\Administrator.DESKTOP-C87CPRE\\Documents\\rsSchool-REACT\\NEW\\react-rs\\src\\hooks\\use-mount.ts": {
     "path": "C:\\Users\\Administrator.DESKTOP-C87CPRE\\Documents\\rsSchool-REACT\\NEW\\react-rs\\src\\hooks\\use-mount.ts",
@@ -43123,26 +43123,26 @@
       "16": 5,
       "17": 5,
       "18": 5,
-      "19": 419,
+      "19": 429,
       "20": 5,
       "21": 5,
       "22": 5,
       "23": 5,
-      "24": 82,
-      "25": 82,
-      "26": 82,
-      "27": 82,
-      "28": 82,
+      "24": 84,
+      "25": 84,
+      "26": 84,
+      "27": 84,
+      "28": 84,
       "29": 1,
       "30": 1,
       "31": 1,
-      "32": 82,
-      "33": 82,
+      "32": 84,
+      "33": 84,
       "34": 1,
       "35": 1,
       "36": 1,
-      "37": 82,
-      "38": 82,
+      "37": 84,
+      "38": 84,
       "39": 5,
       "40": 5,
       "41": 5,
@@ -43159,8 +43159,8 @@
     "f": {
       "0": 0,
       "1": 5,
-      "2": 419,
-      "3": 82,
+      "2": 429,
+      "3": 84,
       "4": 1,
       "5": 1,
       "6": 5,
@@ -43374,15 +43374,15 @@
     "branchMap": {},
     "s": {
       "0": 5,
-      "1": 82,
-      "2": 82,
+      "1": 84,
+      "2": 84,
       "3": 1,
-      "4": 82,
+      "4": 84,
       "5": 1,
-      "6": 82
+      "6": 84
     },
     "f": {
-      "0": 82,
+      "0": 84,
       "1": 1,
       "2": 1
     },
@@ -44100,18 +44100,18 @@
       "7": 5,
       "8": 5,
       "9": 5,
-      "10": 57,
+      "10": 59,
       "11": 5,
       "12": 5,
       "13": 5,
-      "14": 26,
-      "15": 26,
-      "16": 26
+      "14": 27,
+      "15": 27,
+      "16": 27
     },
     "f": {
       "0": 5,
-      "1": 57,
-      "2": 26
+      "1": 59,
+      "2": 27
     },
     "b": {
       "0": [
@@ -44129,7 +44129,7 @@
     },
     "inputSourceMap": {
       "version": 3,
-      "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAeYA;AAAA;AAAAC;AAAA;AAAA;AAAA;AAAAD;AAfZ,SAASE,sBAAsB;AAC/B,SAASC,yBAAyB;AAE3B,aAAMC,uBAAmBJ,yBAAGE,eACjCC,mBACCE,WAAU;AAAAL;AAAAA;AAAA,eAAMM,cAAcC;AAAK,CAAC",
+      "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAeYA;AAAA;AAAAC;AAAA;AAAA;AAAA;AAAAD;AAfZ,SAASE,sBAAsB;AAC/B,SAASC,yBAAyB;AAE3B,aAAMC,uBAAmBJ,yBAAGE,eACjCC,mBACCE,WAAU;AAAAL;AAAAA;AAAA,eAAMM,cAAcC;AAAK,CACtC",
       "names": [
         "cov_1yfphofyl3",
         "actualCoverage",
@@ -44146,7 +44146,7 @@
       "file": "C:/Users/Administrator.DESKTOP-C87CPRE/Documents/rsSchool-REACT/NEW/react-rs/src/store/selectors/search.ts"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "7e9a81044f721e35e066bbccda7ff6735644b551"
+    "hash": "9b008980e737231415f5f160dcbba964dc24bc05"
   },
   "C:\\Users\\Administrator.DESKTOP-C87CPRE\\Documents\\rsSchool-REACT\\NEW\\react-rs\\src\\store\\selectors\\search.ts": {
     "path": "C:\\Users\\Administrator.DESKTOP-C87CPRE\\Documents\\rsSchool-REACT\\NEW\\react-rs\\src\\store\\selectors\\search.ts",
@@ -44201,10 +44201,10 @@
     "branchMap": {},
     "s": {
       "0": 5,
-      "1": 26
+      "1": 27
     },
     "f": {
-      "0": 26
+      "0": 27
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
@@ -45886,27 +45886,27 @@
       "16": 5,
       "17": 5,
       "18": 5,
-      "19": 1776,
+      "19": 1812,
       "20": 5,
       "21": 5,
       "22": 5,
       "23": 5,
-      "24": 82,
-      "25": 82,
-      "26": 82,
-      "27": 82,
-      "28": 82,
-      "29": 82,
-      "30": 82,
-      "31": 82,
-      "32": 82,
-      "33": 82,
-      "34": 82,
+      "24": 84,
+      "25": 84,
+      "26": 84,
+      "27": 84,
+      "28": 84,
+      "29": 84,
+      "30": 84,
+      "31": 84,
+      "32": 84,
+      "33": 84,
+      "34": 84,
       "35": 24,
       "36": 24,
       "37": 24,
-      "38": 82,
-      "39": 82,
+      "38": 84,
+      "39": 84,
       "40": 26,
       "41": 26,
       "42": 26,
@@ -45916,14 +45916,14 @@
       "46": 2,
       "47": 2,
       "48": 24,
-      "49": 82,
-      "50": 82,
+      "49": 84,
+      "50": 84,
       "51": 2,
       "52": 2,
       "53": 2,
       "54": 2,
-      "55": 82,
-      "56": 82,
+      "55": 84,
+      "56": 84,
       "57": 1,
       "58": 1,
       "59": 1,
@@ -45935,8 +45935,8 @@
       "65": 1,
       "66": 1,
       "67": 1,
-      "68": 82,
-      "69": 82,
+      "68": 84,
+      "69": 84,
       "70": 5,
       "71": 2,
       "72": 5,
@@ -45956,8 +45956,8 @@
     "f": {
       "0": 5,
       "1": 5,
-      "2": 1776,
-      "3": 82,
+      "2": 1812,
+      "3": 84,
       "4": 24,
       "5": 26,
       "6": 2,
@@ -46000,21 +46000,21 @@
         1
       ],
       "8": [
-        82,
-        8
+        84,
+        10
       ],
       "9": [
-        82,
+        84,
         0
       ],
       "10": [
-        82,
+        84,
         74,
         74,
         72
       ],
       "11": [
-        82,
+        84,
         2,
         2
       ],
@@ -46033,7 +46033,7 @@
     },
     "inputSourceMap": {
       "version": 3,
-      "mappings": "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",
+      "mappings": "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",
       "names": [
         "cov_1esaa611at",
         "actualCoverage",
@@ -46096,7 +46096,7 @@
       "file": "C:/Users/Administrator.DESKTOP-C87CPRE/Documents/rsSchool-REACT/NEW/react-rs/src/pages/Home.tsx"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "9e21ea99161a9f86402f140477230117222a8f91"
+    "hash": "02d0f5d68161404e9232bf1baa84a10675a26013"
   },
   "C:\\Users\\Administrator.DESKTOP-C87CPRE\\Documents\\rsSchool-REACT\\NEW\\react-rs\\src\\pages\\Home.tsx": {
     "path": "C:\\Users\\Administrator.DESKTOP-C87CPRE\\Documents\\rsSchool-REACT\\NEW\\react-rs\\src\\pages\\Home.tsx",
@@ -46728,31 +46728,31 @@
     },
     "s": {
       "0": 5,
-      "1": 82,
-      "2": 82,
-      "3": 82,
-      "4": 82,
-      "5": 82,
-      "6": 82,
-      "7": 82,
-      "8": 82,
+      "1": 84,
+      "2": 84,
+      "3": 84,
+      "4": 84,
+      "5": 84,
+      "6": 84,
+      "7": 84,
+      "8": 84,
       "9": 24,
-      "10": 82,
+      "10": 84,
       "11": 26,
       "12": 2,
       "13": 2,
-      "14": 82,
+      "14": 84,
       "15": 2,
       "16": 2,
-      "17": 82,
+      "17": 84,
       "18": 1,
       "19": 0,
       "20": 1,
       "21": 1,
-      "22": 82
+      "22": 84
     },
     "f": {
-      "0": 82,
+      "0": 84,
       "1": 24,
       "2": 26,
       "3": 2,
@@ -46772,21 +46772,21 @@
         1
       ],
       "3": [
-        82,
-        8
+        84,
+        10
       ],
       "4": [
-        82,
+        84,
         0
       ],
       "5": [
-        82,
+        84,
         74,
         74,
         72
       ],
       "6": [
-        82,
+        84,
         2,
         2
       ]
@@ -50685,7 +50685,7 @@
     },
     "inputSourceMap": {
       "version": 3,
-      "mappings": "AAeQ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAIA;AAAA;AAAAC;AAAA;AAAA;AAAA;AAAAD;AAfZ,OAAOE,WAAW;AAClB,OAAOC,cAAc;AACrB,SAASC,gBAAgB;AACzB,SAASC,qBAAqB;AAC9B,SAASC,kBAAkB;AAC3B,SAASC,WAAW;AACpB,OAAO;AAEP,MAAMC,SAAKR,yBAAGM,WAAU;AAAGN;AAE3BG,SAASM,YACPC,SAASC,eAAe,MAAM,GAC9B,uBAAC,MAAM,YAAN,EACC,iCAAC,YAAS,OACR,iCAAC,iBACC,iCAAC,SAAD;AAAA;AAAA;AAAA;AAAA,OAAI,KADN;AAAA;AAAA;AAAA;AAAA,OAEA,KAHF;AAAA;AAAA;AAAA;AAAA,OAIA,KALF;AAAA;AAAA;AAAA;AAAA,OAMA,CAAmB",
+      "mappings": "AAeQ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAIA;AAAA;AAAAC;AAAA;AAAA;AAAA;AAAAD;AAfZ,OAAOE,WAAW;AAClB,OAAOC,cAAc;AACrB,SAASC,gBAAgB;AACzB,SAASC,qBAAqB;AAC9B,SAASC,kBAAkB;AAC3B,SAASC,WAAW;AACpB,OAAO;AAEP,MAAMC,SAAKR,yBAAGM,WAAW;AAAEN;AAE3BG,SAASM,YACPC,SAASC,eAAe,MAAM,GAC9B,uBAAC,MAAM,YAAN,EACC,iCAAC,YAAS,OACR,iCAAC,iBACC,iCAAC,SAAD;AAAA;AAAA;AAAA;AAAA,OAAI,KADN;AAAA;AAAA;AAAA;AAAA,OAEA,KAHF;AAAA;AAAA;AAAA;AAAA,OAIA,KALF;AAAA;AAAA;AAAA;AAAA,OAMA,CACF",
       "names": [
         "cov_2qmphk74fn",
         "actualCoverage",
@@ -50706,7 +50706,7 @@
       "file": "C:/Users/Administrator.DESKTOP-C87CPRE/Documents/rsSchool-REACT/NEW/react-rs/src/entry-client.tsx"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "7132e28447c757816977e4af76e52d38624effb5"
+    "hash": "55dd7fc3a4b62260cf1cf02e6620f211571ac485"
   },
   "C:\\Users\\Administrator.DESKTOP-C87CPRE\\Documents\\rsSchool-REACT\\NEW\\react-rs\\src\\entry-client.tsx": {
     "path": "C:\\Users\\Administrator.DESKTOP-C87CPRE\\Documents\\rsSchool-REACT\\NEW\\react-rs\\src\\entry-client.tsx",

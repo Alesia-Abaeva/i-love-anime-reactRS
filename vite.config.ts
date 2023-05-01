@@ -26,7 +26,10 @@ export default defineConfig({
       },
     },
     coverage: {
-      provider: 'istanbul',
+      provider: 'c8',
+      enabled: true,
+      reporter: ['text'],
+      all: true,
     },
   },
   css: {
