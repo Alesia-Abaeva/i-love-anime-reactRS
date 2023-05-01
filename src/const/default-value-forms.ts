@@ -7,4 +7,5 @@ export const defaultValues: FormState = {
   radio: '',
   description: '',
   buttonDisabled: true,
+  cards: [],
 };

@@ -32,6 +32,9 @@ export const formSlice = createSlice({
     setButtonDisabled(state, action: PayloadAction<boolean>) {
       state.buttonDisabled = action.payload;
     },
+    setCards(state, action: PayloadAction<NewCard>) {
+      state.cards = [...state.cards, action.payload];
+    },
   },
 });
 
@@ -47,6 +50,7 @@ export const {
   setTitle,
   setFormState,
   setButtonDisabled,
+  setCards,
 } = actions;
 
 export default reducer;
