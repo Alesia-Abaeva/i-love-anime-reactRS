@@ -2,8 +2,10 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    node: true,
   },
   extends: [
+    'plugin:cypress/recommended',
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
@@ -16,7 +18,6 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: './tsconfig.json',
     extraFileExtension: ['.scss'],
   },
   plugins: ['react', '@typescript-eslint', 'prettier', 'react-hooks'],

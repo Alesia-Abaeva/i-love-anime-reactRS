@@ -7,7 +7,9 @@ import { formValueSelector } from '../store/selectors/form';
 import { setCards } from '../store/reducers/FormSlice';
 
 export const FormPage = () => {
-  const [modal, setModal] = React.useState<boolean>(false);
+  const [cards, setCards] = React.useState<NewCard[]>([]);
+  const [modal, setModal] = React.useState(false);
+
 
   const formState1 = useAppSelector(formValueSelector);
   const dispatch = useAppDispatch();

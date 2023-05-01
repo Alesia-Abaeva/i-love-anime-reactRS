@@ -3,9 +3,19 @@
 
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import istanbul from 'vite-plugin-istanbul';
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react({
+      babel: {
+        plugins: [['istanbul']],
+      },
+    }),
+    istanbul({
+      cypress: true,
+    }),
+  ],
   test: {
     globals: true,
     environment: 'jsdom',
@@ -15,6 +25,12 @@ export default defineConfig({
         classNameStrategy: 'non-scoped',
       },
     },
+    coverage: {
+      provider: 'c8',
+      enabled: true,
+      reporter: ['text'],
+      all: true,
+    },
   },
   css: {
     modules: {
@@ -22,5 +38,12 @@ export default defineConfig({
         return name;
       },
     },
+  },
+  build: {
+    minify: false,
+    sourcemap: true,
+  },
+  ssr: {
+    noExternal: ['@reduxjs/toolkit'],
   },
 });

@@ -27,7 +27,3 @@ export function renderWithProvider(
 
   return { store, ...render(ui, { wrapper: Wrapper, ...renderOptions }) };
 }
-
-/**
- * renderWithProvider(<Element />, {preloadedState: {search: initialSearch}})
- */
