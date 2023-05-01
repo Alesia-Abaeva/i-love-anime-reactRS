@@ -43,9 +43,10 @@ async function startServer() {
         },
       });
     } catch (e) {
-      vite?.ssrFixStacktrace(e);
-      res.status(500).end(e.stack);
-      next(e);
+      const error = e as Error;
+      vite?.ssrFixStacktrace(error);
+      res.status(500).end(error.stack);
+      next(error);
     }
   });
 

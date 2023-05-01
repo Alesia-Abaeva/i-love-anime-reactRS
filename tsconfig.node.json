@@ -3,7 +3,8 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "esModuleInterop": true
   },
-  "include": ["vite.config.ts", "src/entry-server.tsx", "src/vite-env.d.ts", "server.js"]
+  "include": ["vite.config.ts", "src/entry-server.tsx", "src/vite-env.d.ts", "server.ts"]
 }
