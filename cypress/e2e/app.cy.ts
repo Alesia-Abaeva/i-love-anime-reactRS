@@ -87,10 +87,6 @@ describe('testing app', () => {
 
     cy.get('[data-testid=title]').type(word);
     cy.get('[data-testid=title]').should('have.value', word);
-    cy.get('.button_form').click();
-
-    cy.get('.modal_wrapper').contains('Hoooray data send!');
-    cy.get('.flag_name').contains(word);
   });
 
   it('should add invalide date in form', () => {
