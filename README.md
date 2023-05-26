@@ -8,10 +8,15 @@
 - search by anime name
 - pagination on the main page
 - form for adding character information
+- animation (canvas) 404 page
+- state management with Redux / api calls with RTK query
 
 ## Screenshot
 
 ![image](https://user-images.githubusercontent.com/101274979/230780840-fac073d7-353c-4f14-882e-cc245680b6db.png)
+![image](https://user-images.githubusercontent.com/101274979/232251402-f7ba434d-3056-4324-ba7a-f6dcc3843d44.png)
+![image](https://user-images.githubusercontent.com/101274979/232251420-d7f32a68-9915-4325-b3ff-25e2c6ffea9f.png)
+![image](https://user-images.githubusercontent.com/101274979/232251441-a4d7db8b-cbc6-4cfe-be18-7de00fd39f83.png)
 
 ## Tech stack
 
